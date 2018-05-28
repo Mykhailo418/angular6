@@ -1,1 +1,1 @@
-Angular + Webpack
+Angular6 + Webpack

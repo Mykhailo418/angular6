@@ -25,8 +25,17 @@ module.exports = {
 		rules: [
 		  {
 		    test: /\.ts$/,
-		    loader: 'awesome-typescript-loader'
-		  }
+		    loaders: [
+	          {
+	            loader: 'awesome-typescript-loader', 
+	          } , 
+	          'angular2-template-loader'
+	        ]
+		  },
+		  {
+	        test: /\.html$/,
+	        loader: 'html-loader'
+	      }
 		]
 	},
 	devtool: "cheap-inline-source-map",

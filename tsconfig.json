@@ -1,24 +1,13 @@
 {
   "compilerOptions": {
-    "outDir": "dist/",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
     "sourceMap": true,
-    "lib": [
-      "dom",
-      "es2015"
-    ]
-  },
-  "include": [
-    "dist/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2015", "dom"],
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
+  }
 }
