@@ -5,10 +5,12 @@ import { FormsModule }    from '@angular/forms';
 
 // Declarations
 import { AppComponent } from './app/app.component';
+import { MenuComponent } from './menu/menu.component';
+import { CustomComponent } from './custom/custom.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent],
+  declarations: [AppComponent, MenuComponent, CustomComponent],
   bootstrap: [AppComponent]
 })
 
