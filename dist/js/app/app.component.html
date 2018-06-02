@@ -5,4 +5,6 @@
 	<p>{{name}}</p>
 </section>
 <hr />
-<app-custom [serPref]="'New Pref'" [newMsg]="newMessage"></app-custom>
+<app-custom [serPref]="'New Pref'" [newMsg]="newMessage">
+	<p #contentElement>{{ textForContentSection }}</p>
+</app-custom>

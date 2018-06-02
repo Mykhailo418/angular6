@@ -6160,6 +6160,7 @@ var AppComponent = (function () {
         this.title = 'angular';
         this.name = '';
         this.newMessage = { msg: '' };
+        this.textForContentSection = 'Content For Content Section!';
     }
     AppComponent.prototype.onNewMessage = function (event) {
         this.newMessage = event;
@@ -6196,6 +6197,7 @@ var core_1 = __webpack_require__(18);
 var CustomComponent = (function () {
     function CustomComponent() {
         this.serverPrefix = '';
+        this.titleForSomeTitle = 'Some Title!';
         this.serverName = '';
         this.outServerName = '';
         this.isServerName = false;
@@ -6211,9 +6213,35 @@ var CustomComponent = (function () {
     CustomComponent.prototype.changeSomeTitle = function (titleEl) {
         titleEl.textContent = 'Another Title ' + Math.round(Math.random() * 10);
     };
+    /* -- Angular Life cycle Hooks -- */
     CustomComponent.prototype.ngOnInit = function () {
         // Your script here
-        console.log('H3 title from DOM = ', this.titleFromDOM); // ElementRef: {nativaElement}
+        console.log('H3 title from DOM = ', this.titleFromDOM); // ElementRef: {nativeElement}
+        console.log('Text Title Some Title(On Init) = ' + this.titleFromDOM.nativeElement.textContent);
+        console.log('Text Content Element(On Init) = ' + this.contentFromDOM.nativeElement.textContent);
+    };
+    CustomComponent.prototype.ngOnChanges = function (changes) {
+        console.log('-- CHANGES:', changes);
+    };
+    CustomComponent.prototype.ngDoCheck = function () {
+        console.log('DOCheck - custom Compoennt');
+    };
+    CustomComponent.prototype.ngAfterContentInit = function () {
+        console.log('AfterContentInit - custom Compoennt');
+        console.log('Text Content Element(AfterContentInit) = ' + this.contentFromDOM.nativeElement.textContent);
+    };
+    CustomComponent.prototype.ngAfterContentChecked = function () {
+        console.log('AfterContentChecked - custom Compoennt');
+    };
+    CustomComponent.prototype.ngAfterViewInit = function () {
+        console.log('AfterViewInit - custom Compoennt');
+        console.log('Text Title Some Title(AfterViewInit) = ' + this.titleFromDOM.nativeElement.textContent);
+    };
+    CustomComponent.prototype.ngAfterViewChecked = function () {
+        console.log('AfterViewChecked - custom Compoennt');
+    };
+    CustomComponent.prototype.ngOnDestroy = function () {
+        console.log('AfterViewChecked - custom Compoennt');
     };
     return CustomComponent;
 }());
@@ -6229,6 +6257,10 @@ __decorate([
     core_1.ViewChild('someTitle'),
     __metadata("design:type", core_1.ElementRef)
 ], CustomComponent.prototype, "titleFromDOM", void 0);
+__decorate([
+    core_1.ContentChild('contentElement'),
+    __metadata("design:type", core_1.ElementRef)
+], CustomComponent.prototype, "contentFromDOM", void 0);
 CustomComponent = __decorate([
     core_1.Component({
         selector: 'app-custom',
@@ -6287,14 +6319,14 @@ exports.MenuComponent = MenuComponent;
 /***/ 361:
 /***/ (function(module, exports) {
 
-module.exports = "<app-menu (newMessage)=\"onNewMessage($event)\"></app-menu>\r\n<section class=\"container\">\r\n\t<h1>Hello dear, {{title}}</h1>\r\n\t<input type=\"text\" name=\"name\" [(ngModel)]=\"name\" />\r\n\t<p>{{name}}</p>\r\n</section>\r\n<hr />\r\n<app-custom [serPref]=\"'New Pref'\" [newMsg]=\"newMessage\"></app-custom>";
+module.exports = "<app-menu (newMessage)=\"onNewMessage($event)\"></app-menu>\r\n<section class=\"container\">\r\n\t<h1>Hello dear, {{title}}</h1>\r\n\t<input type=\"text\" name=\"name\" [(ngModel)]=\"name\" />\r\n\t<p>{{name}}</p>\r\n</section>\r\n<hr />\r\n<app-custom [serPref]=\"'New Pref'\" [newMsg]=\"newMessage\">\r\n\t<p #contentElement>{{ textForContentSection }}</p>\r\n</app-custom>";
 
 /***/ }),
 
 /***/ 362:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<h3 #someTitle>SOme Title</h3>\r\n\t<button (click)=\"changeSomeTitle(someTitle)\">change Some Title</button>\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>";
+module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<h3 #someTitle>{{ titleForSomeTitle }}</h3>\r\n\t<button (click)=\"changeSomeTitle(someTitle)\">change Some Title</button>\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>\r\n<section class=\"container\">\r\n\t\t<h3>Content Section</h3>\r\n\t\t<ng-content #contentElement></ng-content>\r\n</section>\r\n";
 
 /***/ }),
 

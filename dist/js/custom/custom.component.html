@@ -9,7 +9,11 @@
 </section>
 <hr>
 <section class="container">
-	<h3 #someTitle>SOme Title</h3>
+	<h3 #someTitle>{{ titleForSomeTitle }}</h3>
 	<button (click)="changeSomeTitle(someTitle)">change Some Title</button>
 	<p *ngIf="newMsg && newMsg.msg">{{newMsg.msg}}</p>
+</section>
+<section class="container">
+		<h3>Content Section</h3>
+		<ng-content #contentElement></ng-content>
 </section>
