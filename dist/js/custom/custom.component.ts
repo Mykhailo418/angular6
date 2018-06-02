@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
 	selector: 'app-custom',
@@ -9,6 +9,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 export class CustomComponent implements OnInit  {
 	@Input('serPref') serverPrefix: String = '';
 	@Input() newMsg: Object;
+	@ViewChild('someTitle') titleFromDOM: ElementRef;
 	serverName: String = '';
 	outServerName: String = '';
 	isServerName: boolean = false;
@@ -29,6 +30,6 @@ export class CustomComponent implements OnInit  {
 
 	ngOnInit() {
 		// Your script here
-	 	console.log(this.newMsg);
+	 	console.log('H3 title from DOM = ', this.titleFromDOM); // ElementRef: {nativaElement}
 	}
 }

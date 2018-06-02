@@ -6213,7 +6213,7 @@ var CustomComponent = (function () {
     };
     CustomComponent.prototype.ngOnInit = function () {
         // Your script here
-        console.log(this.newMsg);
+        console.log('H3 title from DOM = ', this.titleFromDOM); // ElementRef: {nativaElement}
     };
     return CustomComponent;
 }());
@@ -6225,6 +6225,10 @@ __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
 ], CustomComponent.prototype, "newMsg", void 0);
+__decorate([
+    core_1.ViewChild('someTitle'),
+    __metadata("design:type", core_1.ElementRef)
+], CustomComponent.prototype, "titleFromDOM", void 0);
 CustomComponent = __decorate([
     core_1.Component({
         selector: 'app-custom',
