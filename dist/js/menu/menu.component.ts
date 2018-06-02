@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
 	selector: 'app-menu',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
 })
 
 export class MenuComponent {
+	@Output('newMessage') sendMessage = new EventEmitter<{msg: String}>();
 
+	onSendMessage(e: Event){
+		e.preventDefault();
+		this.sendMessage.emit({
+			msg: 'Random number is ' + Math.round(Math.random() * 1000)
+		});
+	}
 }

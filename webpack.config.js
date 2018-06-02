@@ -38,7 +38,7 @@ module.exports = {
 	      }
 		]
 	},
-	devtool: "cheap-inline-source-map",
+	devtool: 'source-map',
 	watch: true,
 	watchOptions: {
 		aggregateTimeout: 100

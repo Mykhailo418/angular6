@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
 	selector: 'app-custom',
@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class CustomComponent implements OnInit  {
+	@Input('serPref') serverPrefix: String = '';
+	@Input() newMsg: Object;
 	serverName: String = '';
-	isOutputName: Boolean = false;
+	outServerName: String = '';
+	isServerName: boolean = false;
 	idServer: Number = 123;
 
 	onChangeServerName(e:Event){
@@ -15,18 +18,12 @@ export class CustomComponent implements OnInit  {
 	}
 
 	outputServerName(e:Event){
-		this.isOutputName = true;
-	}
-
-	getServerName(){
-		if(this.isOutputName){
-			this.isOutputName = false;
-			return 'Server name is ' + this.serverName;
-		}
+		this.isServerName = (this.serverName) ? true : false;
+		this.outServerName = 'Server name is ' + this.serverPrefix + ': ' + this.serverName;
 	}
 
 	ngOnInit() {
 		// Your script here
-	 
+	 	console.log(this.newMsg);
 	}
 }

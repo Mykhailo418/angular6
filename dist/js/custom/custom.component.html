@@ -2,5 +2,12 @@
 	<h3>Custom Component</h3>
 	<input type="text" name="serverName" (input)="onChangeServerName($event)">
 	<button class="btn btn-success" (click)="outputServerName($event)">Set Server Name</button>
-	<p [attr.data-id-server]="idServer">{{ getServerName() }}</p>
+	<p *ngIf="isServerName; else noServer" [attr.data-id-server]="idServer">{{ outServerName }}</p>
+	<ng-template #noServer>
+		<p>Server Does not have name</p>
+	</ng-template>
+</section>
+<hr>
+<section class="container">
+	<p *ngIf="newMsg && newMsg.msg">{{newMsg.msg}}</p>
 </section>
