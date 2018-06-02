@@ -6169,7 +6169,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-main',
-        template: __webpack_require__(361)
+        template: __webpack_require__(361),
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -6208,6 +6208,9 @@ var CustomComponent = (function () {
         this.isServerName = (this.serverName) ? true : false;
         this.outServerName = 'Server name is ' + this.serverPrefix + ': ' + this.serverName;
     };
+    CustomComponent.prototype.changeSomeTitle = function (titleEl) {
+        titleEl.textContent = 'Another Title ' + Math.round(Math.random() * 10);
+    };
     CustomComponent.prototype.ngOnInit = function () {
         // Your script here
         console.log(this.newMsg);
@@ -6225,7 +6228,8 @@ __decorate([
 CustomComponent = __decorate([
     core_1.Component({
         selector: 'app-custom',
-        template: __webpack_require__(362)
+        template: __webpack_require__(362),
+        encapsulation: core_1.ViewEncapsulation.None,
     })
 ], CustomComponent);
 exports.CustomComponent = CustomComponent;
@@ -6286,7 +6290,7 @@ module.exports = "<app-menu (newMessage)=\"onNewMessage($event)\"></app-menu>\r\
 /***/ 362:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>";
+module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<h3 #someTitle>SOme Title</h3>\r\n\t<button (click)=\"changeSomeTitle(someTitle)\">change Some Title</button>\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>";
 
 /***/ }),
 

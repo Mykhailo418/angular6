@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
 	selector: 'app-custom',
-	templateUrl: './custom.component.html'
+	templateUrl: './custom.component.html',
+	encapsulation: ViewEncapsulation.None,
 })
 
 export class CustomComponent implements OnInit  {
@@ -20,6 +21,10 @@ export class CustomComponent implements OnInit  {
 	outputServerName(e:Event){
 		this.isServerName = (this.serverName) ? true : false;
 		this.outServerName = 'Server name is ' + this.serverPrefix + ': ' + this.serverName;
+	}
+
+	changeSomeTitle(titleEl: HTMLElement){
+		titleEl.textContent = 'Another Title '+Math.round(Math.random()*10);
 	}
 
 	ngOnInit() {

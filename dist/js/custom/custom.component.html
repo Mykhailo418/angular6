@@ -9,5 +9,7 @@
 </section>
 <hr>
 <section class="container">
+	<h3 #someTitle>SOme Title</h3>
+	<button (click)="changeSomeTitle(someTitle)">change Some Title</button>
 	<p *ngIf="newMsg && newMsg.msg">{{newMsg.msg}}</p>
 </section>
