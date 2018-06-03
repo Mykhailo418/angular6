@@ -8,10 +8,11 @@ import { AppComponent } from './app/app.component';
 import { MenuComponent } from './menu/menu.component';
 import { CustomComponent } from './custom/custom.component';
 import { GreenTextDirective } from './directives/GreenText.directive';
+import { AppUnlessDirective } from './directives/AppUnless.directive';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective],
+  declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective],
   bootstrap: [AppComponent]
 })
 

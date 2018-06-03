@@ -20,3 +20,8 @@
 <section class="container">
 	<p greenTextDrc>Text With Directive</p>
 </section>
+<hr>
+<section class="container">
+	<button (click)="changeUnlessCondition()">Change Condition</button>
+	<p *appUnless="unlessCondition">This text will be show if inless condition</p>
+</section>

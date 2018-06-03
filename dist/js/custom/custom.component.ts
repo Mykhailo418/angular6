@@ -17,8 +17,9 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy  {
 	titleForSomeTitle: String = 'Some Title!';
 	serverName: String = '';
 	outServerName: String = '';
-	isServerName: boolean = false;
+	isServerName: Boolean = false;
 	idServer: Number = 123;
+	unlessCondition: Boolean = false;
 
 	onChangeServerName(e:Event){
 		this.serverName = (<HTMLInputElement>e.target).value;
@@ -31,6 +32,10 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy  {
 
 	changeSomeTitle(titleEl: HTMLElement){
 		titleEl.textContent = 'Another Title '+Math.round(Math.random()*10);
+	}
+
+	changeUnlessCondition(){
+		this.unlessCondition = !this.unlessCondition;
 	}
 
  /* -- Angular Life cycle Hooks -- */

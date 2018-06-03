@@ -21,6 +21,7 @@ var app_component_1 = __webpack_require__(203);
 var menu_component_1 = __webpack_require__(206);
 var custom_component_1 = __webpack_require__(204);
 var GreenText_directive_1 = __webpack_require__(205);
+var AppUnless_directive_1 = __webpack_require__(631);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,7 +30,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective],
+        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
@@ -6203,6 +6204,7 @@ var CustomComponent = (function () {
         this.outServerName = '';
         this.isServerName = false;
         this.idServer = 123;
+        this.unlessCondition = false;
     }
     CustomComponent.prototype.onChangeServerName = function (e) {
         this.serverName = e.target.value;
@@ -6213,6 +6215,9 @@ var CustomComponent = (function () {
     };
     CustomComponent.prototype.changeSomeTitle = function (titleEl) {
         titleEl.textContent = 'Another Title ' + Math.round(Math.random() * 10);
+    };
+    CustomComponent.prototype.changeUnlessCondition = function () {
+        this.unlessCondition = !this.unlessCondition;
     };
     /* -- Angular Life cycle Hooks -- */
     CustomComponent.prototype.ngOnInit = function () {
@@ -6392,7 +6397,7 @@ module.exports = "<app-menu (newMessage)=\"onNewMessage($event)\"></app-menu>\r\
 /***/ 363:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<h3 #someTitle>{{ titleForSomeTitle }}</h3>\r\n\t<button (click)=\"changeSomeTitle(someTitle)\">change Some Title</button>\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>\r\n<section class=\"container\">\r\n\t\t<h3>Content Section</h3>\r\n\t\t<ng-content ></ng-content>\r\n</section>\r\n<section class=\"container\">\r\n\t<p greenTextDrc>Text With Directive</p>\r\n</section>\r\n";
+module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<h3 #someTitle>{{ titleForSomeTitle }}</h3>\r\n\t<button (click)=\"changeSomeTitle(someTitle)\">change Some Title</button>\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>\r\n<section class=\"container\">\r\n\t\t<h3>Content Section</h3>\r\n\t\t<ng-content ></ng-content>\r\n</section>\r\n<section class=\"container\">\r\n\t<p greenTextDrc>Text With Directive</p>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<button (click)=\"changeUnlessCondition()\">Change Condition</button>\r\n\t<p *appUnless=\"unlessCondition\">This text will be show if inless condition</p>\r\n</section>";
 
 /***/ }),
 
@@ -6414,6 +6419,58 @@ var app_module_1 = __webpack_require__(195);
 var core_1 = __webpack_require__(18);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+
+
+/***/ }),
+
+/***/ 631:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(18);
+var AppUnlessDirective = (function () {
+    function AppUnlessDirective(templateRef, vcRef) {
+        this.templateRef = templateRef;
+        this.vcRef = vcRef;
+    }
+    Object.defineProperty(AppUnlessDirective.prototype, "appUnless", {
+        set: function (condition) {
+            console.log('appUnless', condition);
+            if (!condition) {
+                this.vcRef.createEmbeddedView(this.templateRef);
+            }
+            else {
+                this.vcRef.clear();
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return AppUnlessDirective;
+}());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean),
+    __metadata("design:paramtypes", [Boolean])
+], AppUnlessDirective.prototype, "appUnless", null);
+AppUnlessDirective = __decorate([
+    core_1.Directive({
+        selector: '[appUnless]'
+    }),
+    __metadata("design:paramtypes", [core_1.TemplateRef, core_1.ViewContainerRef])
+], AppUnlessDirective);
+exports.AppUnlessDirective = AppUnlessDirective;
 
 
 /***/ })
