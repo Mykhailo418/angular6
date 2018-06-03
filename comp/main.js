@@ -18,8 +18,9 @@ var platform_browser_1 = __webpack_require__(52);
 var forms_1 = __webpack_require__(202);
 // Declarations
 var app_component_1 = __webpack_require__(203);
-var menu_component_1 = __webpack_require__(205);
+var menu_component_1 = __webpack_require__(206);
 var custom_component_1 = __webpack_require__(204);
+var GreenText_directive_1 = __webpack_require__(205);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,7 +29,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent],
+        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
@@ -6170,7 +6171,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-main',
-        template: __webpack_require__(361),
+        template: __webpack_require__(362),
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -6264,7 +6265,7 @@ __decorate([
 CustomComponent = __decorate([
     core_1.Component({
         selector: 'app-custom',
-        template: __webpack_require__(362),
+        template: __webpack_require__(363),
         encapsulation: core_1.ViewEncapsulation.None,
     })
 ], CustomComponent);
@@ -6274,6 +6275,42 @@ exports.CustomComponent = CustomComponent;
 /***/ }),
 
 /***/ 205:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(18);
+var GreenTextDirective = (function () {
+    function GreenTextDirective(elRef) {
+        this.elRef = elRef;
+    }
+    GreenTextDirective.prototype.ngOnInit = function () {
+        this.elRef.nativeElement.style.color = 'green';
+    };
+    return GreenTextDirective;
+}());
+GreenTextDirective = __decorate([
+    core_1.Directive({
+        selector: '[greenTextDrc]'
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], GreenTextDirective);
+exports.GreenTextDirective = GreenTextDirective;
+
+
+/***/ }),
+
+/***/ 206:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6308,7 +6345,7 @@ __decorate([
 MenuComponent = __decorate([
     core_1.Component({
         selector: 'app-menu',
-        template: __webpack_require__(363)
+        template: __webpack_require__(364)
     })
 ], MenuComponent);
 exports.MenuComponent = MenuComponent;
@@ -6316,28 +6353,28 @@ exports.MenuComponent = MenuComponent;
 
 /***/ }),
 
-/***/ 361:
+/***/ 362:
 /***/ (function(module, exports) {
 
 module.exports = "<app-menu (newMessage)=\"onNewMessage($event)\"></app-menu>\r\n<section class=\"container\">\r\n\t<h1>Hello dear, {{title}}</h1>\r\n\t<input type=\"text\" name=\"name\" [(ngModel)]=\"name\" />\r\n\t<p>{{name}}</p>\r\n</section>\r\n<hr />\r\n<app-custom [serPref]=\"'New Pref'\" [newMsg]=\"newMessage\">\r\n\t<p #contentElement>{{ textForContentSection }}</p>\r\n</app-custom>";
 
 /***/ }),
 
-/***/ 362:
+/***/ 363:
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<h3 #someTitle>{{ titleForSomeTitle }}</h3>\r\n\t<button (click)=\"changeSomeTitle(someTitle)\">change Some Title</button>\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>\r\n<section class=\"container\">\r\n\t\t<h3>Content Section</h3>\r\n\t\t<ng-content #contentElement></ng-content>\r\n</section>\r\n";
+module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<h3 #someTitle>{{ titleForSomeTitle }}</h3>\r\n\t<button (click)=\"changeSomeTitle(someTitle)\">change Some Title</button>\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>\r\n<section class=\"container\">\r\n\t\t<h3>Content Section</h3>\r\n\t\t<ng-content ></ng-content>\r\n</section>\r\n<section class=\"container\">\r\n\t<p greenTextDrc>Text With Directive</p>\r\n</section>\r\n";
 
 /***/ }),
 
-/***/ 363:
+/***/ 364:
 /***/ (function(module, exports) {
 
 module.exports = "<nav>\r\n\t<div class=\"container\">\r\n\t\t<h4>Menu</h4>\r\n\t\t<button class=\"btn btn-primary\" (click)=\"onSendMessage($event)\">Send Message</button>\r\n\t</div>\r\n</nav>\r\n<hr />";
 
 /***/ }),
 
-/***/ 627:
+/***/ 628:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6352,5 +6389,5 @@ platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1
 
 /***/ })
 
-},[627]);
+},[628]);
 //# sourceMappingURL=main.js.map
