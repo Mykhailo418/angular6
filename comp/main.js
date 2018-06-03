@@ -6294,21 +6294,28 @@ var GreenTextDirective = (function () {
     function GreenTextDirective(elRef, renderer) {
         this.elRef = elRef;
         this.renderer = renderer;
+        this.colorEl = 'green';
     }
     GreenTextDirective.prototype.ngOnInit = function () {
         //this.elRef.nativeElement.style.color = 'green';
         this.renderer.setStyle(this.elRef.nativeElement, 'color', 'green'); // better way to change the DOM
     };
     GreenTextDirective.prototype.onMousEenter = function (e) {
-        this.renderer.setStyle(this.elRef.nativeElement, 'color', 'red');
+        //this.renderer.setStyle(this.elRef.nativeElement, 'color', 'red');
+        this.colorEl = 'red';
         this.renderer.setStyle(this.elRef.nativeElement, 'cursor', 'pointer');
     };
     GreenTextDirective.prototype.onMousLeave = function (e) {
-        this.renderer.setStyle(this.elRef.nativeElement, 'color', 'green');
+        //this.renderer.setStyle(this.elRef.nativeElement, 'color', 'green');
+        this.colorEl = 'green';
         this.renderer.setStyle(this.elRef.nativeElement, 'cursor', 'initial');
     };
     return GreenTextDirective;
 }());
+__decorate([
+    core_1.HostBinding('style.color'),
+    __metadata("design:type", String)
+], GreenTextDirective.prototype, "colorEl", void 0);
 __decorate([
     core_1.HostListener('mouseenter'),
     __metadata("design:type", Function),
