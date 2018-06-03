@@ -6291,11 +6291,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(18);
 var GreenTextDirective = (function () {
-    function GreenTextDirective(elRef) {
+    function GreenTextDirective(elRef, renderer) {
         this.elRef = elRef;
+        this.renderer = renderer;
     }
     GreenTextDirective.prototype.ngOnInit = function () {
-        this.elRef.nativeElement.style.color = 'green';
+        //this.elRef.nativeElement.style.color = 'green';
+        this.renderer.setStyle(this.elRef.nativeElement, 'color', 'green'); // better way to change the DOM
     };
     return GreenTextDirective;
 }());
@@ -6303,7 +6305,7 @@ GreenTextDirective = __decorate([
     core_1.Directive({
         selector: '[greenTextDrc]'
     }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
+    __metadata("design:paramtypes", [core_1.ElementRef, core_1.Renderer2])
 ], GreenTextDirective);
 exports.GreenTextDirective = GreenTextDirective;
 
