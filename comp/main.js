@@ -6299,8 +6299,28 @@ var GreenTextDirective = (function () {
         //this.elRef.nativeElement.style.color = 'green';
         this.renderer.setStyle(this.elRef.nativeElement, 'color', 'green'); // better way to change the DOM
     };
+    GreenTextDirective.prototype.onMousEenter = function (e) {
+        this.renderer.setStyle(this.elRef.nativeElement, 'color', 'red');
+        this.renderer.setStyle(this.elRef.nativeElement, 'cursor', 'pointer');
+    };
+    GreenTextDirective.prototype.onMousLeave = function (e) {
+        this.renderer.setStyle(this.elRef.nativeElement, 'color', 'green');
+        this.renderer.setStyle(this.elRef.nativeElement, 'cursor', 'initial');
+    };
     return GreenTextDirective;
 }());
+__decorate([
+    core_1.HostListener('mouseenter'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Event]),
+    __metadata("design:returntype", void 0)
+], GreenTextDirective.prototype, "onMousEenter", null);
+__decorate([
+    core_1.HostListener('mouseleave'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Event]),
+    __metadata("design:returntype", void 0)
+], GreenTextDirective.prototype, "onMousLeave", null);
 GreenTextDirective = __decorate([
     core_1.Directive({
         selector: '[greenTextDrc]'
