@@ -2,6 +2,8 @@ import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef, OnC
 	SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, 
 	OnDestroy, ContentChild } from '@angular/core';
 
+import { ListService } from '../services/list.service';
+
 @Component({
 	selector: 'app-custom',
 	templateUrl: './custom.component.html',
@@ -20,6 +22,11 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy  {
 	isServerName: Boolean = false;
 	idServer: Number = 123;
 	unlessCondition: Boolean = false;
+	currentNum: Number;
+
+	constructor(private listService: ListService){
+
+	}
 
 	onChangeServerName(e:Event){
 		this.serverName = (<HTMLInputElement>e.target).value;
@@ -44,6 +51,9 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy  {
 	 	console.log('H3 title from DOM = ', this.titleFromDOM); // ElementRef: {nativeElement}
 	 	console.log('Text Title Some Title(On Init) = '+this.titleFromDOM.nativeElement.textContent);
 	 	console.log('Text Content Element(On Init) = '+this.contentFromDOM.nativeElement.textContent);
+		this.listService.setNumber.subscribe( (num) => {
+			this.currentNum = num;
+		} )
 	}
 
 	ngOnChanges(changes: SimpleChanges){

@@ -7,12 +7,13 @@ import { FormsModule }    from '@angular/forms';
 import { AppComponent } from './app/app.component';
 import { MenuComponent } from './menu/menu.component';
 import { CustomComponent } from './custom/custom.component';
+import { ListComponent } from './list/list.component';
 import { GreenTextDirective } from './directives/GreenText.directive';
 import { AppUnlessDirective } from './directives/AppUnless.directive';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective],
+  declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective, ListComponent],
   bootstrap: [AppComponent]
 })
 

@@ -8,6 +8,7 @@
 	</ng-template>
 </section>
 <hr>
+<h1 *ngIf="currentNum">{{currentNum}}</h1>
 <section class="container">
 	<h3 #someTitle>{{ titleForSomeTitle }}</h3>
 	<button (click)="changeSomeTitle(someTitle)">change Some Title</button>
