@@ -51,7 +51,7 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy  {
 	 	console.log('H3 title from DOM = ', this.titleFromDOM); // ElementRef: {nativeElement}
 	 	console.log('Text Title Some Title(On Init) = '+this.titleFromDOM.nativeElement.textContent);
 	 	console.log('Text Content Element(On Init) = '+this.contentFromDOM.nativeElement.textContent);
-		this.listService.setNumber.subscribe( (num) => {
+		this.listService.setNumber.subscribe( (num: Number) => {
 			this.currentNum = num;
 		} )
 	}

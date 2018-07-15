@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13,16 +13,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // Imports
-var core_1 = __webpack_require__(14);
+var core_1 = __webpack_require__(13);
 var platform_browser_1 = __webpack_require__(53);
-var forms_1 = __webpack_require__(209);
+var forms_1 = __webpack_require__(210);
 // Declarations
-var app_component_1 = __webpack_require__(210);
-var menu_component_1 = __webpack_require__(215);
-var custom_component_1 = __webpack_require__(211);
-var list_component_1 = __webpack_require__(214);
-var GreenText_directive_1 = __webpack_require__(213);
-var AppUnless_directive_1 = __webpack_require__(212);
+var app_component_1 = __webpack_require__(211);
+var menu_component_1 = __webpack_require__(216);
+var custom_component_1 = __webpack_require__(212);
+var list_component_1 = __webpack_require__(215);
+var GreenText_directive_1 = __webpack_require__(214);
+var AppUnless_directive_1 = __webpack_require__(213);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -40,15 +40,15 @@ exports.AppModule = AppModule;
 
 /***/ }),
 
-/***/ 209:
+/***/ 210:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(53);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_bb", function() { return InternalFormsSharedModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_ba", function() { return REACTIVE_DRIVEN_DIRECTIVES; });
@@ -5261,7 +5261,7 @@ var ReactiveFormsModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 210:
+/***/ 211:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5273,7 +5273,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(14);
+var core_1 = __webpack_require__(13);
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'angular';
@@ -5297,7 +5297,7 @@ exports.AppComponent = AppComponent;
 
 /***/ }),
 
-/***/ 211:
+/***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5312,8 +5312,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(14);
-var list_service_1 = __webpack_require__(216);
+var core_1 = __webpack_require__(13);
+var list_service_1 = __webpack_require__(97);
 var CustomComponent = (function () {
     function CustomComponent(listService) {
         this.listService = listService;
@@ -5403,7 +5403,7 @@ exports.CustomComponent = CustomComponent;
 
 /***/ }),
 
-/***/ 212:
+/***/ 213:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5418,7 +5418,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(14);
+var core_1 = __webpack_require__(13);
 var AppUnlessDirective = (function () {
     function AppUnlessDirective(templateRef, vcRef) {
         this.templateRef = templateRef;
@@ -5455,7 +5455,7 @@ exports.AppUnlessDirective = AppUnlessDirective;
 
 /***/ }),
 
-/***/ 213:
+/***/ 214:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5470,7 +5470,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(14);
+var core_1 = __webpack_require__(13);
 var GreenTextDirective = (function () {
     function GreenTextDirective(elRef, renderer) {
         this.elRef = elRef;
@@ -5520,7 +5520,7 @@ exports.GreenTextDirective = GreenTextDirective;
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5535,8 +5535,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(14);
-var list_service_1 = __webpack_require__(216);
+var core_1 = __webpack_require__(13);
+var list_service_1 = __webpack_require__(97);
 var ListComponent = (function () {
     function ListComponent(listService) {
         this.listService = listService;
@@ -5562,7 +5562,7 @@ exports.ListComponent = ListComponent;
 
 /***/ }),
 
-/***/ 215:
+/***/ 216:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5577,8 +5577,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(14);
-var list_service_1 = __webpack_require__(216);
+var core_1 = __webpack_require__(13);
+var list_service_1 = __webpack_require__(97);
 var MenuComponent = (function () {
     function MenuComponent(listService) {
         this.listService = listService;
@@ -5610,43 +5610,6 @@ MenuComponent = __decorate([
     __metadata("design:paramtypes", [list_service_1.ListService])
 ], MenuComponent);
 exports.MenuComponent = MenuComponent;
-
-
-/***/ }),
-
-/***/ 216:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(14);
-var ListService = (function () {
-    function ListService() {
-        this.listNumbers = [2323, 5875, 27256, 278, 28];
-        this.setNumber = new core_1.EventEmitter();
-    }
-    ListService.prototype.getListNumbers = function () {
-        return this.listNumbers;
-    };
-    return ListService;
-}());
-ListService = __decorate([
-    core_1.Injectable({
-        providedIn: 'root',
-    }),
-    __metadata("design:paramtypes", [])
-], ListService);
-exports.ListService = ListService;
 
 
 /***/ }),
@@ -5686,10 +5649,50 @@ module.exports = "<nav>\r\n\t<h1 *ngIf=\"currentNum\">{{currentNum}}</h1>\r\n\t<
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var platform_browser_dynamic_1 = __webpack_require__(96);
-var app_module_1 = __webpack_require__(202);
-var core_1 = __webpack_require__(14);
+var app_module_1 = __webpack_require__(203);
+var core_1 = __webpack_require__(13);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+
+
+/***/ }),
+
+/***/ 97:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(13);
+var ListService = (function () {
+    function ListService() {
+        this.listNumbers = [];
+        this.setNumber = new core_1.EventEmitter();
+        for (var i = 0; i < 5; i++) {
+            this.listNumbers.push(Math.floor(Math.random() * 10000));
+        }
+    }
+    ListService.prototype.getListNumbers = function () {
+        return this.listNumbers.slice();
+    };
+    return ListService;
+}());
+ListService = __decorate([
+    core_1.Injectable({
+        providedIn: 'root',
+    }),
+    __metadata("design:paramtypes", [])
+], ListService);
+exports.ListService = ListService;
 
 
 /***/ })

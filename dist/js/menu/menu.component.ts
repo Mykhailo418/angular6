@@ -20,7 +20,7 @@ export class MenuComponent implements OnInit {
 	}
 
 	ngOnInit(){
-		this.listService.setNumber.subscribe((num)=>{
+		this.listService.setNumber.subscribe((num: Number)=>{
 			this.currentNum = num;
 		})
 	}

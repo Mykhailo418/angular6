@@ -4,13 +4,17 @@ import { Injectable, EventEmitter } from '@angular/core';
   providedIn: 'root',
 })
 export class ListService{
-	private listNumbers: Number[] = [2323,5875,27256,278,28];
+	private listNumbers: Number[] = [];
 	setNumber = new EventEmitter<Number>();
 	private currentNumber: Number;
 
-	constructor(){}
+	constructor(){
+		for(let i = 0; i < 5; i++){
+			this.listNumbers.push(Math.floor(Math.random()*10000));
+		}
+	}
 
 	getListNumbers(){
-		return this.listNumbers;
+		return this.listNumbers.slice();
 	}
 }
