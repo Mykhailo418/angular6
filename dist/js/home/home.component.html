@@ -1,0 +1,15 @@
+<div>
+	<h1>Hello dear, {{title}}</h1>
+	<input type="text" name="name" [(ngModel)]="name" />
+	<p>{{name}}</p>
+</div>
+<hr />
+<div>
+	<app-custom [serPref]="'New Pref'" [newMsg]="newMessage">
+		<p #contentElement>{{ textForContentSection }}</p>
+	</app-custom>
+</div>
+<hr /><hr />
+<div>
+	<app-list></app-list>
+</div>

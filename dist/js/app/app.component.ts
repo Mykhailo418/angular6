@@ -6,10 +6,7 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-	title = 'angular';
-	name = '';
 	newMessage: Object = {msg: ''};
-	textForContentSection: String = 'Content For Content Section!';
 
 	onNewMessage(event: Object){
 		this.newMessage = event;
