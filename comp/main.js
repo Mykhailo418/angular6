@@ -24,13 +24,15 @@ var users_component_1 = __webpack_require__(218);
 var menu_component_1 = __webpack_require__(217);
 var custom_component_1 = __webpack_require__(212);
 var list_component_1 = __webpack_require__(216);
+var contacts_component_1 = __webpack_require__(495);
 // Directives
 var GreenText_directive_1 = __webpack_require__(214);
 var AppUnless_directive_1 = __webpack_require__(213);
 // Routes
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
-    { path: 'users', component: users_component_1.UsersComponent }
+    { path: 'users', component: users_component_1.UsersComponent },
+    { path: 'contacts', component: contacts_component_1.ContactsComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -40,7 +42,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule.forRoot(appRoutes)],
-        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective, list_component_1.ListComponent, users_component_1.UsersComponent, home_component_1.HomeComponent],
+        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective, list_component_1.ListComponent, users_component_1.UsersComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
@@ -5672,9 +5674,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(11);
+var router_1 = __webpack_require__(136);
 var UsersComponent = (function () {
-    function UsersComponent() {
+    function UsersComponent(router) {
+        this.router = router;
     }
+    UsersComponent.prototype.gotoContacts = function () {
+        this.router.navigate(['/contacts']);
+    };
     return UsersComponent;
 }());
 UsersComponent = __decorate([
@@ -5682,7 +5689,7 @@ UsersComponent = __decorate([
         selector: 'app-users',
         template: __webpack_require__(379),
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [router_1.Router])
 ], UsersComponent);
 exports.UsersComponent = UsersComponent;
 
@@ -5727,7 +5734,7 @@ module.exports = "\r\n<div class=\"container\">\r\n\t<h1 *ngIf=\"currentNum\" cl
 /***/ 379:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Users</h1>";
+module.exports = "<h1>Users</h1>\r\n<button class=\"btn btn-primary\" (click)=\"gotoContacts()\">Go to Contacts Page</button>";
 
 /***/ }),
 
@@ -5743,6 +5750,46 @@ var core_1 = __webpack_require__(11);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
+
+/***/ }),
+
+/***/ 495:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(11);
+var ContactsComponent = (function () {
+    function ContactsComponent() {
+    }
+    return ContactsComponent;
+}());
+ContactsComponent = __decorate([
+    core_1.Component({
+        selector: 'app-contacts',
+        template: __webpack_require__(496),
+    }),
+    __metadata("design:paramtypes", [])
+], ContactsComponent);
+exports.ContactsComponent = ContactsComponent;
+
+
+/***/ }),
+
+/***/ 496:
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Contacts</h1>";
 
 /***/ }),
 
