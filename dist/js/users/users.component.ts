@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router, ActivateRoute } from '@angular/router'
 
 @Component({
   selector: 'app-users',
@@ -7,9 +7,15 @@ import { Router } from '@angular/router'
 })
 
 export class UsersComponent {
-	constructor(private router: Router){}
+	constructor(private router: Router, private route: ActivateRoute){}
 
 	gotoContacts(){
 		this.router.navigate(['/contacts']);
+	}
+
+	notWorkingReload(){
+		this.router.navigate(['users'], {
+			relativeTo: this.route // relative to which component navigate, by default it navigtes from root /
+		});
 	}
 }
