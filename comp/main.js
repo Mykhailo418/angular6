@@ -16,22 +16,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(11);
 var platform_browser_1 = __webpack_require__(53);
 var forms_1 = __webpack_require__(210);
-var router_1 = __webpack_require__(136);
+var router_1 = __webpack_require__(96);
 // Components
 var app_component_1 = __webpack_require__(211);
-var home_component_1 = __webpack_require__(215);
-var users_component_1 = __webpack_require__(218);
-var menu_component_1 = __webpack_require__(217);
-var custom_component_1 = __webpack_require__(212);
-var list_component_1 = __webpack_require__(216);
-var contacts_component_1 = __webpack_require__(495);
+var home_component_1 = __webpack_require__(216);
+var users_component_1 = __webpack_require__(220);
+var menu_component_1 = __webpack_require__(218);
+var custom_component_1 = __webpack_require__(213);
+var list_component_1 = __webpack_require__(217);
+var contacts_component_1 = __webpack_require__(212);
 // Directives
-var GreenText_directive_1 = __webpack_require__(214);
-var AppUnless_directive_1 = __webpack_require__(213);
+var GreenText_directive_1 = __webpack_require__(215);
+var AppUnless_directive_1 = __webpack_require__(214);
 // Routes
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
     { path: 'users', component: users_component_1.UsersComponent },
+    { path: 'users/:id', component: users_component_1.UsersComponent },
     { path: 'contacts', component: contacts_component_1.ContactsComponent }
 ];
 var AppModule = (function () {
@@ -59,7 +60,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(53);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_bb", function() { return InternalFormsSharedModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵangular_packages_forms_forms_ba", function() { return REACTIVE_DRIVEN_DIRECTIVES; });
@@ -5297,7 +5298,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-main',
-        template: __webpack_require__(374),
+        template: __webpack_require__(376),
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -5321,7 +5322,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(11);
-var list_service_1 = __webpack_require__(97);
+var ContactsComponent = (function () {
+    function ContactsComponent() {
+    }
+    return ContactsComponent;
+}());
+ContactsComponent = __decorate([
+    core_1.Component({
+        selector: 'app-contacts',
+        template: __webpack_require__(377),
+    }),
+    __metadata("design:paramtypes", [])
+], ContactsComponent);
+exports.ContactsComponent = ContactsComponent;
+
+
+/***/ }),
+
+/***/ 213:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(11);
+var list_service_1 = __webpack_require__(98);
 var CustomComponent = (function () {
     function CustomComponent(listService) {
         this.listService = listService;
@@ -5401,7 +5435,7 @@ __decorate([
 CustomComponent = __decorate([
     core_1.Component({
         selector: 'app-custom',
-        template: __webpack_require__(375),
+        template: __webpack_require__(378),
         encapsulation: core_1.ViewEncapsulation.None,
     }),
     __metadata("design:paramtypes", [list_service_1.ListService])
@@ -5411,7 +5445,7 @@ exports.CustomComponent = CustomComponent;
 
 /***/ }),
 
-/***/ 213:
+/***/ 214:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5463,7 +5497,7 @@ exports.AppUnlessDirective = AppUnlessDirective;
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5528,7 +5562,7 @@ exports.GreenTextDirective = GreenTextDirective;
 
 /***/ }),
 
-/***/ 215:
+/***/ 216:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5555,53 +5589,11 @@ var HomeComponent = (function () {
 HomeComponent = __decorate([
     core_1.Component({
         selector: 'app-home',
-        template: __webpack_require__(376)
+        template: __webpack_require__(379)
     }),
     __metadata("design:paramtypes", [])
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
-
-
-/***/ }),
-
-/***/ 216:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
-var list_service_1 = __webpack_require__(97);
-var ListComponent = (function () {
-    function ListComponent(listService) {
-        this.listService = listService;
-    }
-    ListComponent.prototype.selectNumber = function (e, num) {
-        e.preventDefault();
-        this.listService.setNumber.emit(num);
-    };
-    ListComponent.prototype.ngOnInit = function () {
-        this.listNumbers = this.listService.getListNumbers();
-    };
-    return ListComponent;
-}());
-ListComponent = __decorate([
-    core_1.Component({
-        selector: 'app-list',
-        template: __webpack_require__(377)
-    }),
-    __metadata("design:paramtypes", [list_service_1.ListService])
-], ListComponent);
-exports.ListComponent = ListComponent;
 
 
 /***/ }),
@@ -5622,7 +5614,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(11);
-var list_service_1 = __webpack_require__(97);
+var list_service_1 = __webpack_require__(98);
+var ListComponent = (function () {
+    function ListComponent(listService) {
+        this.listService = listService;
+    }
+    ListComponent.prototype.selectNumber = function (e, num) {
+        e.preventDefault();
+        this.listService.setNumber.emit(num);
+    };
+    ListComponent.prototype.ngOnInit = function () {
+        this.listNumbers = this.listService.getListNumbers();
+    };
+    return ListComponent;
+}());
+ListComponent = __decorate([
+    core_1.Component({
+        selector: 'app-list',
+        template: __webpack_require__(380)
+    }),
+    __metadata("design:paramtypes", [list_service_1.ListService])
+], ListComponent);
+exports.ListComponent = ListComponent;
+
+
+/***/ }),
+
+/***/ 218:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(11);
+var list_service_1 = __webpack_require__(98);
 var MenuComponent = (function () {
     function MenuComponent(listService) {
         this.listService = listService;
@@ -5649,7 +5683,7 @@ __decorate([
 MenuComponent = __decorate([
     core_1.Component({
         selector: 'app-menu',
-        template: __webpack_require__(378)
+        template: __webpack_require__(381)
     }),
     __metadata("design:paramtypes", [list_service_1.ListService])
 ], MenuComponent);
@@ -5658,7 +5692,7 @@ exports.MenuComponent = MenuComponent;
 
 /***/ }),
 
-/***/ 218:
+/***/ 219:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5674,82 +5708,146 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(11);
-var router_1 = __webpack_require__(136);
+var user_model_1 = __webpack_require__(498);
+var UsersService = (function () {
+    function UsersService() {
+        this.users = [
+            new user_model_1.default(1, 'Vasya', 23),
+            new user_model_1.default(2, 'Petya', 21)
+        ];
+    }
+    UsersService.prototype.getAllUsers = function () {
+        return this.users.slice();
+    };
+    UsersService.prototype.getUserById = function (id) {
+        for (var _i = 0, _a = this.users; _i < _a.length; _i++) {
+            var user = _a[_i];
+            if (user.id == id) {
+                return user;
+            }
+        }
+    };
+    return UsersService;
+}());
+UsersService = __decorate([
+    core_1.Injectable({
+        providedIn: 'root',
+    }),
+    __metadata("design:paramtypes", [])
+], UsersService);
+exports.default = UsersService;
+
+
+/***/ }),
+
+/***/ 220:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(11);
+var router_1 = __webpack_require__(96);
+var users_service_1 = __webpack_require__(219);
 var UsersComponent = (function () {
-    function UsersComponent(router) {
+    function UsersComponent(router, route, usersService) {
         this.router = router;
+        this.route = route;
+        this.usersService = usersService;
     }
     UsersComponent.prototype.gotoContacts = function () {
         this.router.navigate(['/contacts']);
+    };
+    UsersComponent.prototype.notWorkingReload = function () {
+        this.router.navigate(['users'], {
+            relativeTo: this.route // relative to which component navigate, by default it navigtes from root /
+        });
+    };
+    UsersComponent.prototype.setCurrentUser = function () {
+        if (this.route.snapshot.params.id) {
+            this.currentUser = this.usersService.getUserById(this.route.snapshot.params.id);
+        }
+    };
+    UsersComponent.prototype.ngOnInit = function () {
+        this.usersList = this.usersService.getAllUsers();
+        if (this.route.snapshot.params.id) {
+            this.currentUser = this.usersService.getUserById(this.route.snapshot.params.id);
+        }
+    };
+    UsersComponent.prototype.ngDoCheck = function () {
+        console.log('--set current user');
+        this.setCurrentUser();
     };
     return UsersComponent;
 }());
 UsersComponent = __decorate([
     core_1.Component({
         selector: 'app-users',
-        template: __webpack_require__(379),
+        template: __webpack_require__(382),
     }),
-    __metadata("design:paramtypes", [router_1.Router])
+    __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute,
+        users_service_1.default])
 ], UsersComponent);
 exports.UsersComponent = UsersComponent;
 
 
 /***/ }),
 
-/***/ 374:
+/***/ 376:
 /***/ (function(module, exports) {
 
 module.exports = "<app-menu (newMessage)=\"onNewMessage($event)\"></app-menu>\r\n<section class=\"container\">\r\n\t<router-outlet></router-outlet>\r\n</section>\r\n";
 
 /***/ }),
 
-/***/ 375:
-/***/ (function(module, exports) {
-
-module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<h1 *ngIf=\"currentNum\">{{currentNum}}</h1>\r\n<section class=\"container\">\r\n\t<h3 #someTitle>{{ titleForSomeTitle }}</h3>\r\n\t<button (click)=\"changeSomeTitle(someTitle)\">change Some Title</button>\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>\r\n<section class=\"container\">\r\n\t\t<h3>Content Section</h3>\r\n\t\t<ng-content ></ng-content>\r\n</section>\r\n<section class=\"container\">\r\n\t<p greenTextDrc>Text With Directive</p>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<button (click)=\"changeUnlessCondition()\">Change Condition</button>\r\n\t<p *appUnless=\"unlessCondition\">This text will be show if inless condition</p>\r\n</section>";
-
-/***/ }),
-
-/***/ 376:
-/***/ (function(module, exports) {
-
-module.exports = "<div>\r\n\t<h1>Hello dear, {{title}}</h1>\r\n\t<input type=\"text\" name=\"name\" [(ngModel)]=\"name\" />\r\n\t<p>{{name}}</p>\r\n</div>\r\n<hr />\r\n<div>\r\n\t<app-custom [serPref]=\"'New Pref'\" [newMsg]=\"newMessage\">\r\n\t\t<p #contentElement>{{ textForContentSection }}</p>\r\n\t</app-custom>\r\n</div>\r\n<hr /><hr />\r\n<div>\r\n\t<app-list></app-list>\r\n</div>";
-
-/***/ }),
-
 /***/ 377:
 /***/ (function(module, exports) {
 
-module.exports = "<ul>\r\n\t<li *ngFor=\"let num of listNumbers\">\r\n\t\t<a href=\"#\" (click)=\"selectNumber($event, num)\">{{num}}</a>\r\n\t</li>\r\n</ul>";
+module.exports = "<h1>Contacts</h1>";
 
 /***/ }),
 
 /***/ 378:
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"container\">\r\n\t<h1 *ngIf=\"currentNum\" class=\"float-right\">{{currentNum}}</h1>\r\n\t<h4>Menu</h4>\r\n\t<button class=\"btn btn-primary\" (click)=\"onSendMessage($event)\">Send Message</button>\r\n\t<nav class=\"navbar-light\">\r\n\t\t<ul class=\"navbar-nav\">\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" routerLink=\"/\">Home</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/users']\">Users</a>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</nav>\r\n</div>\r\n\r\n<hr />";
+module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<h1 *ngIf=\"currentNum\">{{currentNum}}</h1>\r\n<section class=\"container\">\r\n\t<h3 #someTitle>{{ titleForSomeTitle }}</h3>\r\n\t<button (click)=\"changeSomeTitle(someTitle)\">change Some Title</button>\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>\r\n<section class=\"container\">\r\n\t\t<h3>Content Section</h3>\r\n\t\t<ng-content ></ng-content>\r\n</section>\r\n<section class=\"container\">\r\n\t<p greenTextDrc>Text With Directive</p>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<button (click)=\"changeUnlessCondition()\">Change Condition</button>\r\n\t<p *appUnless=\"unlessCondition\">This text will be show if inless condition</p>\r\n</section>";
 
 /***/ }),
 
 /***/ 379:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Users</h1>\r\n<button class=\"btn btn-primary\" (click)=\"gotoContacts()\">Go to Contacts Page</button>";
+module.exports = "<div>\r\n\t<h1>Hello dear, {{title}}</h1>\r\n\t<input type=\"text\" name=\"name\" [(ngModel)]=\"name\" />\r\n\t<p>{{name}}</p>\r\n</div>\r\n<hr />\r\n<div>\r\n\t<app-custom [serPref]=\"'New Pref'\" [newMsg]=\"newMessage\">\r\n\t\t<p #contentElement>{{ textForContentSection }}</p>\r\n\t</app-custom>\r\n</div>\r\n<hr /><hr />\r\n<div>\r\n\t<app-list></app-list>\r\n</div>";
 
 /***/ }),
 
-/***/ 492:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 380:
+/***/ (function(module, exports) {
 
-"use strict";
+module.exports = "<ul>\r\n\t<li *ngFor=\"let num of listNumbers\">\r\n\t\t<a href=\"#\" (click)=\"selectNumber($event, num)\">{{num}}</a>\r\n\t</li>\r\n</ul>";
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_dynamic_1 = __webpack_require__(96);
-var app_module_1 = __webpack_require__(203);
-var core_1 = __webpack_require__(11);
-core_1.enableProdMode();
-platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+/***/ }),
 
+/***/ 381:
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<div class=\"container\">\r\n\t<h1 *ngIf=\"currentNum\" class=\"float-right\">{{currentNum}}</h1>\r\n\t<h4>Menu</h4>\r\n\t<button class=\"btn btn-primary\" (click)=\"onSendMessage($event)\">Send Message</button>\r\n\t<nav class=\"navbar-light\">\r\n\t\t<ul class=\"navbar-nav\">\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" routerLink=\"/\">Home</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/users']\">Users</a>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</nav>\r\n</div>\r\n\r\n<hr />";
+
+/***/ }),
+
+/***/ 382:
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Users</h1>\r\n<button class=\"btn btn-primary\" (click)=\"gotoContacts()\">Go to Contacts Page</button>\r\n<br />\r\n<br />\r\n<button class=\"btn btn-primary\" (click)=\"notWorkingReload()\">Not Working Reload</button>\r\n<hr />\r\n<div class=\"row\">\r\n\t<div class=\"col-sm-6\">\r\n\t\t<ul class=\"nav flex-column\" *ngIf=\"usersList\">\r\n\t\t  <li class=\"nav-item\"\r\n\t\t  \t\t*ngFor=\"let user of usersList\"\r\n\t\t  \t>\r\n\t\t    \t<a class=\"nav-link\" \r\n\t\t\t    \trouterLinkActive=\"active\" \r\n\t\t\t    \t[routerLinkActiveOptions]=\"{exact: true}\"  \r\n\t\t\t    \trouterLink=\"/users/{{user.id}}\"\r\n\t\t    \t>\r\n\t\t    \t\t{{user.name}}\r\n\t\t    \t</a>\r\n\t\t  </li>\r\n\t\t</ul>\r\n\t</div>\r\n\t<div class=\"col-sm-6\">\r\n\t\t<ul *ngIf=\"currentUser\">\r\n\t\t\t<li><strong>ID:</strong> {{currentUser.id}}</li>\r\n\t\t\t<li><strong>Name:</strong> {{currentUser.name}}</li>\r\n\t\t\t<li><strong>Age:</strong> {{currentUser.age}}</li>\r\n\t\t</ul>\r\n\t</div>\r\n</div>";
 
 /***/ }),
 
@@ -5758,42 +5856,36 @@ platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1
 
 "use strict";
 
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+var platform_browser_dynamic_1 = __webpack_require__(97);
+var app_module_1 = __webpack_require__(203);
 var core_1 = __webpack_require__(11);
-var ContactsComponent = (function () {
-    function ContactsComponent() {
+core_1.enableProdMode();
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+
+
+/***/ }),
+
+/***/ 498:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var UserModel = (function () {
+    function UserModel(id, name, age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
     }
-    return ContactsComponent;
+    return UserModel;
 }());
-ContactsComponent = __decorate([
-    core_1.Component({
-        selector: 'app-contacts',
-        template: __webpack_require__(496),
-    }),
-    __metadata("design:paramtypes", [])
-], ContactsComponent);
-exports.ContactsComponent = ContactsComponent;
+exports.default = UserModel;
 
 
 /***/ }),
 
-/***/ 496:
-/***/ (function(module, exports) {
-
-module.exports = "<h1>Contacts</h1>";
-
-/***/ }),
-
-/***/ 97:
+/***/ 98:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5833,5 +5925,5 @@ exports.ListService = ListService;
 
 /***/ })
 
-},[492]);
+},[495]);
 //# sourceMappingURL=main.js.map

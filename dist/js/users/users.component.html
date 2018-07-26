@@ -1,4 +1,30 @@
 <h1>Users</h1>
 <button class="btn btn-primary" (click)="gotoContacts()">Go to Contacts Page</button>
 <br />
+<br />
 <button class="btn btn-primary" (click)="notWorkingReload()">Not Working Reload</button>
+<hr />
+<div class="row">
+	<div class="col-sm-6">
+		<ul class="nav flex-column" *ngIf="usersList">
+		  <li class="nav-item"
+		  		*ngFor="let user of usersList"
+		  	>
+		    	<a class="nav-link" 
+			    	routerLinkActive="active" 
+			    	[routerLinkActiveOptions]="{exact: true}"  
+			    	routerLink="/users/{{user.id}}"
+		    	>
+		    		{{user.name}}
+		    	</a>
+		  </li>
+		</ul>
+	</div>
+	<div class="col-sm-6">
+		<ul *ngIf="currentUser">
+			<li><strong>ID:</strong> {{currentUser.id}}</li>
+			<li><strong>Name:</strong> {{currentUser.name}}</li>
+			<li><strong>Age:</strong> {{currentUser.age}}</li>
+		</ul>
+	</div>
+</div>

@@ -21,6 +21,7 @@ import { AppUnlessDirective } from './directives/AppUnless.directive';
 const appRoutes: Routes = [
 	{path: '', component: HomeComponent},
 	{path: 'users', component: UsersComponent},
+	{path: 'users/:id', component: UsersComponent},
 	{path: 'contacts', component: ContactsComponent}
 ];
 
