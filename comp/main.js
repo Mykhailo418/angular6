@@ -20,7 +20,7 @@ var router_1 = __webpack_require__(96);
 // Components
 var app_component_1 = __webpack_require__(211);
 var home_component_1 = __webpack_require__(216);
-var users_component_1 = __webpack_require__(220);
+var users_component_1 = __webpack_require__(221);
 var menu_component_1 = __webpack_require__(218);
 var custom_component_1 = __webpack_require__(213);
 var list_component_1 = __webpack_require__(217);
@@ -5298,7 +5298,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-main',
-        template: __webpack_require__(376),
+        template: __webpack_require__(377),
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -5330,7 +5330,7 @@ var ContactsComponent = (function () {
 ContactsComponent = __decorate([
     core_1.Component({
         selector: 'app-contacts',
-        template: __webpack_require__(377),
+        template: __webpack_require__(378),
     }),
     __metadata("design:paramtypes", [])
 ], ContactsComponent);
@@ -5435,7 +5435,7 @@ __decorate([
 CustomComponent = __decorate([
     core_1.Component({
         selector: 'app-custom',
-        template: __webpack_require__(378),
+        template: __webpack_require__(379),
         encapsulation: core_1.ViewEncapsulation.None,
     }),
     __metadata("design:paramtypes", [list_service_1.ListService])
@@ -5589,7 +5589,7 @@ var HomeComponent = (function () {
 HomeComponent = __decorate([
     core_1.Component({
         selector: 'app-home',
-        template: __webpack_require__(379)
+        template: __webpack_require__(380)
     }),
     __metadata("design:paramtypes", [])
 ], HomeComponent);
@@ -5631,7 +5631,7 @@ var ListComponent = (function () {
 ListComponent = __decorate([
     core_1.Component({
         selector: 'app-list',
-        template: __webpack_require__(380)
+        template: __webpack_require__(381)
     }),
     __metadata("design:paramtypes", [list_service_1.ListService])
 ], ListComponent);
@@ -5683,7 +5683,7 @@ __decorate([
 MenuComponent = __decorate([
     core_1.Component({
         selector: 'app-menu',
-        template: __webpack_require__(381)
+        template: __webpack_require__(382)
     }),
     __metadata("design:paramtypes", [list_service_1.ListService])
 ], MenuComponent);
@@ -5708,7 +5708,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(11);
-var user_model_1 = __webpack_require__(498);
+var user_model_1 = __webpack_require__(220);
 var UsersService = (function () {
     function UsersService() {
         this.users = [
@@ -5745,6 +5745,25 @@ exports.default = UsersService;
 
 "use strict";
 
+Object.defineProperty(exports, "__esModule", { value: true });
+var UserModel = (function () {
+    function UserModel(id, name, age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+    return UserModel;
+}());
+exports.default = UserModel;
+
+
+/***/ }),
+
+/***/ 221:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5772,27 +5791,25 @@ var UsersComponent = (function () {
             relativeTo: this.route // relative to which component navigate, by default it navigtes from root /
         });
     };
-    UsersComponent.prototype.setCurrentUser = function () {
-        if (this.route.snapshot.params.id) {
-            this.currentUser = this.usersService.getUserById(this.route.snapshot.params.id);
+    UsersComponent.prototype.setCurrentUser = function (params) {
+        if (params.id) {
+            this.currentUser = this.usersService.getUserById(params.id);
         }
     };
     UsersComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.usersList = this.usersService.getAllUsers();
-        if (this.route.snapshot.params.id) {
-            this.currentUser = this.usersService.getUserById(this.route.snapshot.params.id);
-        }
-    };
-    UsersComponent.prototype.ngDoCheck = function () {
-        console.log('--set current user');
-        this.setCurrentUser();
+        this.setCurrentUser(this.route.snapshot.params);
+        this.route.params.subscribe(function (params) {
+            _this.setCurrentUser(params);
+        });
     };
     return UsersComponent;
 }());
 UsersComponent = __decorate([
     core_1.Component({
         selector: 'app-users',
-        template: __webpack_require__(382),
+        template: __webpack_require__(383),
     }),
     __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute,
         users_service_1.default])
@@ -5802,56 +5819,56 @@ exports.UsersComponent = UsersComponent;
 
 /***/ }),
 
-/***/ 376:
+/***/ 377:
 /***/ (function(module, exports) {
 
 module.exports = "<app-menu (newMessage)=\"onNewMessage($event)\"></app-menu>\r\n<section class=\"container\">\r\n\t<router-outlet></router-outlet>\r\n</section>\r\n";
 
 /***/ }),
 
-/***/ 377:
+/***/ 378:
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Contacts</h1>";
 
 /***/ }),
 
-/***/ 378:
+/***/ 379:
 /***/ (function(module, exports) {
 
 module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<h1 *ngIf=\"currentNum\">{{currentNum}}</h1>\r\n<section class=\"container\">\r\n\t<h3 #someTitle>{{ titleForSomeTitle }}</h3>\r\n\t<button (click)=\"changeSomeTitle(someTitle)\">change Some Title</button>\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>\r\n<section class=\"container\">\r\n\t\t<h3>Content Section</h3>\r\n\t\t<ng-content ></ng-content>\r\n</section>\r\n<section class=\"container\">\r\n\t<p greenTextDrc>Text With Directive</p>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<button (click)=\"changeUnlessCondition()\">Change Condition</button>\r\n\t<p *appUnless=\"unlessCondition\">This text will be show if inless condition</p>\r\n</section>";
 
 /***/ }),
 
-/***/ 379:
+/***/ 380:
 /***/ (function(module, exports) {
 
 module.exports = "<div>\r\n\t<h1>Hello dear, {{title}}</h1>\r\n\t<input type=\"text\" name=\"name\" [(ngModel)]=\"name\" />\r\n\t<p>{{name}}</p>\r\n</div>\r\n<hr />\r\n<div>\r\n\t<app-custom [serPref]=\"'New Pref'\" [newMsg]=\"newMessage\">\r\n\t\t<p #contentElement>{{ textForContentSection }}</p>\r\n\t</app-custom>\r\n</div>\r\n<hr /><hr />\r\n<div>\r\n\t<app-list></app-list>\r\n</div>";
 
 /***/ }),
 
-/***/ 380:
+/***/ 381:
 /***/ (function(module, exports) {
 
 module.exports = "<ul>\r\n\t<li *ngFor=\"let num of listNumbers\">\r\n\t\t<a href=\"#\" (click)=\"selectNumber($event, num)\">{{num}}</a>\r\n\t</li>\r\n</ul>";
 
 /***/ }),
 
-/***/ 381:
+/***/ 382:
 /***/ (function(module, exports) {
 
 module.exports = "\r\n<div class=\"container\">\r\n\t<h1 *ngIf=\"currentNum\" class=\"float-right\">{{currentNum}}</h1>\r\n\t<h4>Menu</h4>\r\n\t<button class=\"btn btn-primary\" (click)=\"onSendMessage($event)\">Send Message</button>\r\n\t<nav class=\"navbar-light\">\r\n\t\t<ul class=\"navbar-nav\">\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" routerLink=\"/\">Home</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/users']\">Users</a>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</nav>\r\n</div>\r\n\r\n<hr />";
 
 /***/ }),
 
-/***/ 382:
+/***/ 383:
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Users</h1>\r\n<button class=\"btn btn-primary\" (click)=\"gotoContacts()\">Go to Contacts Page</button>\r\n<br />\r\n<br />\r\n<button class=\"btn btn-primary\" (click)=\"notWorkingReload()\">Not Working Reload</button>\r\n<hr />\r\n<div class=\"row\">\r\n\t<div class=\"col-sm-6\">\r\n\t\t<ul class=\"nav flex-column\" *ngIf=\"usersList\">\r\n\t\t  <li class=\"nav-item\"\r\n\t\t  \t\t*ngFor=\"let user of usersList\"\r\n\t\t  \t>\r\n\t\t    \t<a class=\"nav-link\" \r\n\t\t\t    \trouterLinkActive=\"active\" \r\n\t\t\t    \t[routerLinkActiveOptions]=\"{exact: true}\"  \r\n\t\t\t    \trouterLink=\"/users/{{user.id}}\"\r\n\t\t    \t>\r\n\t\t    \t\t{{user.name}}\r\n\t\t    \t</a>\r\n\t\t  </li>\r\n\t\t</ul>\r\n\t</div>\r\n\t<div class=\"col-sm-6\">\r\n\t\t<ul *ngIf=\"currentUser\">\r\n\t\t\t<li><strong>ID:</strong> {{currentUser.id}}</li>\r\n\t\t\t<li><strong>Name:</strong> {{currentUser.name}}</li>\r\n\t\t\t<li><strong>Age:</strong> {{currentUser.age}}</li>\r\n\t\t</ul>\r\n\t</div>\r\n</div>";
 
 /***/ }),
 
-/***/ 495:
+/***/ 496:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5862,25 +5879,6 @@ var app_module_1 = __webpack_require__(203);
 var core_1 = __webpack_require__(11);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
-
-
-/***/ }),
-
-/***/ 498:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var UserModel = (function () {
-    function UserModel(id, name, age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
-    return UserModel;
-}());
-exports.default = UserModel;
 
 
 /***/ }),
@@ -5925,5 +5923,5 @@ exports.ListService = ListService;
 
 /***/ })
 
-},[495]);
+},[496]);
 //# sourceMappingURL=main.js.map

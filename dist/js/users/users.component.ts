@@ -1,5 +1,5 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import UsersService from '../services/users.service';
 import UserModel from './user.model';
 
@@ -25,21 +25,18 @@ export class UsersComponent {
 		});
 	}
 
-	private setCurrentUser(){
-		if(this.route.snapshot.params.id){
-			this.currentUser = this.usersService.getUserById(this.route.snapshot.params.id);
+	private setCurrentUser(params: Params){
+		if(params.id){
+			this.currentUser = this.usersService.getUserById(params.id);
 		}
 	}
 
 	ngOnInit(){
 		this.usersList = this.usersService.getAllUsers();
-		if(this.route.snapshot.params.id){
-			this.currentUser = this.usersService.getUserById(this.route.snapshot.params.id);
-		}
+		this.setCurrentUser(this.route.snapshot.params);
+		this.route.params.subscribe((params: Params) => {
+			this.setCurrentUser(params);
+		});
 	}
 
-	ngDoCheck(){
-		console.log('--set current user');
-		this.setCurrentUser();
-	}
 }
