@@ -12,6 +12,7 @@ import { MenuComponent } from './menu/menu.component';
 import { CustomComponent } from './custom/custom.component';
 import { ListComponent } from './list/list.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { QueryParamsComponent } from './queryParams/queryParams.component';
 
 // Directives
 import { GreenTextDirective } from './directives/GreenText.directive';
@@ -22,12 +23,13 @@ const appRoutes: Routes = [
 	{path: '', component: HomeComponent},
 	{path: 'users', component: UsersComponent},
 	{path: 'users/:id', component: UsersComponent},
-	{path: 'contacts', component: ContactsComponent}
+	{path: 'contacts', component: ContactsComponent},
+	{path: 'queryparams', component: QueryParamsComponent}
 ];
 
 @NgModule({
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
-  declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective, ListComponent, UsersComponent, HomeComponent, ContactsComponent],
+  declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective, ListComponent, UsersComponent, HomeComponent, ContactsComponent, QueryParamsComponent],
   bootstrap: [AppComponent]
 })
 

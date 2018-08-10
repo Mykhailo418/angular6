@@ -1,0 +1,28 @@
+<section>
+	<div class="row">
+		<div class="col-sm">
+			<a [routerLink]="['/queryparams']"
+				[queryParams]="{'param1': 1, 'param2': 2}"
+				[fragment]="'loading'"
+			>
+				query params with hash loading
+			</a>
+			<div class="form-group">
+				<input type="text" name="param3" [(ngModel)]="param3" placeholder="Param3" />
+			</div>
+			<div class="form-group">
+				<input type="text" name="param4" [(ngModel)]="param4" placeholder="Param4" />
+			</div>
+			<button class="btn btn-primary" (click)="clickQueryParams()">Click custom query params</button>
+		</div>
+		<div class="col-sm">
+			<ul>
+				<li><strong>Fragment:</strong> {{fragment}}</li>
+				<li><strong>Param1:</strong> {{params.param1}}</li>
+				<li><strong>Param2:</strong> {{params.param2}}</li>
+				<li><strong>Param3:</strong> {{params.param3}}</li>
+				<li><strong>Param4:</strong> {{params.param4}}</li>
+			</ul>
+		</div>
+	</div>
+</section>

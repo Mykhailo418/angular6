@@ -13,18 +13,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // Imports
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 var platform_browser_1 = __webpack_require__(53);
 var forms_1 = __webpack_require__(210);
 var router_1 = __webpack_require__(96);
 // Components
 var app_component_1 = __webpack_require__(211);
 var home_component_1 = __webpack_require__(216);
-var users_component_1 = __webpack_require__(221);
+var users_component_1 = __webpack_require__(222);
 var menu_component_1 = __webpack_require__(218);
 var custom_component_1 = __webpack_require__(213);
 var list_component_1 = __webpack_require__(217);
 var contacts_component_1 = __webpack_require__(212);
+var queryParams_component_1 = __webpack_require__(219);
 // Directives
 var GreenText_directive_1 = __webpack_require__(215);
 var AppUnless_directive_1 = __webpack_require__(214);
@@ -33,7 +34,8 @@ var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
     { path: 'users', component: users_component_1.UsersComponent },
     { path: 'users/:id', component: users_component_1.UsersComponent },
-    { path: 'contacts', component: contacts_component_1.ContactsComponent }
+    { path: 'contacts', component: contacts_component_1.ContactsComponent },
+    { path: 'queryparams', component: queryParams_component_1.QueryParamsComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -43,7 +45,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule.forRoot(appRoutes)],
-        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective, list_component_1.ListComponent, users_component_1.UsersComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent],
+        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective, list_component_1.ListComponent, users_component_1.UsersComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent, queryParams_component_1.QueryParamsComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
@@ -58,7 +60,7 @@ exports.AppModule = AppModule;
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(136);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(53);
@@ -5285,7 +5287,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 var AppComponent = (function () {
     function AppComponent() {
         this.newMessage = { msg: '' };
@@ -5298,7 +5300,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app-main',
-        template: __webpack_require__(377),
+        template: __webpack_require__(378),
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -5321,7 +5323,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 var ContactsComponent = (function () {
     function ContactsComponent() {
     }
@@ -5330,7 +5332,7 @@ var ContactsComponent = (function () {
 ContactsComponent = __decorate([
     core_1.Component({
         selector: 'app-contacts',
-        template: __webpack_require__(378),
+        template: __webpack_require__(379),
     }),
     __metadata("design:paramtypes", [])
 ], ContactsComponent);
@@ -5354,7 +5356,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 var list_service_1 = __webpack_require__(98);
 var CustomComponent = (function () {
     function CustomComponent(listService) {
@@ -5435,7 +5437,7 @@ __decorate([
 CustomComponent = __decorate([
     core_1.Component({
         selector: 'app-custom',
-        template: __webpack_require__(379),
+        template: __webpack_require__(380),
         encapsulation: core_1.ViewEncapsulation.None,
     }),
     __metadata("design:paramtypes", [list_service_1.ListService])
@@ -5460,7 +5462,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 var AppUnlessDirective = (function () {
     function AppUnlessDirective(templateRef, vcRef) {
         this.templateRef = templateRef;
@@ -5512,7 +5514,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 var GreenTextDirective = (function () {
     function GreenTextDirective(elRef, renderer) {
         this.elRef = elRef;
@@ -5577,7 +5579,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 var HomeComponent = (function () {
     function HomeComponent() {
         this.title = 'angular';
@@ -5589,7 +5591,7 @@ var HomeComponent = (function () {
 HomeComponent = __decorate([
     core_1.Component({
         selector: 'app-home',
-        template: __webpack_require__(380)
+        template: __webpack_require__(381)
     }),
     __metadata("design:paramtypes", [])
 ], HomeComponent);
@@ -5613,7 +5615,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 var list_service_1 = __webpack_require__(98);
 var ListComponent = (function () {
     function ListComponent(listService) {
@@ -5631,7 +5633,7 @@ var ListComponent = (function () {
 ListComponent = __decorate([
     core_1.Component({
         selector: 'app-list',
-        template: __webpack_require__(381)
+        template: __webpack_require__(382)
     }),
     __metadata("design:paramtypes", [list_service_1.ListService])
 ], ListComponent);
@@ -5655,7 +5657,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 var list_service_1 = __webpack_require__(98);
 var MenuComponent = (function () {
     function MenuComponent(listService) {
@@ -5683,7 +5685,7 @@ __decorate([
 MenuComponent = __decorate([
     core_1.Component({
         selector: 'app-menu',
-        template: __webpack_require__(382)
+        template: __webpack_require__(383)
     }),
     __metadata("design:paramtypes", [list_service_1.ListService])
 ], MenuComponent);
@@ -5707,8 +5709,65 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
-var user_model_1 = __webpack_require__(220);
+var core_1 = __webpack_require__(10);
+var router_1 = __webpack_require__(96);
+var QueryParamsComponent = (function () {
+    function QueryParamsComponent(router, route) {
+        this.router = router;
+        this.route = route;
+        this.param3 = '';
+        this.param4 = '';
+        this.params = {};
+        this.fragment = '';
+    }
+    QueryParamsComponent.prototype.clickQueryParams = function () {
+        this.router.navigate(['/queryparams'], {
+            queryParams: { param3: this.param3, param4: this.param4 },
+            fragment: 'fragment'
+        });
+    };
+    QueryParamsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.params = this.route.snapshot.queryParams;
+        this.fragment = this.route.snapshot.fragment;
+        this.route.queryParams.subscribe(function (params) {
+            _this.params = params;
+        });
+        this.route.fragment.subscribe(function (fragment) {
+            _this.fragment = fragment;
+        });
+    };
+    return QueryParamsComponent;
+}());
+QueryParamsComponent = __decorate([
+    core_1.Component({
+        selector: 'query-contacts',
+        template: __webpack_require__(384),
+    }),
+    __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute])
+], QueryParamsComponent);
+exports.QueryParamsComponent = QueryParamsComponent;
+
+
+/***/ }),
+
+/***/ 220:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(10);
+var user_model_1 = __webpack_require__(221);
 var UsersService = (function () {
     function UsersService() {
         this.users = [
@@ -5740,7 +5799,7 @@ exports.default = UsersService;
 
 /***/ }),
 
-/***/ 220:
+/***/ 221:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5759,7 +5818,7 @@ exports.default = UserModel;
 
 /***/ }),
 
-/***/ 221:
+/***/ 222:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5774,9 +5833,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 var router_1 = __webpack_require__(96);
-var users_service_1 = __webpack_require__(219);
+var users_service_1 = __webpack_require__(220);
 var UsersComponent = (function () {
     function UsersComponent(router, route, usersService) {
         this.router = router;
@@ -5809,7 +5868,7 @@ var UsersComponent = (function () {
 UsersComponent = __decorate([
     core_1.Component({
         selector: 'app-users',
-        template: __webpack_require__(383),
+        template: __webpack_require__(385),
     }),
     __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute,
         users_service_1.default])
@@ -5819,56 +5878,63 @@ exports.UsersComponent = UsersComponent;
 
 /***/ }),
 
-/***/ 377:
+/***/ 378:
 /***/ (function(module, exports) {
 
 module.exports = "<app-menu (newMessage)=\"onNewMessage($event)\"></app-menu>\r\n<section class=\"container\">\r\n\t<router-outlet></router-outlet>\r\n</section>\r\n";
 
 /***/ }),
 
-/***/ 378:
+/***/ 379:
 /***/ (function(module, exports) {
 
 module.exports = "<h1>Contacts</h1>";
 
 /***/ }),
 
-/***/ 379:
+/***/ 380:
 /***/ (function(module, exports) {
 
 module.exports = "<section class=\"container\">\r\n\t<h3>Custom Component</h3>\r\n\t<input type=\"text\" name=\"serverName\" (input)=\"onChangeServerName($event)\">\r\n\t<button class=\"btn btn-success\" (click)=\"outputServerName($event)\">Set Server Name</button>\r\n\t<p *ngIf=\"isServerName; else noServer\" [attr.data-id-server]=\"idServer\">{{ outServerName }}</p>\r\n\t<ng-template #noServer>\r\n\t\t<p>Server Does not have name</p>\r\n\t</ng-template>\r\n</section>\r\n<hr>\r\n<h1 *ngIf=\"currentNum\">{{currentNum}}</h1>\r\n<section class=\"container\">\r\n\t<h3 #someTitle>{{ titleForSomeTitle }}</h3>\r\n\t<button (click)=\"changeSomeTitle(someTitle)\">change Some Title</button>\r\n\t<p *ngIf=\"newMsg && newMsg.msg\">{{newMsg.msg}}</p>\r\n</section>\r\n<section class=\"container\">\r\n\t\t<h3>Content Section</h3>\r\n\t\t<ng-content ></ng-content>\r\n</section>\r\n<section class=\"container\">\r\n\t<p greenTextDrc>Text With Directive</p>\r\n</section>\r\n<hr>\r\n<section class=\"container\">\r\n\t<button (click)=\"changeUnlessCondition()\">Change Condition</button>\r\n\t<p *appUnless=\"unlessCondition\">This text will be show if inless condition</p>\r\n</section>";
 
 /***/ }),
 
-/***/ 380:
+/***/ 381:
 /***/ (function(module, exports) {
 
 module.exports = "<div>\r\n\t<h1>Hello dear, {{title}}</h1>\r\n\t<input type=\"text\" name=\"name\" [(ngModel)]=\"name\" />\r\n\t<p>{{name}}</p>\r\n</div>\r\n<hr />\r\n<div>\r\n\t<app-custom [serPref]=\"'New Pref'\" [newMsg]=\"newMessage\">\r\n\t\t<p #contentElement>{{ textForContentSection }}</p>\r\n\t</app-custom>\r\n</div>\r\n<hr /><hr />\r\n<div>\r\n\t<app-list></app-list>\r\n</div>";
 
 /***/ }),
 
-/***/ 381:
+/***/ 382:
 /***/ (function(module, exports) {
 
 module.exports = "<ul>\r\n\t<li *ngFor=\"let num of listNumbers\">\r\n\t\t<a href=\"#\" (click)=\"selectNumber($event, num)\">{{num}}</a>\r\n\t</li>\r\n</ul>";
 
 /***/ }),
 
-/***/ 382:
-/***/ (function(module, exports) {
-
-module.exports = "\r\n<div class=\"container\">\r\n\t<h1 *ngIf=\"currentNum\" class=\"float-right\">{{currentNum}}</h1>\r\n\t<h4>Menu</h4>\r\n\t<button class=\"btn btn-primary\" (click)=\"onSendMessage($event)\">Send Message</button>\r\n\t<nav class=\"navbar-light\">\r\n\t\t<ul class=\"navbar-nav\">\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" routerLink=\"/\">Home</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/users']\">Users</a>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</nav>\r\n</div>\r\n\r\n<hr />";
-
-/***/ }),
-
 /***/ 383:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Users</h1>\r\n<button class=\"btn btn-primary\" (click)=\"gotoContacts()\">Go to Contacts Page</button>\r\n<br />\r\n<br />\r\n<button class=\"btn btn-primary\" (click)=\"notWorkingReload()\">Not Working Reload</button>\r\n<hr />\r\n<div class=\"row\">\r\n\t<div class=\"col-sm-6\">\r\n\t\t<ul class=\"nav flex-column\" *ngIf=\"usersList\">\r\n\t\t  <li class=\"nav-item\"\r\n\t\t  \t\t*ngFor=\"let user of usersList\"\r\n\t\t  \t>\r\n\t\t    \t<a class=\"nav-link\" \r\n\t\t\t    \trouterLinkActive=\"active\" \r\n\t\t\t    \t[routerLinkActiveOptions]=\"{exact: true}\"  \r\n\t\t\t    \trouterLink=\"/users/{{user.id}}\"\r\n\t\t    \t>\r\n\t\t    \t\t{{user.name}}\r\n\t\t    \t</a>\r\n\t\t  </li>\r\n\t\t</ul>\r\n\t</div>\r\n\t<div class=\"col-sm-6\">\r\n\t\t<ul *ngIf=\"currentUser\">\r\n\t\t\t<li><strong>ID:</strong> {{currentUser.id}}</li>\r\n\t\t\t<li><strong>Name:</strong> {{currentUser.name}}</li>\r\n\t\t\t<li><strong>Age:</strong> {{currentUser.age}}</li>\r\n\t\t</ul>\r\n\t</div>\r\n</div>";
+module.exports = "\r\n<div class=\"container\">\r\n\t<h1 *ngIf=\"currentNum\" class=\"float-right\">{{currentNum}}</h1>\r\n\t<h4>Menu</h4>\r\n\t<button class=\"btn btn-primary\" (click)=\"onSendMessage($event)\">Send Message</button>\r\n\t<nav class=\"navbar-light\">\r\n\t\t<ul class=\"navbar-nav\">\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" routerLink=\"/\">Home</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/users']\">Users</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/queryparams']\">Query Params</a>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</nav>\r\n</div>\r\n\r\n<hr />";
 
 /***/ }),
 
-/***/ 496:
+/***/ 384:
+/***/ (function(module, exports) {
+
+module.exports = "<section>\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-sm\">\r\n\t\t\t<a [routerLink]=\"['/queryparams']\"\r\n\t\t\t\t[queryParams]=\"{'param1': 1, 'param2': 2}\"\r\n\t\t\t\t[fragment]=\"'loading'\"\r\n\t\t\t>\r\n\t\t\t\tquery params with hash loading\r\n\t\t\t</a>\r\n\t\t\t<div class=\"form-group\">\r\n\t\t\t\t<input type=\"text\" name=\"param3\" [(ngModel)]=\"param3\" placeholder=\"Param3\" />\r\n\t\t\t</div>\r\n\t\t\t<div class=\"form-group\">\r\n\t\t\t\t<input type=\"text\" name=\"param4\" [(ngModel)]=\"param4\" placeholder=\"Param4\" />\r\n\t\t\t</div>\r\n\t\t\t<button class=\"btn btn-primary\" (click)=\"clickQueryParams()\">Click custom query params</button>\r\n\t\t</div>\r\n\t\t<div class=\"col-sm\">\r\n\t\t\t<ul>\r\n\t\t\t\t<li><strong>Fragment:</strong> {{fragment}}</li>\r\n\t\t\t\t<li><strong>Param1:</strong> {{params.param1}}</li>\r\n\t\t\t\t<li><strong>Param2:</strong> {{params.param2}}</li>\r\n\t\t\t\t<li><strong>Param3:</strong> {{params.param3}}</li>\r\n\t\t\t\t<li><strong>Param4:</strong> {{params.param4}}</li>\r\n\t\t\t</ul>\r\n\t\t</div>\r\n\t</div>\r\n</section>";
+
+/***/ }),
+
+/***/ 385:
+/***/ (function(module, exports) {
+
+module.exports = "<h1>Users</h1>\r\n<button class=\"btn btn-primary\" (click)=\"gotoContacts()\">Go to Contacts Page</button>\r\n<br />\r\n<br />\r\n<button class=\"btn btn-primary\" (click)=\"notWorkingReload()\">Not Working Reload</button>\r\n<hr />\r\n<div class=\"row\">\r\n\t<div class=\"col-sm-6\">\r\n\t\t<ul class=\"nav flex-column\" *ngIf=\"usersList\">\r\n\t\t  <li class=\"nav-item\"\r\n\t\t  \t\t*ngFor=\"let user of usersList\"\r\n\t\t  \t>\r\n\t\t    \t<a class=\"nav-link\" \r\n\t\t\t    \trouterLinkActive=\"active\" \r\n\t\t\t    \t[routerLinkActiveOptions]=\"{exact: true}\"  \r\n\t\t\t    \t[routerLink]=\"['/users', user.id]\"\r\n\t\t    \t>\r\n\t\t    \t\t{{user.name}}\r\n\t\t    \t</a>\r\n\t\t  </li>\r\n\t\t</ul>\r\n\t</div>\r\n\t<div class=\"col-sm-6\">\r\n\t\t<ul *ngIf=\"currentUser\">\r\n\t\t\t<li><strong>ID:</strong> {{currentUser.id}}</li>\r\n\t\t\t<li><strong>Name:</strong> {{currentUser.name}}</li>\r\n\t\t\t<li><strong>Age:</strong> {{currentUser.age}}</li>\r\n\t\t</ul>\r\n\t</div>\r\n</div>";
+
+/***/ }),
+
+/***/ 498:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5876,7 +5942,7 @@ module.exports = "<h1>Users</h1>\r\n<button class=\"btn btn-primary\" (click)=\"
 Object.defineProperty(exports, "__esModule", { value: true });
 var platform_browser_dynamic_1 = __webpack_require__(97);
 var app_module_1 = __webpack_require__(203);
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
@@ -5898,7 +5964,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(11);
+var core_1 = __webpack_require__(10);
 var ListService = (function () {
     function ListService() {
         this.listNumbers = [];
@@ -5923,5 +5989,5 @@ exports.ListService = ListService;
 
 /***/ })
 
-},[496]);
+},[498]);
 //# sourceMappingURL=main.js.map
