@@ -5728,6 +5728,12 @@ var QueryParamsComponent = (function () {
             fragment: 'fragment'
         });
     };
+    QueryParamsComponent.prototype.newQueryParam = function () {
+        this.router.navigate(['/queryparams'], {
+            queryParamsHandling: "merge",
+            queryParams: { newparam: 'param' }
+        });
+    };
     QueryParamsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.params = this.route.snapshot.queryParams;
@@ -5925,7 +5931,7 @@ module.exports = "\r\n<div class=\"container\">\r\n\t<h1 *ngIf=\"currentNum\" cl
 /***/ 384:
 /***/ (function(module, exports) {
 
-module.exports = "<section>\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-sm\">\r\n\t\t\t<a [routerLink]=\"['/queryparams']\"\r\n\t\t\t\t[queryParams]=\"{'param1': 1, 'param2': 2}\"\r\n\t\t\t\t[fragment]=\"'loading'\"\r\n\t\t\t>\r\n\t\t\t\tquery params with hash loading\r\n\t\t\t</a>\r\n\t\t\t<div class=\"form-group\">\r\n\t\t\t\t<input type=\"text\" name=\"param3\" [(ngModel)]=\"param3\" placeholder=\"Param3\" />\r\n\t\t\t</div>\r\n\t\t\t<div class=\"form-group\">\r\n\t\t\t\t<input type=\"text\" name=\"param4\" [(ngModel)]=\"param4\" placeholder=\"Param4\" />\r\n\t\t\t</div>\r\n\t\t\t<button class=\"btn btn-primary\" (click)=\"clickQueryParams()\">Click custom query params</button>\r\n\t\t</div>\r\n\t\t<div class=\"col-sm\">\r\n\t\t\t<ul>\r\n\t\t\t\t<li><strong>Fragment:</strong> {{fragment}}</li>\r\n\t\t\t\t<li><strong>Param1:</strong> {{params.param1}}</li>\r\n\t\t\t\t<li><strong>Param2:</strong> {{params.param2}}</li>\r\n\t\t\t\t<li><strong>Param3:</strong> {{params.param3}}</li>\r\n\t\t\t\t<li><strong>Param4:</strong> {{params.param4}}</li>\r\n\t\t\t</ul>\r\n\t\t</div>\r\n\t</div>\r\n</section>";
+module.exports = "<section>\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-sm\">\r\n\t\t\t<a [routerLink]=\"['/queryparams']\"\r\n\t\t\t\t[queryParams]=\"{'param1': 1, 'param2': 2}\"\r\n\t\t\t\t[fragment]=\"'loading'\"\r\n\t\t\t>\r\n\t\t\t\tquery params with hash loading\r\n\t\t\t</a>\r\n\t\t\t<div class=\"form-group\">\r\n\t\t\t\t<input type=\"text\" name=\"param3\" [(ngModel)]=\"param3\" placeholder=\"Param3\" />\r\n\t\t\t</div>\r\n\t\t\t<div class=\"form-group\">\r\n\t\t\t\t<input type=\"text\" name=\"param4\" [(ngModel)]=\"param4\" placeholder=\"Param4\" />\r\n\t\t\t</div>\r\n\t\t\t<button class=\"btn btn-primary\" (click)=\"clickQueryParams()\">Click custom query params</button>\r\n\t\t\t<br />\r\n\t\t\t<button class=\"btn btn-primary\" (click)=\"newQueryParam()\">Add new Query Param</button>\r\n\t\t</div>\r\n\t\t<div class=\"col-sm\">\r\n\t\t\t<ul>\r\n\t\t\t\t<li><strong>Fragment:</strong> {{fragment}}</li>\r\n\t\t\t\t<li><strong>Param1:</strong> {{params.param1}}</li>\r\n\t\t\t\t<li><strong>Param2:</strong> {{params.param2}}</li>\r\n\t\t\t\t<li><strong>Param3:</strong> {{params.param3}}</li>\r\n\t\t\t\t<li><strong>Param4:</strong> {{params.param4}}</li>\r\n\t\t\t</ul>\r\n\t\t</div>\r\n\t</div>\r\n</section>\r\n";
 
 /***/ }),
 

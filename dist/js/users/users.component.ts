@@ -12,7 +12,7 @@ export class UsersComponent {
 	usersList: UserModel[];
 	currentUser: UserModel;
 
-	constructor(private router: Router, private route: ActivatedRoute, 
+	constructor(private router: Router, private route: ActivatedRoute,
 		private usersService: UsersService){}
 
 	gotoContacts(){

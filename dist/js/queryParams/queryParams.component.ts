@@ -16,11 +16,18 @@ export class QueryParamsComponent {
 	constructor(private router: Router, private route: ActivatedRoute, ){}
 
 	clickQueryParams(){
-		this.router.navigate(['/queryparams'], { 
+		this.router.navigate(['/queryparams'], {
 			queryParams: {param3: this.param3, param4: this.param4},
 			fragment: 'fragment'
 		});
 	}
+
+  newQueryParam(){
+    this.router.navigate(['/queryparams'], {
+      queryParamsHandling: "merge", // if value 'preserve', it will not add new param
+    	queryParams: {newparam: 'param'}
+    });
+  }
 
 	ngOnInit(){
 		this.params = this.route.snapshot.queryParams;
