@@ -10,9 +10,9 @@
 		  <li class="nav-item"
 		  		*ngFor="let user of usersList"
 		  	>
-		    	<a class="nav-link" 
-			    	routerLinkActive="active" 
-			    	[routerLinkActiveOptions]="{exact: true}"  
+		    	<a class="nav-link"
+			    	routerLinkActive="active"
+			    	[routerLinkActiveOptions]="{exact: true}"
 			    	[routerLink]="['/users', user.id]"
 		    	>
 		    		{{user.name}}
@@ -21,10 +21,6 @@
 		</ul>
 	</div>
 	<div class="col-sm-6">
-		<ul *ngIf="currentUser">
-			<li><strong>ID:</strong> {{currentUser.id}}</li>
-			<li><strong>Name:</strong> {{currentUser.name}}</li>
-			<li><strong>Age:</strong> {{currentUser.age}}</li>
-		</ul>
+		<router-outlet></router-outlet>
 	</div>
 </div>

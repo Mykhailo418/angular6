@@ -16,7 +16,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(10);
 var platform_browser_1 = __webpack_require__(53);
 var forms_1 = __webpack_require__(210);
-var router_1 = __webpack_require__(96);
+var router_1 = __webpack_require__(78);
 // Components
 var app_component_1 = __webpack_require__(211);
 var home_component_1 = __webpack_require__(216);
@@ -26,14 +26,16 @@ var custom_component_1 = __webpack_require__(213);
 var list_component_1 = __webpack_require__(217);
 var contacts_component_1 = __webpack_require__(212);
 var queryParams_component_1 = __webpack_require__(219);
+var user_component_1 = __webpack_require__(501);
 // Directives
 var GreenText_directive_1 = __webpack_require__(215);
 var AppUnless_directive_1 = __webpack_require__(214);
 // Routes
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
-    { path: 'users', component: users_component_1.UsersComponent },
-    { path: 'users/:id', component: users_component_1.UsersComponent },
+    { path: 'users', component: users_component_1.UsersComponent, children: [
+            { path: ':id', component: user_component_1.UserComponent },
+        ] },
     { path: 'contacts', component: contacts_component_1.ContactsComponent },
     { path: 'queryparams', component: queryParams_component_1.QueryParamsComponent }
 ];
@@ -45,7 +47,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, router_1.RouterModule.forRoot(appRoutes)],
-        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective, list_component_1.ListComponent, users_component_1.UsersComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent, queryParams_component_1.QueryParamsComponent],
+        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective, list_component_1.ListComponent, users_component_1.UsersComponent, user_component_1.UserComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent, queryParams_component_1.QueryParamsComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
@@ -5710,7 +5712,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(10);
-var router_1 = __webpack_require__(96);
+var router_1 = __webpack_require__(78);
 var QueryParamsComponent = (function () {
     function QueryParamsComponent(router, route) {
         this.router = router;
@@ -5834,7 +5836,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(10);
-var router_1 = __webpack_require__(96);
+var router_1 = __webpack_require__(78);
 var users_service_1 = __webpack_require__(220);
 var UsersComponent = (function () {
     function UsersComponent(router, route, usersService) {
@@ -5930,7 +5932,7 @@ module.exports = "<section>\r\n\t<div class=\"row\">\r\n\t\t<div class=\"col-sm\
 /***/ 385:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Users</h1>\r\n<button class=\"btn btn-primary\" (click)=\"gotoContacts()\">Go to Contacts Page</button>\r\n<br />\r\n<br />\r\n<button class=\"btn btn-primary\" (click)=\"notWorkingReload()\">Not Working Reload</button>\r\n<hr />\r\n<div class=\"row\">\r\n\t<div class=\"col-sm-6\">\r\n\t\t<ul class=\"nav flex-column\" *ngIf=\"usersList\">\r\n\t\t  <li class=\"nav-item\"\r\n\t\t  \t\t*ngFor=\"let user of usersList\"\r\n\t\t  \t>\r\n\t\t    \t<a class=\"nav-link\" \r\n\t\t\t    \trouterLinkActive=\"active\" \r\n\t\t\t    \t[routerLinkActiveOptions]=\"{exact: true}\"  \r\n\t\t\t    \t[routerLink]=\"['/users', user.id]\"\r\n\t\t    \t>\r\n\t\t    \t\t{{user.name}}\r\n\t\t    \t</a>\r\n\t\t  </li>\r\n\t\t</ul>\r\n\t</div>\r\n\t<div class=\"col-sm-6\">\r\n\t\t<ul *ngIf=\"currentUser\">\r\n\t\t\t<li><strong>ID:</strong> {{currentUser.id}}</li>\r\n\t\t\t<li><strong>Name:</strong> {{currentUser.name}}</li>\r\n\t\t\t<li><strong>Age:</strong> {{currentUser.age}}</li>\r\n\t\t</ul>\r\n\t</div>\r\n</div>";
+module.exports = "<h1>Users</h1>\r\n<button class=\"btn btn-primary\" (click)=\"gotoContacts()\">Go to Contacts Page</button>\r\n<br />\r\n<br />\r\n<button class=\"btn btn-primary\" (click)=\"notWorkingReload()\">Not Working Reload</button>\r\n<hr />\r\n<div class=\"row\">\r\n\t<div class=\"col-sm-6\">\r\n\t\t<ul class=\"nav flex-column\" *ngIf=\"usersList\">\r\n\t\t  <li class=\"nav-item\"\r\n\t\t  \t\t*ngFor=\"let user of usersList\"\r\n\t\t  \t>\r\n\t\t    \t<a class=\"nav-link\"\r\n\t\t\t    \trouterLinkActive=\"active\"\r\n\t\t\t    \t[routerLinkActiveOptions]=\"{exact: true}\"\r\n\t\t\t    \t[routerLink]=\"['/users', user.id]\"\r\n\t\t    \t>\r\n\t\t    \t\t{{user.name}}\r\n\t\t    \t</a>\r\n\t\t  </li>\r\n\t\t</ul>\r\n\t</div>\r\n\t<div class=\"col-sm-6\">\r\n\t\t<router-outlet></router-outlet>\r\n\t</div>\r\n</div>\r\n";
 
 /***/ }),
 
@@ -5946,6 +5948,64 @@ var core_1 = __webpack_require__(10);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
+
+/***/ }),
+
+/***/ 501:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(10);
+var router_1 = __webpack_require__(78);
+var users_service_1 = __webpack_require__(220);
+var UserComponent = (function () {
+    function UserComponent(router, route, usersService) {
+        this.router = router;
+        this.route = route;
+        this.usersService = usersService;
+    }
+    UserComponent.prototype.setCurrentUser = function (params) {
+        if (params.id) {
+            this.currentUser = this.usersService.getUserById(params.id);
+        }
+    };
+    UserComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.setCurrentUser(this.route.snapshot.params);
+        this.route.params.subscribe(function (params) {
+            _this.setCurrentUser(params);
+        });
+    };
+    return UserComponent;
+}());
+UserComponent = __decorate([
+    core_1.Component({
+        selector: 'app-user',
+        template: __webpack_require__(502),
+    }),
+    __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute,
+        users_service_1.default])
+], UserComponent);
+exports.UserComponent = UserComponent;
+
+
+/***/ }),
+
+/***/ 502:
+/***/ (function(module, exports) {
+
+module.exports = "<ul *ngIf=\"currentUser\">\r\n  <li><strong>ID:</strong> {{currentUser.id}}</li>\r\n  <li><strong>Name:</strong> {{currentUser.name}}</li>\r\n  <li><strong>Age:</strong> {{currentUser.age}}</li>\r\n</ul>\r\n";
 
 /***/ }),
 
