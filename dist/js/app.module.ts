@@ -20,11 +20,16 @@ import { NotFoundComponent } from './notFound/notFound.component';
 import { GreenTextDirective } from './directives/GreenText.directive';
 import { AppUnlessDirective } from './directives/AppUnless.directive';
 
+// Services
+import { AuthGuard } from './services/auth/AuthGuard';
+import { AuthService } from './services/auth/AuthService';
+
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective,
 		ListComponent, UsersComponent, UserComponent, HomeComponent, ContactsComponent, QueryParamsComponent, NotFoundComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [AuthService, AuthGuard]
 })
 export class AppModule {
 }
