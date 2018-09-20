@@ -199,6 +199,9 @@ var AuthGuard = (function () {
             return false;
         });
     };
+    AuthGuard.prototype.canActivateChild = function (route, state) {
+        return this.canActivate(route, state);
+    };
     return AuthGuard;
 }());
 AuthGuard = __decorate([
@@ -5699,9 +5702,14 @@ var notFound_component_1 = __webpack_require__(140);
 var AuthGuard_1 = __webpack_require__(142);
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
-    { path: 'users', canActivate: [AuthGuard_1.AuthGuard], component: users_component_1.UsersComponent, children: [
+    { path: 'users',
+        //canActivate: [AuthGuard], 
+        canActivateChild: [AuthGuard_1.AuthGuard],
+        component: users_component_1.UsersComponent,
+        children: [
             { path: ':id', component: user_component_1.UserComponent },
-        ] },
+        ]
+    },
     { path: 'contacts', component: contacts_component_1.ContactsComponent },
     { path: 'queryparams', component: queryParams_component_1.QueryParamsComponent },
     { path: '404', component: notFound_component_1.NotFoundComponent },
