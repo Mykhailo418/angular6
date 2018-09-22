@@ -481,6 +481,7 @@ var contacts_component_1 = __webpack_require__(138);
 var queryParams_component_1 = __webpack_require__(142);
 var notFound_component_1 = __webpack_require__(141);
 var editing_component_1 = __webpack_require__(139);
+var errorPage_component_1 = __webpack_require__(511);
 // Directives
 var GreenText_directive_1 = __webpack_require__(225);
 var AppUnless_directive_1 = __webpack_require__(224);
@@ -498,7 +499,7 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule],
         declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective,
             list_component_1.ListComponent, users_component_1.UsersComponent, user_component_1.UserComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent, queryParams_component_1.QueryParamsComponent,
-            notFound_component_1.NotFoundComponent, editing_component_1.EditingPageComponent],
+            notFound_component_1.NotFoundComponent, editing_component_1.EditingPageComponent, errorPage_component_1.ErrorPage],
         bootstrap: [app_component_1.AppComponent],
         providers: [AuthService_1.AuthService, AuthGuard_1.AuthGuard, CanDeactivateGuard_1.CanDeactivateGuard]
     })
@@ -5751,6 +5752,7 @@ var contacts_component_1 = __webpack_require__(138);
 var queryParams_component_1 = __webpack_require__(142);
 var notFound_component_1 = __webpack_require__(141);
 var editing_component_1 = __webpack_require__(139);
+var errorPage_component_1 = __webpack_require__(511);
 // Services
 var AuthGuard_1 = __webpack_require__(143);
 var CanDeactivateGuard_1 = __webpack_require__(510);
@@ -5766,6 +5768,8 @@ var appRoutes = [
     },
     { path: 'contacts', component: contacts_component_1.ContactsComponent },
     { path: 'queryparams', component: queryParams_component_1.QueryParamsComponent },
+    { path: '500', component: errorPage_component_1.ErrorPage, data: { msg: 'Error 500: Server Error' } },
+    { path: '501', component: errorPage_component_1.ErrorPage, data: { msg: 'Error 501: Not Implemented' } },
     { path: '404', component: notFound_component_1.NotFoundComponent },
     { path: 'editing-page', canDeactivate: [CanDeactivateGuard_1.CanDeactivateGuard], component: editing_component_1.EditingPageComponent },
     { path: '**', redirectTo: '/404' }
@@ -6165,7 +6169,7 @@ module.exports = "<app-menu (newMessage)=\"onNewMessage($event)\"></app-menu>\r\
 /***/ 385:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Contacts</h1>\r\n<a [routerLink]=\"['/lalala']\">Not Found Page</a>\r\n";
+module.exports = "<h1>Contacts</h1>\r\n<a [routerLink]=\"['/lalala']\">Not Found Page</a>\r\n<br />\r\n<a [routerLink]=\"['/500']\">Error 500 page</a>\r\n<br />\r\n<a [routerLink]=\"['/501']\">Error 501 page</a>\r\n";
 
 /***/ }),
 
@@ -6263,6 +6267,56 @@ var CanDeactivateGuard = (function () {
 }());
 exports.CanDeactivateGuard = CanDeactivateGuard;
 
+
+/***/ }),
+
+/***/ 511:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(9);
+var router_1 = __webpack_require__(54);
+var ErrorPage = (function () {
+    function ErrorPage(route) {
+        this.route = route;
+        this.message = '';
+    }
+    ErrorPage.prototype.ngOnInit = function () {
+        var _this = this;
+        //this.message = this.route.shapshot.data['msg']; // add static data once after Init
+        this.route.data.subscribe(function (data) {
+            _this.message = data.msg;
+        });
+    };
+    return ErrorPage;
+}());
+ErrorPage = __decorate([
+    core_1.Component({
+        selector: 'error-page',
+        template: __webpack_require__(512),
+    }),
+    __metadata("design:paramtypes", [router_1.ActivatedRoute])
+], ErrorPage);
+exports.ErrorPage = ErrorPage;
+
+
+/***/ }),
+
+/***/ 512:
+/***/ (function(module, exports) {
+
+module.exports = "<h1>{{ message }}</h1>\r\n";
 
 /***/ }),
 

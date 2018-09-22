@@ -16,6 +16,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { QueryParamsComponent } from './queryParams/queryParams.component';
 import { NotFoundComponent } from './notFound/notFound.component';
 import { EditingPageComponent } from './editingPage/editing.component';
+import { ErrorPage } from './errorPage/errorPage.component';
 
 // Directives
 import { GreenTextDirective } from './directives/GreenText.directive';
@@ -30,7 +31,7 @@ import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective,
 		ListComponent, UsersComponent, UserComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
-    NotFoundComponent, EditingPageComponent],
+    NotFoundComponent, EditingPageComponent, ErrorPage],
   bootstrap: [AppComponent],
   providers: [AuthService, AuthGuard, CanDeactivateGuard]
 })

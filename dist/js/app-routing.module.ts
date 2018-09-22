@@ -9,6 +9,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { QueryParamsComponent } from './queryParams/queryParams.component';
 import { NotFoundComponent } from './notFound/notFound.component';
 import { EditingPageComponent } from './editingPage/editing.component';
+import { ErrorPage } from './errorPage/errorPage.component';
 
 // Services
 import { AuthGuard } from './services/auth/AuthGuard';
@@ -26,6 +27,8 @@ const appRoutes: Routes = [
 	},
 	{path: 'contacts', component: ContactsComponent},
 	{path: 'queryparams', component: QueryParamsComponent},
+	{path: '500', component: ErrorPage, data: { msg: 'Error 500: Server Error' }},
+	{path: '501', component: ErrorPage, data: { msg: 'Error 501: Not Implemented' }},
 	{path: '404', component: NotFoundComponent},
 	{path: 'editing-page', canDeactivate: [CanDeactivateGuard], component: EditingPageComponent},
 	{path: '**', redirectTo: '/404'}
