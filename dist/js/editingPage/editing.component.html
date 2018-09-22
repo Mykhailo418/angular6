@@ -1,0 +1,7 @@
+<h1>Editing</h1>
+<form class="form">
+  <div class="form-group">
+    <label>Edit this input</label>
+    <input class="form-control" type="text" [(ngModel)]="editField" name="editField" (input)="onChangeField($event)" />
+  </div>
+</form>

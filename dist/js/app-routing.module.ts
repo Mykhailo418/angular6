@@ -8,14 +8,16 @@ import { UserComponent } from './users/user.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { QueryParamsComponent } from './queryParams/queryParams.component';
 import { NotFoundComponent } from './notFound/notFound.component';
+import { EditingPageComponent } from './editingPage/editing.component';
 
 // Services
 import { AuthGuard } from './services/auth/AuthGuard';
+import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
 
 const appRoutes: Routes = [
 	{path: '', component: HomeComponent},
 	{path: 'users',
-			//canActivate: [AuthGuard], 
+			//canActivate: [AuthGuard],
 			canActivateChild: [AuthGuard],
 			component: UsersComponent,
 			children: [
@@ -25,6 +27,7 @@ const appRoutes: Routes = [
 	{path: 'contacts', component: ContactsComponent},
 	{path: 'queryparams', component: QueryParamsComponent},
 	{path: '404', component: NotFoundComponent},
+	{path: 'editing-page', canDeactivate: [CanDeactivateGuard], component: EditingPageComponent},
 	{path: '**', redirectTo: '/404'}
 ];
 

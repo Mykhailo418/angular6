@@ -15,6 +15,7 @@ import { ListComponent } from './list/list.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { QueryParamsComponent } from './queryParams/queryParams.component';
 import { NotFoundComponent } from './notFound/notFound.component';
+import { EditingPageComponent } from './editingPage/editing.component';
 
 // Directives
 import { GreenTextDirective } from './directives/GreenText.directive';
@@ -23,13 +24,15 @@ import { AppUnlessDirective } from './directives/AppUnless.directive';
 // Services
 import { AuthGuard } from './services/auth/AuthGuard';
 import { AuthService } from './services/auth/AuthService';
+import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective,
-		ListComponent, UsersComponent, UserComponent, HomeComponent, ContactsComponent, QueryParamsComponent, NotFoundComponent],
+		ListComponent, UsersComponent, UserComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
+    NotFoundComponent, EditingPageComponent],
   bootstrap: [AppComponent],
-  providers: [AuthService, AuthGuard]
+  providers: [AuthService, AuthGuard, CanDeactivateGuard]
 })
 export class AppModule {
 }
