@@ -14,15 +14,16 @@ import { ErrorPage } from './errorPage/errorPage.component';
 // Services
 import { AuthGuard } from './services/auth/AuthGuard';
 import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
+import { UserResolveService } from './services/user-resolve.service';
 
 const appRoutes: Routes = [
 	{path: '', component: HomeComponent},
 	{path: 'users',
 			//canActivate: [AuthGuard],
-			canActivateChild: [AuthGuard],
+			//canActivateChild: [AuthGuard],
 			component: UsersComponent,
 			children: [
-					{path: ':id', component: UserComponent},
+					{path: ':id', component: UserComponent, resolve: {userData: UserResolveService}},
 			]
 	},
 	{path: 'contacts', component: ContactsComponent},

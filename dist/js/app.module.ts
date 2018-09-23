@@ -26,6 +26,7 @@ import { AppUnlessDirective } from './directives/AppUnless.directive';
 import { AuthGuard } from './services/auth/AuthGuard';
 import { AuthService } from './services/auth/AuthService';
 import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
+import { UserResolveService } from './services/user-resolve.service';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
@@ -33,7 +34,7 @@ import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
 		ListComponent, UsersComponent, UserComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
     NotFoundComponent, EditingPageComponent, ErrorPage],
   bootstrap: [AppComponent],
-  providers: [AuthService, AuthGuard, CanDeactivateGuard]
+  providers: [AuthService, AuthGuard, CanDeactivateGuard, UserResolveService]
 })
 export class AppModule {
 }
