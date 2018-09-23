@@ -5823,7 +5823,8 @@ var errorPage_component_1 = __webpack_require__(140);
 var CanDeactivateGuard_1 = __webpack_require__(146);
 var user_resolve_service_1 = __webpack_require__(513);
 var appRoutes = [
-    { path: '', component: home_component_1.HomeComponent },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: home_component_1.HomeComponent },
     { path: 'users',
         //canActivate: [AuthGuard],
         //canActivateChild: [AuthGuard],

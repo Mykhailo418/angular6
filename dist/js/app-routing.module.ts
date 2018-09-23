@@ -17,7 +17,8 @@ import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
 import { UserResolveService } from './services/user-resolve.service';
 
 const appRoutes: Routes = [
-	{path: '', component: HomeComponent},
+	{path: '', redirectTo: '/home', pathMatch: 'full'},
+	{path: 'home', component: HomeComponent},
 	{path: 'users',
 			//canActivate: [AuthGuard],
 			//canActivateChild: [AuthGuard],
