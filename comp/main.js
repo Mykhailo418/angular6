@@ -1324,7 +1324,8 @@ var ObservablesPageComponent = (function () {
     ObservablesPageComponent.prototype.ngOnInit = function () {
         var _this = this;
         var seconds = rxjs_1.Observable.interval(1000);
-        seconds.subscribe(function (second) {
+        this.secondsSubscription = seconds.subscribe(function (second) {
+            console.log(second);
             _this.second = second;
         });
         var myObserver = rxjs_1.Observable.create(function (observer) {
@@ -1341,13 +1342,17 @@ var ObservablesPageComponent = (function () {
                 observer.complete();
             }, 6000);
         });
-        myObserver.subscribe(function (data) {
+        this.myObserverSubscription = myObserver.subscribe(function (data) {
             _this.myObserverValue = data;
         }, function (error) {
             _this.myObserverValue = 'Errorr: ' + error;
         }, function () {
             _this.myObserverValue = 'myObserver is completed';
         });
+    };
+    ObservablesPageComponent.prototype.ngOnDestroy = function () {
+        this.secondsSubscription.unsubscribe();
+        this.myObserverSubscription.unsubscribe();
     };
     return ObservablesPageComponent;
 }());

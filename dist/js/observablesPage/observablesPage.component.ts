@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Observer } from 'rxjs/Observer';
+import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/Rx'
 
 @Component({
@@ -11,12 +12,15 @@ import 'rxjs/Rx'
 export class ObservablesPageComponent {
   second: Number;
   myObserverValue: String;
+  secondsSubscription: Subscription;
+  myObserverSubscription: Subscription;
 
 	constructor(){}
 
   ngOnInit() {
     const seconds = Observable.interval(1000);
-    seconds.subscribe((second: Number) => {
+    this.secondsSubscription = seconds.subscribe((second: Number) => {
+      console.log(second);
       this.second = second;
     });
 
@@ -34,12 +38,17 @@ export class ObservablesPageComponent {
          observer.complete();
        }, 6000);
      });
-     myObserver.subscribe((data: string) => {
+     this.myObserverSubscription = myObserver.subscribe((data: string) => {
        this.myObserverValue = data;
      }, (error: string) => {
        this.myObserverValue = 'Errorr: ' + error;
      }, () => {
        this.myObserverValue = 'myObserver is completed';
      });
+  }
+
+  ngOnDestroy(){
+    this.secondsSubscription.unsubscribe();
+    this.myObserverSubscription.unsubscribe();
   }
 }
