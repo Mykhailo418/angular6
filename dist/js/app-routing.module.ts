@@ -10,6 +10,7 @@ import { QueryParamsComponent } from './queryParams/queryParams.component';
 import { NotFoundComponent } from './notFound/notFound.component';
 import { EditingPageComponent } from './editingPage/editing.component';
 import { ErrorPage } from './errorPage/errorPage.component';
+import { ObservablesPageComponent } from './observablesPage/observablesPage.component';
 
 // Services
 import { AuthGuard } from './services/auth/AuthGuard';
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
 	},
 	{path: 'contacts', component: ContactsComponent},
 	{path: 'queryparams', component: QueryParamsComponent},
+	{path: 'observables', component: ObservablesPageComponent},
 	{path: '500', component: ErrorPage, data: { msg: 'Error 500: Server Error' }},
 	{path: '501', component: ErrorPage, data: { msg: 'Error 501: Not Implemented' }},
 	{path: '404', component: NotFoundComponent},
