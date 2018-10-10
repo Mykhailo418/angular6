@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Observer } from 'rxjs/Observer';
 import 'rxjs/Rx'
 
 @Component({
@@ -9,6 +10,7 @@ import 'rxjs/Rx'
 
 export class ObservablesPageComponent {
   second: Number;
+  myObserverValue: String;
 
 	constructor(){}
 
@@ -17,5 +19,27 @@ export class ObservablesPageComponent {
     seconds.subscribe((second: Number) => {
       this.second = second;
     });
+
+     const myObserver = Observable.create((observer: Observer<string>) => {
+       setTimeout(() => {
+         observer.next('First data');
+       }, 2000);
+       setTimeout(() => {
+         observer.next('Second data');
+       }, 4000);
+       // setTimeout(() => {
+       //   observer.error('Failed');
+       // }, 5000);
+       setTimeout(() => {
+         observer.complete();
+       }, 6000);
+     });
+     myObserver.subscribe((data: string) => {
+       this.myObserverValue = data;
+     }, (error: string) => {
+       this.myObserverValue = 'Errorr: ' + error;
+     }, () => {
+       this.myObserverValue = 'myObserver is completed';
+     });
   }
 }

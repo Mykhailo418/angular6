@@ -1327,6 +1327,27 @@ var ObservablesPageComponent = (function () {
         seconds.subscribe(function (second) {
             _this.second = second;
         });
+        var myObserver = rxjs_1.Observable.create(function (observer) {
+            setTimeout(function () {
+                observer.next('First data');
+            }, 2000);
+            setTimeout(function () {
+                observer.next('Second data');
+            }, 4000);
+            // setTimeout(() => {
+            //   observer.error('Failed');
+            // }, 5000);
+            setTimeout(function () {
+                observer.complete();
+            }, 6000);
+        });
+        myObserver.subscribe(function (data) {
+            _this.myObserverValue = data;
+        }, function (error) {
+            _this.myObserverValue = 'Errorr: ' + error;
+        }, function () {
+            _this.myObserverValue = 'myObserver is completed';
+        });
     };
     return ObservablesPageComponent;
 }());
@@ -7793,7 +7814,7 @@ module.exports = "<h1>Error 404: Not Found</h1>\r\n";
 /* 420 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <h1>Observables</h1>\r\n  <p>{{second}} seconds</p>\r\n</div>\r\n";
+module.exports = "<div>\r\n  <h1>Observables</h1>\r\n  <p>{{second}} seconds</p>\r\n  <p>MyObserver Value : {{myObserverValue}}</p>\r\n</div>\r\n";
 
 /***/ }),
 /* 421 */
