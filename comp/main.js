@@ -1328,7 +1328,9 @@ var ObservablesPageComponent = (function () {
     }
     ObservablesPageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var seconds = rxjs_1.Observable.interval(1000);
+        var seconds = rxjs_1.Observable.interval(1000).map(function (num) {
+            return num + 's';
+        });
         this.secondsSubscription = seconds.subscribe(function (second) {
             console.log(second);
             _this.second = second;
@@ -7861,7 +7863,7 @@ module.exports = "<h1>Error 404: Not Found</h1>\r\n";
 /* 421 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n  <h1>Observables</h1>\r\n  <p>{{second}} seconds</p>\r\n  <p>MyObserver Value : {{myObserverValue}}</p>\r\n</div>\r\n";
+module.exports = "<div>\r\n  <h1>Observables</h1>\r\n  <p>Seconds: {{second}}</p>\r\n  <p>MyObserver Value : {{myObserverValue}}</p>\r\n</div>\r\n";
 
 /***/ }),
 /* 422 */

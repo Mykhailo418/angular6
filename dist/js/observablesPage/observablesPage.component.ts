@@ -18,7 +18,9 @@ export class ObservablesPageComponent {
 	constructor(){}
 
   ngOnInit() {
-    const seconds = Observable.interval(1000);
+    const seconds = Observable.interval(1000).map((num: number) => {
+      return num + 's';
+    });
     this.secondsSubscription = seconds.subscribe((second: Number) => {
       console.log(second);
       this.second = second;
