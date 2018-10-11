@@ -9,6 +9,10 @@
 		<p #contentElement>{{ textForContentSection }}</p>
 	</app-custom>
 </div>
+<div>
+	<button class="btn btn-success" (click)="onActivateDeactivate(true)">Activate account</button>
+	<button class="btn btn-danger" (click)="onActivateDeactivate(false)">Deactivate account</button>
+</div>
 <hr /><hr />
 <div>
 	<app-list></app-list>

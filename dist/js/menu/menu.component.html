@@ -1,6 +1,7 @@
 
 <div class="container">
 	<h1 *ngIf="currentNum" class="float-right">{{currentNum}}</h1>
+	<p class="float-right"><i>Account is {{(accountActevated) ? 'activated' : 'deactivated'}}</i></p>
 	<h4>Menu</h4>
 	<button class="btn btn-primary" (click)="onSendMessage($event)">Send Message</button>
 	<nav class="navbar-light navbar navbar-expand-sm">
