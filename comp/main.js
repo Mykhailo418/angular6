@@ -7505,14 +7505,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(7);
+var forms_1 = __webpack_require__(247);
 var FormsPageComponent = (function () {
     function FormsPageComponent() {
     }
     FormsPageComponent.prototype.onSubmit = function (formElement) {
-        console.log(formElement);
+        console.log(formElement, this.form);
     };
     return FormsPageComponent;
 }());
+__decorate([
+    core_1.ViewChild('formElement'),
+    __metadata("design:type", forms_1.NgForm)
+], FormsPageComponent.prototype, "form", void 0);
 FormsPageComponent = __decorate([
     core_1.Component({
         selector: 'forms-page',
