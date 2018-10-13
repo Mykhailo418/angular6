@@ -10,7 +10,7 @@ import 'rxjs/Rx'
 })
 
 export class ObservablesPageComponent {
-  second: Number;
+  second: String;
   myObserverValue: String;
   secondsSubscription: Subscription;
   myObserverSubscription: Subscription;
@@ -18,10 +18,10 @@ export class ObservablesPageComponent {
 	constructor(){}
 
   ngOnInit() {
-    const seconds = Observable.interval(1000).map((num: number) => {
+    const seconds = Observable.interval(1000).map((num: number): String => {
       return num + 's';
     });
-    this.secondsSubscription = seconds.subscribe((second: Number) => {
+    this.secondsSubscription = seconds.subscribe((second: string) => {
       console.log(second);
       this.second = second;
     });
