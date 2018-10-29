@@ -13,4 +13,13 @@ export class FormsPageComponent  {
   onSubmit(formElement: NgForm){
       console.log(formElement, this.form);
   }
+
+  suggestName(){
+    // this.form.setValue({}) - overrides all fields
+    this.form.form.patchValue({ // set value do not override other fields
+      userData: { // local mark  #userData="ngModelGroup"
+        name: 'Vasya'
+      }
+    });
+  }
 }
