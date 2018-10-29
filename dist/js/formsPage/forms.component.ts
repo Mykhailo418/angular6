@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
 })
 export class FormsPageComponent  {
   @ViewChild('formElement') form: NgForm;
+  ganderValue: String = 'female';
 	constructor(){}
 
   onSubmit(formElement: NgForm){
