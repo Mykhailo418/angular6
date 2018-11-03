@@ -8,10 +8,21 @@ import { NgForm } from '@angular/forms';
 export class FormsPageComponent  {
   @ViewChild('formElement') form: NgForm;
   ganderValue: String = 'female';
+  user = {
+    name: '',
+    email: '',
+    gender: ''
+  };
+  submitted: Boolean = false;
 	constructor(){}
 
   onSubmit(formElement: NgForm){
       console.log(formElement, this.form);
+      this.user.name = this.form.value.userData.name;
+      this.user.email = this.form.value.userData.email;
+      this.user.gender = this.form.value.gender;
+      this.submitted = true;
+      this.form.reset();
   }
 
   suggestName(){

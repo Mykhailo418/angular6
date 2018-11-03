@@ -6473,9 +6473,20 @@ var forms_1 = __webpack_require__(159);
 var FormsPageComponent = (function () {
     function FormsPageComponent() {
         this.ganderValue = 'female';
+        this.user = {
+            name: '',
+            email: '',
+            gender: ''
+        };
+        this.submitted = false;
     }
     FormsPageComponent.prototype.onSubmit = function (formElement) {
         console.log(formElement, this.form);
+        this.user.name = this.form.value.userData.name;
+        this.user.email = this.form.value.userData.email;
+        this.user.gender = this.form.value.gender;
+        this.submitted = true;
+        this.form.reset();
     };
     FormsPageComponent.prototype.suggestName = function () {
         // this.form.setValue({}) - overrides all fields
@@ -7891,7 +7902,7 @@ module.exports = "<h1>{{ message }}</h1>\r\n";
 /* 418 */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\r\n  <form id=\"simpeForm\" class=\"form\" (ngSubmit)=\"onSubmit(formElement)\" #formElement=\"ngForm\">\r\n    <div ngModelGroup=\"userData\" #userData=\"ngModelGroup\">\r\n        <div class=\"form-group\">\r\n          <label class=\"label-control\" for=\"username\">Name:</label>\r\n          <input type=\"text\" id=\"username\" class=\"form-control\" name=\"name\" ngModel required #nameField=\"ngModel\" />\r\n          <span class=\"help-block\" *ngIf=\"!nameField.valid && nameField.touched\">Name is required</span>\r\n        </div>\r\n        <div>\r\n          <button class=\"btn btn-default\" type=\"button\" name=\"button\" (click)=\"suggestName()\">Suggest Name</button>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label class=\"label-control\" for=\"email\">Email:</label>\r\n          <input type=\"email\" id=\"email\" class=\"form-control\" name=\"email\" ngModel required email #emailField=\"ngModel\" />\r\n          <span class=\"help-block\" *ngIf=\"!emailField.valid && emailField.touched\">Email is invalid</span>\r\n        </div>\r\n    </div>\r\n    <p *ngIf=\"!userData.valid && userData.touched\"><i>User Data is not valid</i></p>\r\n    <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"gender\">Gender:</label>\r\n      <select id=\"gender\" class=\"form-control\" name=\"gender\" [ngModel]=\"ganderValue\" >\r\n        <option value=\"male\">Male</option>\r\n        <option value=\"female\">Female</option>\r\n      </select>\r\n    </div>\r\n    <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\">Submit</button>\r\n  </form>\r\n</section>\r\n";
+module.exports = "<section>\r\n  <form id=\"simpeForm\" class=\"form\" (ngSubmit)=\"onSubmit(formElement)\" #formElement=\"ngForm\">\r\n    <div ngModelGroup=\"userData\" #userData=\"ngModelGroup\">\r\n        <div class=\"form-group\">\r\n          <label class=\"label-control\" for=\"username\">Name:</label>\r\n          <input type=\"text\" id=\"username\" class=\"form-control\" name=\"name\" ngModel required #nameField=\"ngModel\" />\r\n          <span class=\"help-block\" *ngIf=\"!nameField.valid && nameField.touched\">Name is required</span>\r\n        </div>\r\n        <div>\r\n          <button class=\"btn btn-default\" type=\"button\" name=\"button\" (click)=\"suggestName()\">Suggest Name</button>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <label class=\"label-control\" for=\"email\">Email:</label>\r\n          <input type=\"email\" id=\"email\" class=\"form-control\" name=\"email\" ngModel required email #emailField=\"ngModel\" />\r\n          <span class=\"help-block\" *ngIf=\"!emailField.valid && emailField.touched\">Email is invalid</span>\r\n        </div>\r\n    </div>\r\n    <p *ngIf=\"!userData.valid && userData.touched\"><i>User Data is not valid</i></p>\r\n    <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"gender\">Gender:</label>\r\n      <select id=\"gender\" class=\"form-control\" name=\"gender\" [ngModel]=\"ganderValue\" >\r\n        <option value=\"male\">Male</option>\r\n        <option value=\"female\">Female</option>\r\n      </select>\r\n    </div>\r\n    <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\">Submit</button>\r\n  </form>\r\n  <div *ngIf=\"submitted\">\r\n    <hr />\r\n    <h3>Submitted Data</h3>\r\n    <ul>\r\n      <li><strong>Name:</strong> {{user.name}}</li>\r\n      <li><strong>Email:</strong> {{user.email}}</li>\r\n      <li><strong>Gender:</strong> {{user.gender}}</li>\r\n    </ul>\r\n  </div>\r\n</section>\r\n";
 
 /***/ }),
 /* 419 */

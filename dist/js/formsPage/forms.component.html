@@ -25,4 +25,13 @@
     </div>
     <button type="submit" class="btn btn-success" [disabled]="!formElement.valid">Submit</button>
   </form>
+  <div *ngIf="submitted">
+    <hr />
+    <h3>Submitted Data</h3>
+    <ul>
+      <li><strong>Name:</strong> {{user.name}}</li>
+      <li><strong>Email:</strong> {{user.email}}</li>
+      <li><strong>Gender:</strong> {{user.gender}}</li>
+    </ul>
+  </div>
 </section>
