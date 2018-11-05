@@ -19,6 +19,7 @@ import { EditingPageComponent } from './editingPage/editing.component';
 import { ErrorPage } from './errorPage/errorPage.component';
 import { ObservablesPageComponent } from './observablesPage/observablesPage.component';
 import { FormsPageComponent } from './formsPage/forms.component';
+import { ReactiveFormComponent } from './formsPage/reactiveForms.component';
 
 // Directives
 import { GreenTextDirective } from './directives/GreenText.directive';
@@ -34,7 +35,7 @@ import { UserResolveService } from './services/user-resolve.service';
   imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
   declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective,
 		ListComponent, UsersComponent, UserComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
-    NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent],
+    NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent],
   bootstrap: [AppComponent],
   providers: [AuthService, AuthGuard, CanDeactivateGuard, UserResolveService]
 })

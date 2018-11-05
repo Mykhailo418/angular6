@@ -7201,6 +7201,7 @@ var editing_component_1 = __webpack_require__(161);
 var errorPage_component_1 = __webpack_require__(162);
 var observablesPage_component_1 = __webpack_require__(166);
 var forms_component_1 = __webpack_require__(163);
+var reactiveForms_component_1 = __webpack_require__(768);
 // Directives
 var GreenText_directive_1 = __webpack_require__(253);
 var AppUnless_directive_1 = __webpack_require__(252);
@@ -7219,7 +7220,7 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule, forms_1.ReactiveFormsModule],
         declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective,
             list_component_1.ListComponent, users_component_1.UsersComponent, user_component_1.UserComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent, queryParams_component_1.QueryParamsComponent,
-            notFound_component_1.NotFoundComponent, editing_component_1.EditingPageComponent, errorPage_component_1.ErrorPage, observablesPage_component_1.ObservablesPageComponent, forms_component_1.FormsPageComponent],
+            notFound_component_1.NotFoundComponent, editing_component_1.EditingPageComponent, errorPage_component_1.ErrorPage, observablesPage_component_1.ObservablesPageComponent, forms_component_1.FormsPageComponent, reactiveForms_component_1.ReactiveFormComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [AuthService_1.AuthService, AuthGuard_1.AuthGuard, CanDeactivateGuard_1.CanDeactivateGuard, user_resolve_service_1.UserResolveService]
     })
@@ -15338,6 +15339,50 @@ var core_1 = __webpack_require__(7);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
+
+/***/ }),
+/* 766 */,
+/* 767 */,
+/* 768 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(7);
+var forms_1 = __webpack_require__(159);
+var ReactiveFormComponent = (function () {
+    function ReactiveFormComponent() {
+    }
+    ReactiveFormComponent.prototype.ngOnInit = function () {
+        this.signupForm = new forms_1.FormGroup({
+            'name': new forms_1.FormControl(null),
+            'email': new forms_1.FormControl(null),
+            'gender': new forms_1.FormControl('male'),
+        });
+    };
+    return ReactiveFormComponent;
+}());
+ReactiveFormComponent = __decorate([
+    core_1.Component({
+        selector: 'reactive-form',
+        template: __webpack_require__(769),
+    })
+], ReactiveFormComponent);
+exports.ReactiveFormComponent = ReactiveFormComponent;
+
+
+/***/ }),
+/* 769 */
+/***/ (function(module, exports) {
+
+module.exports = "<form id=\"reactiveForm\" class=\"form\">\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"username\">Name:</label>\r\n      <input type=\"text\" id=\"username\" class=\"form-control\" name=\"name\" />\r\n  </div>\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"email\">Email:</label>\r\n      <input type=\"email\" id=\"email\" class=\"form-control\" name=\"email\" />\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label class=\"label-control\" for=\"gender\">Gender:</label>\r\n    <select id=\"gender\" class=\"form-control\" name=\"gender\" >\r\n      <option value=\"male\">Male</option>\r\n      <option value=\"female\">Female</option>\r\n    </select>\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-success\" >Submit</button>\r\n</form>\r\n";
 
 /***/ })
 ]),[765]);
