@@ -1,4 +1,5 @@
-<section>
+<!-- Template Driven Form -->
+<section *ngIf="false">
   <form id="simpeForm" class="form" (ngSubmit)="onSubmit(formElement)" #formElement="ngForm">
     <div ngModelGroup="userData" #userData="ngModelGroup">
         <div class="form-group">
@@ -34,4 +35,9 @@
       <li><strong>Gender:</strong> {{user.gender}}</li>
     </ul>
   </div>
+</section>
+
+<!-- Reactive Form -->
+<section *ngIf="true">
+  <reactive-form></reactive-form>
 </section>
