@@ -7574,6 +7574,9 @@ var ReactiveFormComponent = (function () {
             'gender': new forms_1.FormControl('male'),
         });
     };
+    ReactiveFormComponent.prototype.onSubmit = function () {
+        console.log(this.signupForm);
+    };
     return ReactiveFormComponent;
 }());
 ReactiveFormComponent = __decorate([
@@ -7945,7 +7948,7 @@ module.exports = "<!-- Template Driven Form -->\r\n<section *ngIf=\"false\">\r\n
 /* 420 */
 /***/ (function(module, exports) {
 
-module.exports = "<form id=\"reactiveForm\" class=\"form\" [formGroup]=\"signupForm\">\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"username\">Name:</label>\r\n      <input type=\"text\"\r\n        id=\"username\"\r\n        class=\"form-control\"\r\n        name=\"name\"\r\n        formControlName=\"name\"\r\n      />\r\n  </div>\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"email\">Email:</label>\r\n      <input type=\"email\"\r\n        id=\"email\"\r\n        class=\"form-control\"\r\n        name=\"email\"\r\n        formControlName=\"email\"\r\n      />\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label class=\"label-control\" for=\"gender\">Gender:</label>\r\n    <select id=\"gender\"\r\n      class=\"form-control\"\r\n      name=\"gender\"\r\n      formControlName=\"gender\"\r\n    >\r\n      <option value=\"male\">Male</option>\r\n      <option value=\"female\">Female</option>\r\n    </select>\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-success\" >Submit</button>\r\n</form>\r\n";
+module.exports = "<form id=\"reactiveForm\" class=\"form\" [formGroup]=\"signupForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"username\">Name:</label>\r\n      <input type=\"text\"\r\n        id=\"username\"\r\n        class=\"form-control\"\r\n        name=\"name\"\r\n        formControlName=\"name\"\r\n      />\r\n  </div>\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"email\">Email:</label>\r\n      <input type=\"email\"\r\n        id=\"email\"\r\n        class=\"form-control\"\r\n        name=\"email\"\r\n        formControlName=\"email\"\r\n      />\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label class=\"label-control\" for=\"gender\">Gender:</label>\r\n    <select id=\"gender\"\r\n      class=\"form-control\"\r\n      name=\"gender\"\r\n      formControlName=\"gender\"\r\n    >\r\n      <option value=\"male\">Male</option>\r\n      <option value=\"female\">Female</option>\r\n    </select>\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-success\" >Submit</button>\r\n</form>\r\n";
 
 /***/ }),
 /* 421 */
