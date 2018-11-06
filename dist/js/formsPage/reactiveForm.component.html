@@ -36,6 +36,18 @@
       <option value="female">Female</option>
     </select>
   </div>
+  <div formArrayName="hobbies">
+    <h4>Your Hobbies</h4>
+    <button type="button" name="button" class="btn btn-default" (click)="addHobby()">Add Hobby</button>
+    <div class="form=group" *ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index">
+      <input type="text"
+        class="form-control"
+        [name]="'hobby' + i"
+        [formControlName]="i"
+      />
+    </div>
+  </div>
+  <br />
   <p *ngIf="!signupForm.valid && signupForm.touched">
     Data is invalid
   </p>
