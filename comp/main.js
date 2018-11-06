@@ -7569,8 +7569,8 @@ var ReactiveFormComponent = (function () {
     }
     ReactiveFormComponent.prototype.ngOnInit = function () {
         this.signupForm = new forms_1.FormGroup({
-            'name': new forms_1.FormControl(null),
-            'email': new forms_1.FormControl(null),
+            'name': new forms_1.FormControl(null, forms_1.Validators.required),
+            'email': new forms_1.FormControl(null, [forms_1.Validators.required, forms_1.Validators.email]),
             'gender': new forms_1.FormControl('male'),
         });
     };
