@@ -9,7 +9,8 @@
           formControlName="name"
         />
         <span *ngIf="!signupForm.get('userData.name').valid && signupForm.get('userData.name').touched">
-          Name is required
+          <span *ngIf="signupForm.get('userData.name').errors['required']">Name is required</span>
+          <span *ngIf="signupForm.get('userData.name').errors['nameIsForbidden']">This name is forbidden</span>
         </span>
     </div>
     <div class="form-group">

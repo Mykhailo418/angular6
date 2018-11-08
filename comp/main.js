@@ -7566,11 +7566,12 @@ var core_1 = __webpack_require__(7);
 var forms_1 = __webpack_require__(105);
 var ReactiveFormComponent = (function () {
     function ReactiveFormComponent() {
+        this.forbiddenNames = ['Vasya', 'Petya'];
     }
     ReactiveFormComponent.prototype.ngOnInit = function () {
         this.signupForm = new forms_1.FormGroup({
             'userData': new forms_1.FormGroup({
-                'name': new forms_1.FormControl(null, forms_1.Validators.required),
+                'name': new forms_1.FormControl(null, forms_1.Validators.required, this.customNameValidator.bind(this)),
                 'email': new forms_1.FormControl(null, [forms_1.Validators.required, forms_1.Validators.email]),
             }),
             'gender': new forms_1.FormControl('male'),
@@ -7583,6 +7584,12 @@ var ReactiveFormComponent = (function () {
     ReactiveFormComponent.prototype.addHobby = function () {
         var control = new forms_1.FormControl(null, forms_1.Validators.required);
         this.signupForm.get('hobbies').push(control);
+    };
+    ReactiveFormComponent.prototype.customNameValidator = function (control) {
+        if (this.forbiddenNames.indexOf(control.value) > -1) {
+            return Promise.resolve({ 'nameIsForbidden': true });
+        }
+        return Promise.resolve(null);
     };
     return ReactiveFormComponent;
 }());
@@ -7955,7 +7962,7 @@ module.exports = "<!-- Template Driven Form -->\r\n<section *ngIf=\"false\">\r\n
 /* 420 */
 /***/ (function(module, exports) {
 
-module.exports = "<form id=\"reactiveForm\" class=\"form\" [formGroup]=\"signupForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div formGroupName=\"userData\">\r\n    <div class=\"form-group\">\r\n        <label class=\"label-control\" for=\"username\">Name:</label>\r\n        <input type=\"text\"\r\n          id=\"username\"\r\n          class=\"form-control\"\r\n          name=\"name\"\r\n          formControlName=\"name\"\r\n        />\r\n        <span *ngIf=\"!signupForm.get('userData.name').valid && signupForm.get('userData.name').touched\">\r\n          Name is required\r\n        </span>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label class=\"label-control\" for=\"email\">Email:</label>\r\n        <input type=\"email\"\r\n          id=\"email\"\r\n          class=\"form-control\"\r\n          name=\"email\"\r\n          formControlName=\"email\"\r\n        />\r\n        <span *ngIf=\"!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched\">\r\n          Email is invalid\r\n        </span>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label class=\"label-control\" for=\"gender\">Gender:</label>\r\n    <select id=\"gender\"\r\n      class=\"form-control\"\r\n      name=\"gender\"\r\n      formControlName=\"gender\"\r\n    >\r\n      <option value=\"male\">Male</option>\r\n      <option value=\"female\">Female</option>\r\n    </select>\r\n  </div>\r\n  <div formArrayName=\"hobbies\">\r\n    <h4>Your Hobbies</h4>\r\n    <button type=\"button\" name=\"button\" class=\"btn btn-default\" (click)=\"addHobby()\">Add Hobby</button>\r\n    <div class=\"form=group\" *ngFor=\"let hobbyControl of signupForm.get('hobbies').controls; let i = index\">\r\n      <input type=\"text\"\r\n        class=\"form-control\"\r\n        [name]=\"'hobby' + i\"\r\n        [formControlName]=\"i\"\r\n      />\r\n    </div>\r\n  </div>\r\n  <br />\r\n  <p *ngIf=\"!signupForm.valid && signupForm.touched\">\r\n    Data is invalid\r\n  </p>\r\n  <button type=\"submit\" class=\"btn btn-success\" >Submit</button>\r\n</form>\r\n";
+module.exports = "<form id=\"reactiveForm\" class=\"form\" [formGroup]=\"signupForm\" (ngSubmit)=\"onSubmit()\">\r\n  <div formGroupName=\"userData\">\r\n    <div class=\"form-group\">\r\n        <label class=\"label-control\" for=\"username\">Name:</label>\r\n        <input type=\"text\"\r\n          id=\"username\"\r\n          class=\"form-control\"\r\n          name=\"name\"\r\n          formControlName=\"name\"\r\n        />\r\n        <span *ngIf=\"!signupForm.get('userData.name').valid && signupForm.get('userData.name').touched\">\r\n          <span *ngIf=\"signupForm.get('userData.name').errors['required']\">Name is required</span>\r\n          <span *ngIf=\"signupForm.get('userData.name').errors['nameIsForbidden']\">This name is forbidden</span>\r\n        </span>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label class=\"label-control\" for=\"email\">Email:</label>\r\n        <input type=\"email\"\r\n          id=\"email\"\r\n          class=\"form-control\"\r\n          name=\"email\"\r\n          formControlName=\"email\"\r\n        />\r\n        <span *ngIf=\"!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched\">\r\n          Email is invalid\r\n        </span>\r\n    </div>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label class=\"label-control\" for=\"gender\">Gender:</label>\r\n    <select id=\"gender\"\r\n      class=\"form-control\"\r\n      name=\"gender\"\r\n      formControlName=\"gender\"\r\n    >\r\n      <option value=\"male\">Male</option>\r\n      <option value=\"female\">Female</option>\r\n    </select>\r\n  </div>\r\n  <div formArrayName=\"hobbies\">\r\n    <h4>Your Hobbies</h4>\r\n    <button type=\"button\" name=\"button\" class=\"btn btn-default\" (click)=\"addHobby()\">Add Hobby</button>\r\n    <div class=\"form=group\" *ngFor=\"let hobbyControl of signupForm.get('hobbies').controls; let i = index\">\r\n      <input type=\"text\"\r\n        class=\"form-control\"\r\n        [name]=\"'hobby' + i\"\r\n        [formControlName]=\"i\"\r\n      />\r\n    </div>\r\n  </div>\r\n  <br />\r\n  <p *ngIf=\"!signupForm.valid && signupForm.touched\">\r\n    Data is invalid\r\n  </p>\r\n  <button type=\"submit\" class=\"btn btn-success\" >Submit</button>\r\n</form>\r\n";
 
 /***/ }),
 /* 421 */
