@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'reactive-form',
@@ -8,12 +9,13 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 export class ReactiveFormComponent implements OnInit  {
   signupForm: FormGroup;
   forbiddenNames: String[] = ['Vasya', 'Petya'];
+  forbiddenEmails: String[] = ['test@test.com', 'vasya@mail.com'];
 
   ngOnInit(){
     this.signupForm = new FormGroup({
       'userData' :  new FormGroup({
         'name': new FormControl(null, [Validators.required, this.customNameValidator.bind(this)]),
-        'email': new FormControl(null, [Validators.required, Validators.email]),
+        'email': new FormControl(null, [Validators.required, Validators.email], this.customEmailValidatorAsync.bind(this)),
        }),
       'gender': new FormControl('male'),
       'hobbies': new FormArray([])
@@ -34,5 +36,16 @@ export class ReactiveFormComponent implements OnInit  {
       return {'nameIsForbidden': true};
     }
     return null;
+  }
+
+  customEmailValidatorAsync(control: FormControl): Promise<any> | Observable<any>{
+    return new Promise ((resolve, reject) => {
+      setTimeout(() => {
+        if(this.forbiddenEmails.indexOf(control.value) > -1 ){
+          resolve({'emailIsForbidden': true});
+        }
+        resolve(null);
+      }, 1000);
+    });
   }
 }

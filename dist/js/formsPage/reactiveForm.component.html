@@ -22,7 +22,9 @@
           formControlName="email"
         />
         <span *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched">
-          Email is invalid
+          <span *ngIf="signupForm.get('userData.email').errors['required']">Email is required</span>
+          <span *ngIf="signupForm.get('userData.email').errors['email']">Email is invalid</span>
+          <span *ngIf="signupForm.get('userData.email').errors['emailIsForbidden']">This email is forbidden</span>
         </span>
     </div>
   </div>
