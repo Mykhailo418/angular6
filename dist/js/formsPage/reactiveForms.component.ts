@@ -12,7 +12,7 @@ export class ReactiveFormComponent implements OnInit  {
   ngOnInit(){
     this.signupForm = new FormGroup({
       'userData' :  new FormGroup({
-        'name': new FormControl(null, Validators.required, this.customNameValidator.bind(this)),
+        'name': new FormControl(null, [Validators.required, this.customNameValidator.bind(this)]),
         'email': new FormControl(null, [Validators.required, Validators.email]),
        }),
       'gender': new FormControl('male'),
@@ -29,10 +29,10 @@ export class ReactiveFormComponent implements OnInit  {
     (<FormArray>this.signupForm.get('hobbies')).push(control);
   }
 
-  customNameValidator(control: FormControl): {[s: string]: boolean} | Promise<{[s: string]: boolean}>{
+  customNameValidator(control: FormControl): {[s: string]: boolean}{
     if(this.forbiddenNames.indexOf(control.value) > -1 ){
-      return Promise.resolve({'nameIsForbidden': true});
+      return {'nameIsForbidden': true};
     }
-    return  Promise.resolve(null);
+    return null;
   }
 }

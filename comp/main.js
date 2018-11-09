@@ -7571,7 +7571,7 @@ var ReactiveFormComponent = (function () {
     ReactiveFormComponent.prototype.ngOnInit = function () {
         this.signupForm = new forms_1.FormGroup({
             'userData': new forms_1.FormGroup({
-                'name': new forms_1.FormControl(null, forms_1.Validators.required, this.customNameValidator.bind(this)),
+                'name': new forms_1.FormControl(null, [forms_1.Validators.required, this.customNameValidator.bind(this)]),
                 'email': new forms_1.FormControl(null, [forms_1.Validators.required, forms_1.Validators.email]),
             }),
             'gender': new forms_1.FormControl('male'),
@@ -7587,9 +7587,9 @@ var ReactiveFormComponent = (function () {
     };
     ReactiveFormComponent.prototype.customNameValidator = function (control) {
         if (this.forbiddenNames.indexOf(control.value) > -1) {
-            return Promise.resolve({ 'nameIsForbidden': true });
+            return { 'nameIsForbidden': true };
         }
-        return Promise.resolve(null);
+        return null;
     };
     return ReactiveFormComponent;
 }());
