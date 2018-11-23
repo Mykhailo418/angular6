@@ -11,7 +11,8 @@ export class FormsPageComponent  {
   user = {
     name: '',
     email: '',
-    gender: ''
+    gender: '',
+    age: 0
   };
   submitted: Boolean = false;
 	constructor(){}
@@ -21,6 +22,7 @@ export class FormsPageComponent  {
       this.user.name = this.form.value.userData.name;
       this.user.email = this.form.value.userData.email;
       this.user.gender = this.form.value.gender;
+      this.user.age = this.form.value.age;
       this.submitted = true;
       this.form.reset();
   }
