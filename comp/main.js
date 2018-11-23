@@ -7578,6 +7578,12 @@ var ReactiveFormComponent = (function () {
             'gender': new forms_1.FormControl('male'),
             'hobbies': new forms_1.FormArray([])
         });
+        this.signupForm.valueChanges.subscribe(function (value) {
+            console.log('-- Value Changes', value);
+        });
+        this.signupForm.statusChanges.subscribe(function (status) {
+            console.log('-- Status Changes', status);
+        });
     };
     ReactiveFormComponent.prototype.onSubmit = function () {
         console.log(this.signupForm);
