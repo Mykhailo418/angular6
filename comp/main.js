@@ -15462,6 +15462,11 @@ var PipesPageComponent = (function () {
             "Many desktop publishing packages and web page"
         ];
         this.searchField = '';
+        this.pipeStatusPromise = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                resolve('stable');
+            }, 3000);
+        });
     }
     return PipesPageComponent;
 }());
@@ -15478,7 +15483,7 @@ exports.PipesPageComponent = PipesPageComponent;
 /* 771 */
 /***/ (function(module, exports) {
 
-module.exports = "<p>{{uppercaseText | uppercase}}</p>\r\n<p><strong>Today:</strong> {{date | date:'EEEE, dd-MM-yyyy' | lowercase}}</p>\r\n<p>{{longText | shorten:10:'!!!'}}</p>\r\n\r\n<div class=\"form-group\">\r\n  <label>Filter by:</label>\r\n  <input type=\"text\" name=\"search\" [(ngModel)]=\"searchField\">\r\n</div>\r\n<ul>\r\n  <li *ngFor=\"let str of list | filter:searchField\">{{str}}</li>\r\n</ul>\r\n";
+module.exports = "<h2>Pipe Status: {{pipeStatusPromise | async}}</h2>\r\n\r\n<p>{{uppercaseText | uppercase}}</p>\r\n<p><strong>Today:</strong> {{date | date:'EEEE, dd-MM-yyyy' | lowercase}}</p>\r\n<p>{{longText | shorten:10:'!!!'}}</p>\r\n\r\n<div class=\"form-group\">\r\n  <label>Filter by:</label>\r\n  <input type=\"text\" name=\"search\" [(ngModel)]=\"searchField\">\r\n</div>\r\n<ul>\r\n  <li *ngFor=\"let str of list | filter:searchField\">{{str}}</li>\r\n</ul>\r\n";
 
 /***/ }),
 /* 772 */

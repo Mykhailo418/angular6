@@ -16,4 +16,9 @@ export class PipesPageComponent  {
     "Many desktop publishing packages and web page"
   ];
   searchField: String = '';
+  pipeStatusPromise: Promise<String> = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('stable');
+    }, 3000);
+  });
 }
