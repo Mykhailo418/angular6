@@ -12,6 +12,7 @@ import { EditingPageComponent } from './editingPage/editing.component';
 import { ErrorPage } from './errorPage/errorPage.component';
 import { ObservablesPageComponent } from './observablesPage/observablesPage.component';
 import { FormsPageComponent } from './formsPage/forms.component';
+import { PipesPageComponent } from './pipesPage/pipes.component';
 
 // Services
 import { AuthGuard } from './services/auth/AuthGuard';
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
 	{path: 'queryparams', component: QueryParamsComponent},
 	{path: 'observables', component: ObservablesPageComponent},
 	{path: 'forms', component: FormsPageComponent},
+	{path: 'pipes', component: PipesPageComponent},
 	{path: '500', component: ErrorPage, data: { msg: 'Error 500: Server Error' }},
 	{path: '501', component: ErrorPage, data: { msg: 'Error 501: Not Implemented' }},
 	{path: '404', component: NotFoundComponent},

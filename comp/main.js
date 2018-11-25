@@ -7205,6 +7205,7 @@ var errorPage_component_1 = __webpack_require__(162);
 var observablesPage_component_1 = __webpack_require__(166);
 var forms_component_1 = __webpack_require__(163);
 var reactiveForms_component_1 = __webpack_require__(254);
+var pipes_component_1 = __webpack_require__(770);
 // Directives
 var GreenText_directive_1 = __webpack_require__(253);
 var AppUnless_directive_1 = __webpack_require__(252);
@@ -7223,7 +7224,8 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule, forms_1.ReactiveFormsModule],
         declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective,
             list_component_1.ListComponent, users_component_1.UsersComponent, user_component_1.UserComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent, queryParams_component_1.QueryParamsComponent,
-            notFound_component_1.NotFoundComponent, editing_component_1.EditingPageComponent, errorPage_component_1.ErrorPage, observablesPage_component_1.ObservablesPageComponent, forms_component_1.FormsPageComponent, reactiveForms_component_1.ReactiveFormComponent],
+            notFound_component_1.NotFoundComponent, editing_component_1.EditingPageComponent, errorPage_component_1.ErrorPage, observablesPage_component_1.ObservablesPageComponent, forms_component_1.FormsPageComponent, reactiveForms_component_1.ReactiveFormComponent,
+            pipes_component_1.PipesPageComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [AuthService_1.AuthService, AuthGuard_1.AuthGuard, CanDeactivateGuard_1.CanDeactivateGuard, user_resolve_service_1.UserResolveService]
     })
@@ -7263,6 +7265,7 @@ var editing_component_1 = __webpack_require__(161);
 var errorPage_component_1 = __webpack_require__(162);
 var observablesPage_component_1 = __webpack_require__(166);
 var forms_component_1 = __webpack_require__(163);
+var pipes_component_1 = __webpack_require__(770);
 var CanDeactivateGuard_1 = __webpack_require__(170);
 var user_resolve_service_1 = __webpack_require__(171);
 var appRoutes = [
@@ -7280,6 +7283,7 @@ var appRoutes = [
     { path: 'queryparams', component: queryParams_component_1.QueryParamsComponent },
     { path: 'observables', component: observablesPage_component_1.ObservablesPageComponent },
     { path: 'forms', component: forms_component_1.FormsPageComponent },
+    { path: 'pipes', component: pipes_component_1.PipesPageComponent },
     { path: '500', component: errorPage_component_1.ErrorPage, data: { msg: 'Error 500: Server Error' } },
     { path: '501', component: errorPage_component_1.ErrorPage, data: { msg: 'Error 501: Not Implemented' } },
     { path: '404', component: notFound_component_1.NotFoundComponent },
@@ -8007,7 +8011,7 @@ module.exports = "<ul>\r\n\t<li *ngFor=\"let num of listNumbers\">\r\n\t\t<a hre
 /* 423 */
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class=\"container\">\r\n\t<h1 *ngIf=\"currentNum\" class=\"float-right\">{{currentNum}}</h1>\r\n\t<p class=\"float-right\"><i>Account is {{(accountActevated) ? 'activated' : 'deactivated'}}</i></p>\r\n\t<h4>Menu</h4>\r\n\t<button class=\"btn btn-primary\" (click)=\"onSendMessage($event)\">Send Message</button>\r\n\t<nav class=\"navbar-light navbar navbar-expand-sm\">\r\n\t\t<ul class=\"navbar-nav\">\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" routerLink=\"/\">Home</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/users']\">Users</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/queryparams']\">Query Params</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/editing-page']\">Editing Page</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/observables']\">Observables</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/forms']\">Forms</a>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</nav>\r\n</div>\r\n\r\n<hr />\r\n";
+module.exports = "\r\n<div class=\"container\">\r\n\t<h1 *ngIf=\"currentNum\" class=\"float-right\">{{currentNum}}</h1>\r\n\t<p class=\"float-right\"><i>Account is {{(accountActevated) ? 'activated' : 'deactivated'}}</i></p>\r\n\t<h4>Menu</h4>\r\n\t<button class=\"btn btn-primary\" (click)=\"onSendMessage($event)\">Send Message</button>\r\n\t<nav class=\"navbar-light navbar navbar-expand-sm\">\r\n\t\t<ul class=\"navbar-nav\">\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" routerLink=\"/\">Home</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/users']\">Users</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/queryparams']\">Query Params</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/editing-page']\">Editing Page</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/observables']\">Observables</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/forms']\">Forms</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/pipes']\">Pipes</a>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</nav>\r\n</div>\r\n\r\n<hr />\r\n";
 
 /***/ }),
 /* 424 */
@@ -15425,6 +15429,43 @@ var core_1 = __webpack_require__(7);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
+
+/***/ }),
+/* 768 */,
+/* 769 */,
+/* 770 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(7);
+var PipesPageComponent = (function () {
+    function PipesPageComponent() {
+        this.uppercaseText = 'this text should be uppercase';
+    }
+    return PipesPageComponent;
+}());
+PipesPageComponent = __decorate([
+    core_1.Component({
+        selector: 'pipes-page',
+        template: __webpack_require__(771),
+    })
+], PipesPageComponent);
+exports.PipesPageComponent = PipesPageComponent;
+
+
+/***/ }),
+/* 771 */
+/***/ (function(module, exports) {
+
+module.exports = "<p>{{uppercaseText | uppercase}}</p>\r\n";
 
 /***/ })
 ]),[767]);
