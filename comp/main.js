@@ -7214,6 +7214,8 @@ var AuthGuard_1 = __webpack_require__(257);
 var AuthService_1 = __webpack_require__(169);
 var CanDeactivateGuard_1 = __webpack_require__(170);
 var user_resolve_service_1 = __webpack_require__(171);
+// Pipes
+var shorten_pipe_1 = __webpack_require__(772);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -7225,7 +7227,7 @@ AppModule = __decorate([
         declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective,
             list_component_1.ListComponent, users_component_1.UsersComponent, user_component_1.UserComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent, queryParams_component_1.QueryParamsComponent,
             notFound_component_1.NotFoundComponent, editing_component_1.EditingPageComponent, errorPage_component_1.ErrorPage, observablesPage_component_1.ObservablesPageComponent, forms_component_1.FormsPageComponent, reactiveForms_component_1.ReactiveFormComponent,
-            pipes_component_1.PipesPageComponent],
+            pipes_component_1.PipesPageComponent, shorten_pipe_1.ShortenPipe],
         bootstrap: [app_component_1.AppComponent],
         providers: [AuthService_1.AuthService, AuthGuard_1.AuthGuard, CanDeactivateGuard_1.CanDeactivateGuard, user_resolve_service_1.UserResolveService]
     })
@@ -15450,6 +15452,7 @@ var PipesPageComponent = (function () {
     function PipesPageComponent() {
         this.uppercaseText = 'this text should be uppercase';
         this.date = new Date();
+        this.longText = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
     }
     return PipesPageComponent;
 }());
@@ -15466,7 +15469,42 @@ exports.PipesPageComponent = PipesPageComponent;
 /* 771 */
 /***/ (function(module, exports) {
 
-module.exports = "<p>{{uppercaseText | uppercase}}</p>\r\n<p><strong>Today:</strong> {{date | date:'EEEE, dd-MM-yyyy' | lowercase}}</p>\r\n";
+module.exports = "<p>{{uppercaseText | uppercase}}</p>\r\n<p><strong>Today:</strong> {{date | date:'EEEE, dd-MM-yyyy' | lowercase}}</p>\r\n<p>{{longText | shorten:10:'!!!'}}</p>\r\n";
+
+/***/ }),
+/* 772 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(7);
+var ShortenPipe = (function () {
+    function ShortenPipe() {
+    }
+    ShortenPipe.prototype.transform = function (value, limits, symbols) {
+        if (limits === void 0) { limits = 20; }
+        if (symbols === void 0) { symbols = '...'; }
+        if (value.length > limits) {
+            return value.substr(0, limits) + (" " + symbols);
+        }
+        return value;
+    };
+    return ShortenPipe;
+}());
+ShortenPipe = __decorate([
+    core_1.Pipe({
+        name: 'shorten'
+    })
+], ShortenPipe);
+exports.ShortenPipe = ShortenPipe;
+
 
 /***/ })
 ]),[767]);

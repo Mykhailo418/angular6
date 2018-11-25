@@ -32,12 +32,15 @@ import { AuthService } from './services/auth/AuthService';
 import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
 import { UserResolveService } from './services/user-resolve.service';
 
+// Pipes
+import { ShortenPipe } from './pipes/shorten.pipe';
+
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
   declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective,
 		ListComponent, UsersComponent, UserComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
     NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent,
-    PipesPageComponent],
+    PipesPageComponent, ShortenPipe],
   bootstrap: [AppComponent],
   providers: [AuthService, AuthGuard, CanDeactivateGuard, UserResolveService]
 })
