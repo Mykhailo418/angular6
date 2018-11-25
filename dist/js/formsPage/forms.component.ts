@@ -6,6 +6,8 @@ import { NgForm } from '@angular/forms';
   templateUrl: './forms.component.html',
 })
 export class FormsPageComponent  {
+  currentFormComponent: String = 'RF';
+
   @ViewChild('formElement') form: NgForm;
   ganderValue: String = 'female';
   user = {

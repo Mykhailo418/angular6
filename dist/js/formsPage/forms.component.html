@@ -1,5 +1,5 @@
 <!-- Template Driven Form -->
-<section *ngIf="true">
+<section *ngIf="currentFormComponent == 'TD'">
   <form id="simpeForm" class="form" (ngSubmit)="onSubmit(formElement)" #formElement="ngForm">
     <div ngModelGroup="userData" #userData="ngModelGroup">
         <div class="form-group">
@@ -46,6 +46,6 @@
 </section>
 
 <!-- Reactive Form -->
-<section *ngIf="false">
+<section *ngIf="currentFormComponent == 'RF'">
   <reactive-form></reactive-form>
 </section>
