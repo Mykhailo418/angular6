@@ -34,13 +34,14 @@ import { UserResolveService } from './services/user-resolve.service';
 
 // Pipes
 import { ShortenPipe } from './pipes/shorten.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
   declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective,
 		ListComponent, UsersComponent, UserComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
     NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent,
-    PipesPageComponent, ShortenPipe],
+    PipesPageComponent, ShortenPipe, FilterPipe],
   bootstrap: [AppComponent],
   providers: [AuthService, AuthGuard, CanDeactivateGuard, UserResolveService]
 })

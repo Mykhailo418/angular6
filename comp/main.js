@@ -7216,6 +7216,7 @@ var CanDeactivateGuard_1 = __webpack_require__(170);
 var user_resolve_service_1 = __webpack_require__(171);
 // Pipes
 var shorten_pipe_1 = __webpack_require__(772);
+var filter_pipe_1 = __webpack_require__(773);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -7227,7 +7228,7 @@ AppModule = __decorate([
         declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective,
             list_component_1.ListComponent, users_component_1.UsersComponent, user_component_1.UserComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent, queryParams_component_1.QueryParamsComponent,
             notFound_component_1.NotFoundComponent, editing_component_1.EditingPageComponent, errorPage_component_1.ErrorPage, observablesPage_component_1.ObservablesPageComponent, forms_component_1.FormsPageComponent, reactiveForms_component_1.ReactiveFormComponent,
-            pipes_component_1.PipesPageComponent, shorten_pipe_1.ShortenPipe],
+            pipes_component_1.PipesPageComponent, shorten_pipe_1.ShortenPipe, filter_pipe_1.FilterPipe],
         bootstrap: [app_component_1.AppComponent],
         providers: [AuthService_1.AuthService, AuthGuard_1.AuthGuard, CanDeactivateGuard_1.CanDeactivateGuard, user_resolve_service_1.UserResolveService]
     })
@@ -15453,6 +15454,14 @@ var PipesPageComponent = (function () {
         this.uppercaseText = 'this text should be uppercase';
         this.date = new Date();
         this.longText = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
+        this.list = [
+            "Contrary to popular belief",
+            "The standard chunk of Lorem",
+            "There are many variations of passages",
+            "It is a long established fact that a reade",
+            "Many desktop publishing packages and web page"
+        ];
+        this.searchField = '';
     }
     return PipesPageComponent;
 }());
@@ -15469,7 +15478,7 @@ exports.PipesPageComponent = PipesPageComponent;
 /* 771 */
 /***/ (function(module, exports) {
 
-module.exports = "<p>{{uppercaseText | uppercase}}</p>\r\n<p><strong>Today:</strong> {{date | date:'EEEE, dd-MM-yyyy' | lowercase}}</p>\r\n<p>{{longText | shorten:10:'!!!'}}</p>\r\n";
+module.exports = "<p>{{uppercaseText | uppercase}}</p>\r\n<p><strong>Today:</strong> {{date | date:'EEEE, dd-MM-yyyy' | lowercase}}</p>\r\n<p>{{longText | shorten:10:'!!!'}}</p>\r\n\r\n<div class=\"form-group\">\r\n  <label>Filter by:</label>\r\n  <input type=\"text\" name=\"search\" [(ngModel)]=\"searchField\">\r\n</div>\r\n<ul>\r\n  <li *ngFor=\"let str of list | filter:searchField\">{{str}}</li>\r\n</ul>\r\n";
 
 /***/ }),
 /* 772 */
@@ -15504,6 +15513,46 @@ ShortenPipe = __decorate([
     })
 ], ShortenPipe);
 exports.ShortenPipe = ShortenPipe;
+
+
+/***/ }),
+/* 773 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(7);
+var FilterPipe = (function () {
+    function FilterPipe() {
+    }
+    FilterPipe.prototype.transform = function (value, searchText) {
+        if (!value || !Array.isArray(value) || !value.length || !searchText) {
+            return value;
+        }
+        var result = [];
+        for (var _i = 0, value_1 = value; _i < value_1.length; _i++) {
+            var str = value_1[_i];
+            if (str.startsWith(searchText)) {
+                result.push(str);
+            }
+        }
+        return result;
+    };
+    return FilterPipe;
+}());
+FilterPipe = __decorate([
+    core_1.Pipe({
+        name: 'filter'
+    })
+], FilterPipe);
+exports.FilterPipe = FilterPipe;
 
 
 /***/ })
