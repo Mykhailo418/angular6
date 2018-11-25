@@ -15449,6 +15449,7 @@ var core_1 = __webpack_require__(7);
 var PipesPageComponent = (function () {
     function PipesPageComponent() {
         this.uppercaseText = 'this text should be uppercase';
+        this.date = new Date();
     }
     return PipesPageComponent;
 }());
@@ -15465,7 +15466,7 @@ exports.PipesPageComponent = PipesPageComponent;
 /* 771 */
 /***/ (function(module, exports) {
 
-module.exports = "<p>{{uppercaseText | uppercase}}</p>\r\n";
+module.exports = "<p>{{uppercaseText | uppercase}}</p>\r\n<p><strong>Today:</strong> {{date | date:'EEEE, dd-MM-yyyy' | lowercase}}</p>\r\n";
 
 /***/ })
 ]),[767]);

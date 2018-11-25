@@ -6,4 +6,5 @@ import { Component } from '@angular/core';
 })
 export class PipesPageComponent  {
   uppercaseText: String = 'this text should be uppercase';
+  date: Date = new Date()
 }
