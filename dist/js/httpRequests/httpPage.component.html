@@ -10,3 +10,10 @@
   </div>
   <button type="submit" class="btn btn-success" [disabled]="!formElement.valid">Submit</button>
 </form>
+<h2>Data from the Firebase</h2>
+<ul *ngIf="data && data.length">
+  <li *ngFor="let item of data">
+    <p><strong>Name: </strong>{{item.name}}</p>
+    <p><strong>Value: </strong>{{item.value}}</p>
+  </li>
+</ul>

@@ -6578,6 +6578,7 @@ var rest_service_1 = __webpack_require__(776);
 var HttpPageComponent = (function () {
     function HttpPageComponent(restService) {
         this.restService = restService;
+        this.data = [];
     }
     HttpPageComponent.prototype.onSubmit = function (formElement) {
         var data = { name: '', value: '' };
@@ -6589,6 +6590,20 @@ var HttpPageComponent = (function () {
             console.error(error);
         });
         this.form.reset();
+    };
+    HttpPageComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.restService.getData().subscribe(function (res) {
+            var data = res.json();
+            if (!Array.isArray(data)) {
+                for (var k in data) {
+                    _this.data = _this.data.concat(data[k]);
+                }
+            }
+            else {
+                _this.data = _this.data.concat(data);
+            }
+        });
     };
     return HttpPageComponent;
 }());
@@ -8183,7 +8198,7 @@ module.exports = "<div>\r\n\t<h1>Hello dear, {{title}}</h1>\r\n\t<input type=\"t
 /* 426 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>HTTP Requests Page</h1>\r\n<form id=\"simpeForm\" class=\"form\" (ngSubmit)=\"onSubmit(formElement)\" #formElement=\"ngForm\">\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"name\">Name:</label>\r\n      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" ngModel />\r\n  </div>\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"value\">Value:</label>\r\n      <input type=\"text\" id=\"value\" class=\"form-control\" name=\"value\" ngModel />\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\">Submit</button>\r\n</form>\r\n";
+module.exports = "<h1>HTTP Requests Page</h1>\r\n<form id=\"simpeForm\" class=\"form\" (ngSubmit)=\"onSubmit(formElement)\" #formElement=\"ngForm\">\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"name\">Name:</label>\r\n      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" ngModel />\r\n  </div>\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"value\">Value:</label>\r\n      <input type=\"text\" id=\"value\" class=\"form-control\" name=\"value\" ngModel />\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\">Submit</button>\r\n</form>\r\n<h2>Data from the Firebase</h2>\r\n<ul *ngIf=\"data && data.length\">\r\n  <li *ngFor=\"let item of data\">\r\n    <p><strong>Name: </strong>{{item.name}}</p>\r\n    <p><strong>Value: </strong>{{item.value}}</p>\r\n  </li>\r\n</ul>\r\n";
 
 /***/ }),
 /* 427 */
@@ -15648,6 +15663,9 @@ var RestService = (function () {
     RestService.prototype.saveDate = function (data) {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         return this.http.post(this.firebaseUrl + 'data.json', data, { headers: headers });
+    };
+    RestService.prototype.getData = function () {
+        return this.http.get(this.firebaseUrl + 'data.json');
     };
     return RestService;
 }());
