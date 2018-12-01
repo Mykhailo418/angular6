@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http, Headers, Response } from '@angular/http';
+import 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,9 @@ export default class RestService{
     }
 
     getData(){
-      return this.http.get(this.firebaseUrl + 'data.json');
+      return this.http.get(this.firebaseUrl + 'data.json').map((res: Response) => {
+          const data = res.json();
+          return data;
+      });
     }
 }

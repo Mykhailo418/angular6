@@ -6621,8 +6621,8 @@ var HttpPageComponent = (function () {
     };
     HttpPageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.restService.getData().subscribe(function (res) {
-            var data = res.json();
+        this.restService.getData().subscribe(function (data) {
+            console.log('GET DATA', data);
             _this.parseResponseData(data);
         });
     };
@@ -15676,6 +15676,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var http_1 = __webpack_require__(159);
+__webpack_require__(0);
 var RestService = (function () {
     function RestService(http) {
         this.http = http;
@@ -15689,7 +15690,10 @@ var RestService = (function () {
         return this.http.put(this.firebaseUrl + 'data.json', data);
     };
     RestService.prototype.getData = function () {
-        return this.http.get(this.firebaseUrl + 'data.json');
+        return this.http.get(this.firebaseUrl + 'data.json').map(function (res) {
+            var data = res.json();
+            return data;
+        });
     };
     return RestService;
 }());

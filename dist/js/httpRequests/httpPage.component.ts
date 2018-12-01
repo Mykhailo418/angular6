@@ -37,8 +37,8 @@ export class HttpPageComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.restService.getData().subscribe((res: Response) => {
-        const data = res.json();
+    this.restService.getData().subscribe((data: Object |any[]) => {
+      console.log('GET DATA', data);
         this.parseResponseData(data);
     });
   }
@@ -50,7 +50,7 @@ export class HttpPageComponent implements OnInit {
     };
   }
 
-  private parseResponseData = (data: Object | Array<Object>) => {
+  private parseResponseData = (data: Object | Array<Object> | any[]) => {
     if(!Array.isArray(data)){
       for(let k in data){
         this.data = this.data.concat(data[k]);
