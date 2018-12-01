@@ -1,6 +1,7 @@
 // Imports
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -21,6 +22,7 @@ import { ObservablesPageComponent } from './observablesPage/observablesPage.comp
 import { FormsPageComponent } from './formsPage/forms.component';
 import { ReactiveFormComponent } from './formsPage/reactiveForms.component';
 import { PipesPageComponent } from './pipesPage/pipes.component';
+import { HttpPageComponent } from './httpRequests/httpPage.component';
 
 // Directives
 import { GreenTextDirective } from './directives/GreenText.directive';
@@ -37,11 +39,11 @@ import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, HttpModule],
   declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective,
 		ListComponent, UsersComponent, UserComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
     NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent,
-    PipesPageComponent, ShortenPipe, FilterPipe],
+    PipesPageComponent, ShortenPipe, FilterPipe, HttpPageComponent],
   bootstrap: [AppComponent],
   providers: [AuthService, AuthGuard, CanDeactivateGuard, UserResolveService]
 })

@@ -1,0 +1,12 @@
+<h1>HTTP Requests Page</h1>
+<form id="simpeForm" class="form" (ngSubmit)="onSubmit(formElement)" #formElement="ngForm">
+  <div class="form-group">
+      <label class="label-control" for="name">Name:</label>
+      <input type="text" id="name" class="form-control" name="name" ngModel />
+  </div>
+  <div class="form-group">
+      <label class="label-control" for="value">Value:</label>
+      <input type="text" id="value" class="form-control" name="value" ngModel />
+  </div>
+  <button type="submit" class="btn btn-success" [disabled]="!formElement.valid">Submit</button>
+</form>
