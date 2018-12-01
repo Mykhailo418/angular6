@@ -13,6 +13,10 @@ export default class RestService{
       return this.http.post(this.firebaseUrl + 'data.json', data, {headers});
     }
 
+    updateDate(data: any[]){
+      return this.http.put(this.firebaseUrl + 'data.json', data);
+    }
+
     getData(){
       return this.http.get(this.firebaseUrl + 'data.json');
     }

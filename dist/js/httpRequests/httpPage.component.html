@@ -8,11 +8,12 @@
       <label class="label-control" for="value">Value:</label>
       <input type="text" id="value" class="form-control" name="value" ngModel />
   </div>
-  <button type="submit" class="btn btn-success" [disabled]="!formElement.valid">Submit</button>
+  <button type="submit" class="btn btn-success" [disabled]="!formElement.valid">Save</button>
+  <button type="button" class="btn btn-success" [disabled]="!formElement.valid" (click)="onUpdate()">Update</button>
 </form>
 <h2>Data from the Firebase</h2>
-<ul *ngIf="data && data.length">
-  <li *ngFor="let item of data">
+<ul *ngIf="data && data.length" class="row">
+  <li *ngFor="let item of data" class="col-3">
     <p><strong>Name: </strong>{{item.name}}</p>
     <p><strong>Value: </strong>{{item.value}}</p>
   </li>
