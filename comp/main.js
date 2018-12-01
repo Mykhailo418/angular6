@@ -15646,7 +15646,8 @@ var RestService = (function () {
         this.firebaseUrl = 'https://angular-90284.firebaseio.com/';
     }
     RestService.prototype.saveDate = function (data) {
-        return this.http.post(this.firebaseUrl + 'data.json', data);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        return this.http.post(this.firebaseUrl + 'data.json', data, { headers: headers });
     };
     return RestService;
 }());

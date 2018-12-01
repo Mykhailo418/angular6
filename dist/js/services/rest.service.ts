@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http'
+import { Http, Headers } from '@angular/http'
 
 @Injectable({
   providedIn: 'root',
@@ -9,6 +9,7 @@ export default class RestService{
     constructor(private http: Http){}
 
     saveDate(data: any[]){
-      return this.http.post(this.firebaseUrl + 'data.json', data);
+      const headers = new Headers({'Content-Type': 'application/json'});
+      return this.http.post(this.firebaseUrl + 'data.json', data, {headers});
     }
 }
