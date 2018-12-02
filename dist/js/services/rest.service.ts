@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
+import { Observable } from 'rxjs';
 import 'rxjs';
 
 @Injectable({
@@ -22,6 +23,12 @@ export default class RestService{
       return this.http.get(this.firebaseUrl + 'data.json').map((res: Response) => {
           const data = res.json();
           return data;
+      });
+    }
+
+    errorUrl(){
+      return this.http.get(this.firebaseUrl + 'data').catch((error: Response) => {
+        return Observable.throw('Wrong Url');
       });
     }
 }

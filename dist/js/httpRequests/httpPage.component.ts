@@ -37,20 +37,26 @@ export class HttpPageComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.restService.getData().subscribe((data: Object |any[]) => {
-      console.log('GET DATA', data);
+    this.restService.getData().subscribe((data: Object | any[]) => {
+        console.log('GET DATA', data);
         this.parseResponseData(data);
+    });
+    this.restService.errorUrl().subscribe((res: Response) => {
+      console.log(res);
+    }, (error: any) => {
+        console.error(error);
     });
   }
 
-  private setupData = () => {
+  private setupData (){
+    console.log('setupData');
     return {
       name: this.form.value.name,
       value: this.form.value.value
     };
   }
 
-  private parseResponseData = (data: Object | Array<Object> | any[]) => {
+  private parseResponseData(data: Object | Array<Object> | any[]) {
     if(!Array.isArray(data)){
       for(let k in data){
         this.data = this.data.concat(data[k]);
