@@ -6,7 +6,8 @@ import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 
 // Custom Modules
 import { AppRoutingModule } from './app-routing.module';
-import { AppUsersModule } from './app-users.module'
+import { AppUsersModule } from './app-users.module';
+import { SharedModule } from './shared.module';
 
 // Components
 import { AppComponent } from './app/app.component';
@@ -25,8 +26,6 @@ import { ReactiveFormComponent } from './formsPage/reactiveForms.component';
 import { PipesPageComponent } from './pipesPage/pipes.component';
 import { HttpPageComponent } from './httpRequests/httpPage.component';
 
-// Directives
-import { GreenTextDirective } from './directives/GreenText.directive';
 import { AppUnlessDirective } from './directives/AppUnless.directive';
 
 // Services
@@ -40,8 +39,8 @@ import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, HttpModule, AppUsersModule],
-  declarations: [AppComponent, MenuComponent, CustomComponent, GreenTextDirective, AppUnlessDirective,
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, HttpModule, AppUsersModule, SharedModule],
+  declarations: [AppComponent, MenuComponent, CustomComponent, AppUnlessDirective,
 		ListComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
     NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent,
     PipesPageComponent, ShortenPipe, FilterPipe, HttpPageComponent],

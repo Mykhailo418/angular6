@@ -7327,6 +7327,7 @@ var forms_1 = __webpack_require__(86);
 // Custom Modules
 var app_routing_module_1 = __webpack_require__(252);
 var app_users_module_1 = __webpack_require__(253);
+var shared_module_1 = __webpack_require__(779);
 // Components
 var app_component_1 = __webpack_require__(254);
 var home_component_1 = __webpack_require__(165);
@@ -7343,8 +7344,6 @@ var forms_component_1 = __webpack_require__(164);
 var reactiveForms_component_1 = __webpack_require__(258);
 var pipes_component_1 = __webpack_require__(169);
 var httpPage_component_1 = __webpack_require__(166);
-// Directives
-var GreenText_directive_1 = __webpack_require__(257);
 var AppUnless_directive_1 = __webpack_require__(256);
 // Services
 var AuthGuard_1 = __webpack_require__(263);
@@ -7361,8 +7360,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule, forms_1.ReactiveFormsModule, http_1.HttpModule, app_users_module_1.AppUsersModule],
-        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, GreenText_directive_1.GreenTextDirective, AppUnless_directive_1.AppUnlessDirective,
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule, forms_1.ReactiveFormsModule, http_1.HttpModule, app_users_module_1.AppUsersModule, shared_module_1.SharedModule],
+        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, AppUnless_directive_1.AppUnlessDirective,
             list_component_1.ListComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent, queryParams_component_1.QueryParamsComponent,
             notFound_component_1.NotFoundComponent, editing_component_1.EditingPageComponent, errorPage_component_1.ErrorPage, observablesPage_component_1.ObservablesPageComponent, forms_component_1.FormsPageComponent, reactiveForms_component_1.ReactiveFormComponent,
             pipes_component_1.PipesPageComponent, shorten_pipe_1.ShortenPipe, filter_pipe_1.FilterPipe, httpPage_component_1.HttpPageComponent],
@@ -7496,6 +7495,7 @@ var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(71);
 // Custom Modules
 var app_routing_users_module_1 = __webpack_require__(251);
+var shared_module_1 = __webpack_require__(779);
 // Components
 var users_component_1 = __webpack_require__(176);
 var user_component_1 = __webpack_require__(175);
@@ -7506,7 +7506,7 @@ var AppUsersModule = (function () {
 }());
 AppUsersModule = __decorate([
     core_1.NgModule({
-        imports: [common_1.CommonModule, app_routing_users_module_1.AppRoutingUsersModule],
+        imports: [common_1.CommonModule, app_routing_users_module_1.AppRoutingUsersModule, shared_module_1.SharedModule],
         declarations: [users_component_1.UsersComponent, user_component_1.UserComponent]
     })
 ], AppUsersModule);
@@ -15780,6 +15780,47 @@ var app_module_1 = __webpack_require__(244);
 var core_1 = __webpack_require__(5);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+
+
+/***/ }),
+/* 777 */,
+/* 778 */,
+/* 779 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// Imports
+var core_1 = __webpack_require__(5);
+var common_1 = __webpack_require__(71);
+// Directives
+var GreenText_directive_1 = __webpack_require__(257);
+var SharedModule = (function () {
+    function SharedModule() {
+    }
+    return SharedModule;
+}());
+SharedModule = __decorate([
+    core_1.NgModule({
+        declarations: [
+            GreenText_directive_1.GreenTextDirective
+            // place here directive or something else to share with other modules
+        ],
+        exports: [
+            common_1.CommonModule,
+            GreenText_directive_1.GreenTextDirective
+            // place here directive or something else to share with other modules
+        ]
+    })
+], SharedModule);
+exports.SharedModule = SharedModule;
 
 
 /***/ })
