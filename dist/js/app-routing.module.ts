@@ -17,6 +17,8 @@ import { HttpPageComponent } from './httpRequests/httpPage.component';
 import { AuthGuard } from './services/auth/AuthGuard';
 import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
 
+const directPath = './users';
+
 const appRoutes: Routes = [
 	{path: '', redirectTo: '/home', pathMatch: 'full'},
 	{path: 'home', component: HomeComponent},
@@ -26,6 +28,7 @@ const appRoutes: Routes = [
 	{path: 'forms', component: FormsPageComponent},
 	{path: 'pipes', component: PipesPageComponent},
 	{path: 'http-page', component: HttpPageComponent},
+	{path: 'users', loadChildren: '../dist/js/users/users.module#AppUsersModule'}, //TODO: can not find module
 	{path: '500', component: ErrorPage, data: { msg: 'Error 500: Server Error' }},
 	{path: '501', component: ErrorPage, data: { msg: 'Error 501: Not Implemented' }},
 	{path: '404', component: NotFoundComponent},

@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Components
-import { UsersComponent } from './users/users.component';
-import { UserComponent } from './users/user.component';
+import { UsersComponent } from './users.component';
+import { UserComponent } from './user.component';
 
 // Services
-import { AuthGuard } from './services/auth/AuthGuard';
-import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
-import { UserResolveService } from './services/user-resolve.service';
+import { AuthGuard } from '../services/auth/AuthGuard';
+import { CanDeactivateGuard } from '../services/auth/CanDeactivateGuard';
+import { UserResolveService } from '../services/user-resolve.service';
 
 const appRoutes: Routes = [
-	{path: 'users',
+	{path: '',
 			//canActivate: [AuthGuard],
 			//canActivateChild: [AuthGuard],
 			component: UsersComponent,
