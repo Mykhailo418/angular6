@@ -3,8 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Components
 import { HomeComponent } from './home/home.component';
-import { UsersComponent } from './users/users.component';
-import { UserComponent } from './users/user.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { QueryParamsComponent } from './queryParams/queryParams.component';
 import { NotFoundComponent } from './notFound/notFound.component';
@@ -18,19 +16,10 @@ import { HttpPageComponent } from './httpRequests/httpPage.component';
 // Services
 import { AuthGuard } from './services/auth/AuthGuard';
 import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
-import { UserResolveService } from './services/user-resolve.service';
 
 const appRoutes: Routes = [
 	{path: '', redirectTo: '/home', pathMatch: 'full'},
 	{path: 'home', component: HomeComponent},
-	{path: 'users',
-			//canActivate: [AuthGuard],
-			//canActivateChild: [AuthGuard],
-			component: UsersComponent,
-			children: [
-					{path: ':id', component: UserComponent, resolve: {userData: UserResolveService}},
-			]
-	},
 	{path: 'contacts', component: ContactsComponent},
 	{path: 'queryparams', component: QueryParamsComponent},
 	{path: 'observables', component: ObservablesPageComponent},
