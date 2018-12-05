@@ -7,11 +7,11 @@ import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 // Custom Modules
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared.module';
+import { CoreModule } from './core/core.module';
 
 // Components
 import { AppComponent } from './app/app.component';
 import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './menu/menu.component';
 import { CustomComponent } from './custom/custom.component';
 import { ListComponent } from './list/list.component';
 import { ContactsComponent } from './contacts/contacts.component';
@@ -38,8 +38,8 @@ import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, HttpModule, SharedModule],
-  declarations: [AppComponent, MenuComponent, CustomComponent, AppUnlessDirective,
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, HttpModule, SharedModule, CoreModule],
+  declarations: [AppComponent, CustomComponent, AppUnlessDirective,
 		ListComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
     NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent,
     PipesPageComponent, ShortenPipe, FilterPipe, HttpPageComponent],

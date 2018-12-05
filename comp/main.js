@@ -7126,10 +7126,10 @@ var forms_1 = __webpack_require__(86);
 // Custom Modules
 var app_routing_module_1 = __webpack_require__(247);
 var shared_module_1 = __webpack_require__(261);
+var core_module_1 = __webpack_require__(774);
 // Components
 var app_component_1 = __webpack_require__(248);
 var home_component_1 = __webpack_require__(164);
-var menu_component_1 = __webpack_require__(254);
 var custom_component_1 = __webpack_require__(249);
 var list_component_1 = __webpack_require__(253);
 var contacts_component_1 = __webpack_require__(160);
@@ -7158,8 +7158,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule, forms_1.ReactiveFormsModule, http_1.HttpModule, shared_module_1.SharedModule],
-        declarations: [app_component_1.AppComponent, menu_component_1.MenuComponent, custom_component_1.CustomComponent, AppUnless_directive_1.AppUnlessDirective,
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule, forms_1.ReactiveFormsModule, http_1.HttpModule, shared_module_1.SharedModule, core_module_1.CoreModule],
+        declarations: [app_component_1.AppComponent, custom_component_1.CustomComponent, AppUnless_directive_1.AppUnlessDirective,
             list_component_1.ListComponent, home_component_1.HomeComponent, contacts_component_1.ContactsComponent, queryParams_component_1.QueryParamsComponent,
             notFound_component_1.NotFoundComponent, editing_component_1.EditingPageComponent, errorPage_component_1.ErrorPage, observablesPage_component_1.ObservablesPageComponent, forms_component_1.FormsPageComponent, reactiveForms_component_1.ReactiveFormComponent,
             pipes_component_1.PipesPageComponent, shorten_pipe_1.ShortenPipe, filter_pipe_1.FilterPipe, httpPage_component_1.HttpPageComponent],
@@ -7605,65 +7605,7 @@ exports.ListComponent = ListComponent;
 
 
 /***/ }),
-/* 254 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(5);
-var list_service_1 = __webpack_require__(107);
-var account_service_1 = __webpack_require__(170);
-var MenuComponent = (function () {
-    function MenuComponent(listService, accountService) {
-        this.listService = listService;
-        this.accountService = accountService;
-        this.sendMessage = new core_1.EventEmitter();
-    }
-    MenuComponent.prototype.onSendMessage = function (e) {
-        e.preventDefault();
-        this.sendMessage.emit({
-            msg: 'Random number is ' + Math.round(Math.random() * 1000)
-        });
-    };
-    MenuComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.listService.setNumber.subscribe(function (num) {
-            _this.currentNum = num;
-        });
-        this.accountService.accountActivated.subscribe(function (isActevated) {
-            _this.accountActevated = isActevated;
-        });
-    };
-    MenuComponent.prototype.ngOnDestroy = function () {
-        this.accountService.accountActivated.unsubscribe();
-    };
-    return MenuComponent;
-}());
-__decorate([
-    core_1.Output('newMessage'),
-    __metadata("design:type", Object)
-], MenuComponent.prototype, "sendMessage", void 0);
-MenuComponent = __decorate([
-    core_1.Component({
-        selector: 'app-menu',
-        template: __webpack_require__(428)
-    }),
-    __metadata("design:paramtypes", [list_service_1.ListService, account_service_1.default])
-], MenuComponent);
-exports.MenuComponent = MenuComponent;
-
-
-/***/ }),
+/* 254 */,
 /* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7947,6 +7889,7 @@ var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(70);
 // Directives
 var GreenText_directive_1 = __webpack_require__(251);
+// IMPORTANT: Do not provide services in shared modules
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -8202,12 +8145,7 @@ module.exports = "<h1>HTTP Requests Page</h1>\r\n<form id=\"simpeForm\" class=\"
 module.exports = "<ul>\r\n\t<li *ngFor=\"let num of listNumbers\">\r\n\t\t<a href=\"#\" (click)=\"selectNumber($event, num)\">{{num}}</a>\r\n\t</li>\r\n</ul>";
 
 /***/ }),
-/* 428 */
-/***/ (function(module, exports) {
-
-module.exports = "\r\n<div class=\"container\">\r\n\t<h1 *ngIf=\"currentNum\" class=\"float-right\">{{currentNum}}</h1>\r\n\t<p class=\"float-right\"><i>Account is {{(accountActevated) ? 'activated' : 'deactivated'}}</i></p>\r\n\t<h4>Menu</h4>\r\n\t<button class=\"btn btn-primary\" (click)=\"onSendMessage($event)\">Send Message</button>\r\n\t<nav class=\"navbar-light navbar navbar-expand-sm\">\r\n\t\t<ul class=\"navbar-nav\">\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" routerLink=\"/\">Home</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/users']\">Users</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/queryparams']\">Query Params</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/editing-page']\">Editing Page</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/observables']\">Observables</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/forms']\">Forms</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/pipes']\">Pipes</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/http-page']\">Http Page</a>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</nav>\r\n</div>\r\n\r\n<hr />\r\n";
-
-/***/ }),
+/* 428 */,
 /* 429 */
 /***/ (function(module, exports) {
 
@@ -15617,6 +15555,109 @@ var core_1 = __webpack_require__(5);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
+
+/***/ }),
+/* 772 */,
+/* 773 */,
+/* 774 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// Imports
+var core_1 = __webpack_require__(5);
+var common_1 = __webpack_require__(70);
+var app_routing_module_1 = __webpack_require__(247);
+// Components
+var menu_component_1 = __webpack_require__(776);
+var CoreModule = (function () {
+    function CoreModule() {
+    }
+    return CoreModule;
+}());
+CoreModule = __decorate([
+    core_1.NgModule({
+        imports: [common_1.CommonModule, app_routing_module_1.AppRoutingModule],
+        declarations: [menu_component_1.MenuComponent],
+        exports: [menu_component_1.MenuComponent]
+    })
+], CoreModule);
+exports.CoreModule = CoreModule;
+
+
+/***/ }),
+/* 775 */,
+/* 776 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var list_service_1 = __webpack_require__(107);
+var account_service_1 = __webpack_require__(170);
+var MenuComponent = (function () {
+    function MenuComponent(listService, accountService) {
+        this.listService = listService;
+        this.accountService = accountService;
+        this.sendMessage = new core_1.EventEmitter();
+    }
+    MenuComponent.prototype.onSendMessage = function (e) {
+        e.preventDefault();
+        this.sendMessage.emit({
+            msg: 'Random number is ' + Math.round(Math.random() * 1000)
+        });
+    };
+    MenuComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.listService.setNumber.subscribe(function (num) {
+            _this.currentNum = num;
+        });
+        this.accountService.accountActivated.subscribe(function (isActevated) {
+            _this.accountActevated = isActevated;
+        });
+    };
+    MenuComponent.prototype.ngOnDestroy = function () {
+        this.accountService.accountActivated.unsubscribe();
+    };
+    return MenuComponent;
+}());
+__decorate([
+    core_1.Output('newMessage'),
+    __metadata("design:type", Object)
+], MenuComponent.prototype, "sendMessage", void 0);
+MenuComponent = __decorate([
+    core_1.Component({
+        selector: 'app-menu',
+        template: __webpack_require__(778)
+    }),
+    __metadata("design:paramtypes", [list_service_1.ListService, account_service_1.default])
+], MenuComponent);
+exports.MenuComponent = MenuComponent;
+
+
+/***/ }),
+/* 777 */,
+/* 778 */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<div class=\"container\">\r\n\t<h1 *ngIf=\"currentNum\" class=\"float-right\">{{currentNum}}</h1>\r\n\t<p class=\"float-right\"><i>Account is {{(accountActevated) ? 'activated' : 'deactivated'}}</i></p>\r\n\t<h4>Menu</h4>\r\n\t<button class=\"btn btn-primary\" (click)=\"onSendMessage($event)\">Send Message</button>\r\n\t<nav class=\"navbar-light navbar navbar-expand-sm\">\r\n\t\t<ul class=\"navbar-nav\">\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" routerLink=\"/\">Home</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/users']\">Users</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/queryparams']\">Query Params</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/editing-page']\">Editing Page</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/observables']\">Observables</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/forms']\">Forms</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/pipes']\">Pipes</a>\r\n\t\t\t</li>\r\n\t\t\t<li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\r\n\t\t\t\t<a class=\"nav-link\" [routerLink]=\"['/http-page']\">Http Page</a>\r\n\t\t\t</li>\r\n\t\t</ul>\r\n\t</nav>\r\n</div>\r\n\r\n<hr />\r\n";
 
 /***/ })
 ]),[771]);

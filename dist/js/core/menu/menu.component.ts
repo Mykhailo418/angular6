@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
-import { ListService } from '../services/list.service';
-import AccountService from '../services/account.service';
+import { ListService } from '../../services/list.service';
+import AccountService from '../../services/account.service';
 
 @Component({
 	selector: 'app-menu',

@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 // Directives
 import { GreenTextDirective } from './directives/GreenText.directive';
 
-
+// IMPORTANT: Do not provide services in shared modules
 @NgModule({
   declarations: [
     GreenTextDirective
