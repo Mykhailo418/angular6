@@ -6335,7 +6335,7 @@ var AppRoutingModule = (function () {
 }());
 AppRoutingModule = __decorate([
     core_1.NgModule({
-        imports: [router_1.RouterModule.forRoot(appRoutes, { useHash: true })],
+        imports: [router_1.RouterModule.forRoot(appRoutes, { useHash: true, preloadingStrategy: router_1.PreloadAllModules })],
         exports: [router_1.RouterModule]
     })
 ], AppRoutingModule);
