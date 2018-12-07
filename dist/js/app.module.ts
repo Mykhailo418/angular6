@@ -27,12 +27,6 @@ import { HttpPageComponent } from './httpRequests/httpPage.component';
 
 import { AppUnlessDirective } from './directives/AppUnless.directive';
 
-// Services
-import { AuthGuard } from './services/auth/AuthGuard';
-import { AuthService } from './services/auth/AuthService';
-import { CanDeactivateGuard } from './services/auth/CanDeactivateGuard';
-import { UserResolveService } from './services/user-resolve.service';
-
 // Pipes
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
@@ -44,7 +38,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent,
     PipesPageComponent, ShortenPipe, FilterPipe, HttpPageComponent],
   bootstrap: [AppComponent],
-  providers: [AuthService, AuthGuard, CanDeactivateGuard, UserResolveService]
+  providers: []
 })
 export class AppModule {
 }
