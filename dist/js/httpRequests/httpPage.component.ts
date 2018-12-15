@@ -1,7 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import RestService from '../services/rest.service';
-import { Response } from '@angular/http';
 
 @Component({
   selector: 'http-page',
@@ -15,9 +14,9 @@ export class HttpPageComponent implements OnInit {
 
   onSubmit(formElement: NgForm){
       const data = this.setupData();
-      this.restService.saveDate([data]).subscribe((res) => {
+      this.restService.saveDate([data]).subscribe((res: any) => {
           console.log('Response Save',res);
-      }, (error) => {
+      }, (error: any) => {
           console.error(error);
       });
       this.form.reset();
@@ -26,11 +25,11 @@ export class HttpPageComponent implements OnInit {
   onUpdate(){
       const data = this.setupData();
       this.data.push(data);
-      this.restService.updateDate(this.data).subscribe((res: Response) => {
+      this.restService.updateDate(this.data).subscribe((res: any) => {
           const data = res.json();
           console.log('Response Update',res,data);
           this.data = data;
-      }, (error) => {
+      }, (error: any) => {
           console.error(error);
       });
       this.form.reset();
@@ -41,7 +40,7 @@ export class HttpPageComponent implements OnInit {
         console.log('GET DATA', data);
         this.parseResponseData(data);
     });
-    this.restService.errorUrl().subscribe((res: Response) => {
+    this.restService.errorUrl().subscribe((res: any) => {
       console.log(res);
     }, (error: any) => {
         console.error(error);
