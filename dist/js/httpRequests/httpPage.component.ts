@@ -1,6 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import RestService from '../services/rest.service';
+import { HttpEvent, HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'http-page',
@@ -8,7 +9,7 @@ import RestService from '../services/rest.service';
 })
 export class HttpPageComponent implements OnInit {
   @ViewChild('formElement') form: NgForm;
-  data: Array<Object> = [];
+  data: any[] = [];
 
 	constructor(private restService: RestService){}
 
@@ -26,9 +27,29 @@ export class HttpPageComponent implements OnInit {
       const data = this.setupData();
       this.data.push(data);
       this.restService.updateDate(this.data).subscribe((res: any) => {
-          const data = res.json();
+          const data = res;
           console.log('Response Update',res,data);
           this.data = data;
+      }, (error: any) => {
+          console.error(error);
+      });
+      this.form.reset();
+  }
+
+  onUpdateWithEvents(){
+      const data = this.setupData();
+      this.data.push(data);
+      this.restService.updateDateWithEvents(this.data).subscribe((res: HttpEvent<Object>) => {
+          switch(res.type){
+            case HttpEventType.Sent:
+              console.log('Update was sent');
+            break;
+            case HttpEventType.Response:
+              const data: any[] = (<any[]>res.body);
+              console.log('Response Update',res,data);
+              this.data = data;
+            break;
+          }
       }, (error: any) => {
           console.error(error);
       });

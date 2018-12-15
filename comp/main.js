@@ -10,11 +10,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "InnerSubscriber", function() { return __WEBPACK_IMPORTED_MODULE_1__internal_InnerSubscriber__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__internal_OuterSubscriber__ = __webpack_require__(8);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "OuterSubscriber", function() { return __WEBPACK_IMPORTED_MODULE_2__internal_OuterSubscriber__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__internal_Scheduler__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__internal_Scheduler__ = __webpack_require__(129);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Scheduler", function() { return __WEBPACK_IMPORTED_MODULE_3__internal_Scheduler__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__internal_Subject__ = __webpack_require__(16);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "AnonymousSubject", function() { return __WEBPACK_IMPORTED_MODULE_4__internal_Subject__["c"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__internal_SubjectSubscription__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__internal_SubjectSubscription__ = __webpack_require__(130);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "SubjectSubscription", function() { return __WEBPACK_IMPORTED_MODULE_5__internal_SubjectSubscription__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__internal_Subscriber__ = __webpack_require__(4);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Subscriber", function() { return __WEBPACK_IMPORTED_MODULE_6__internal_Subscriber__["a"]; });
@@ -26,7 +26,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ajax", function() { return __WEBPACK_IMPORTED_MODULE_9__internal_observable_dom_ajax__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__internal_observable_dom_webSocket__ = __webpack_require__(212);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "webSocket", function() { return __WEBPACK_IMPORTED_MODULE_10__internal_observable_dom_webSocket__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__internal_observable_dom_AjaxObservable__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__internal_observable_dom_AjaxObservable__ = __webpack_require__(132);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ajaxGet", function() { return __WEBPACK_IMPORTED_MODULE_11__internal_observable_dom_AjaxObservable__["e"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ajaxPost", function() { return __WEBPACK_IMPORTED_MODULE_11__internal_observable_dom_AjaxObservable__["f"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ajaxDelete", function() { return __WEBPACK_IMPORTED_MODULE_11__internal_observable_dom_AjaxObservable__["g"]; });
@@ -38,7 +38,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "AjaxResponse", function() { return __WEBPACK_IMPORTED_MODULE_11__internal_observable_dom_AjaxObservable__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "AjaxError", function() { return __WEBPACK_IMPORTED_MODULE_11__internal_observable_dom_AjaxObservable__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "AjaxTimeoutError", function() { return __WEBPACK_IMPORTED_MODULE_11__internal_observable_dom_AjaxObservable__["c"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__internal_observable_dom_WebSocketSubject__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__internal_observable_dom_WebSocketSubject__ = __webpack_require__(133);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "WebSocketSubject", function() { return __WEBPACK_IMPORTED_MODULE_12__internal_observable_dom_WebSocketSubject__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__internal_observable_combineLatest__ = __webpack_require__(98);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "CombineLatestOperator", function() { return __WEBPACK_IMPORTED_MODULE_13__internal_observable_combineLatest__["b"]; });
@@ -50,9 +50,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Timestamp", function() { return __WEBPACK_IMPORTED_MODULE_16__internal_operators_timestamp__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__internal_operators_timeInterval__ = __webpack_require__(227);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TimeInterval", function() { return __WEBPACK_IMPORTED_MODULE_17__internal_operators_timeInterval__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__internal_operators_groupBy__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__internal_operators_groupBy__ = __webpack_require__(138);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "GroupedObservable", function() { return __WEBPACK_IMPORTED_MODULE_18__internal_operators_groupBy__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__internal_operators_throttle__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__internal_operators_throttle__ = __webpack_require__(145);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "defaultThrottleConfig", function() { return __WEBPACK_IMPORTED_MODULE_19__internal_operators_throttle__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__internal_symbol_rxSubscriber__ = __webpack_require__(102);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "rxSubscriber", function() { return __WEBPACK_IMPORTED_MODULE_20__internal_symbol_rxSubscriber__["a"]; });
@@ -68,11 +68,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Immediate", function() { return __WEBPACK_IMPORTED_MODULE_25__internal_util_Immediate__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__internal_util_ObjectUnsubscribedError__ = __webpack_require__(83);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ObjectUnsubscribedError", function() { return __WEBPACK_IMPORTED_MODULE_26__internal_util_ObjectUnsubscribedError__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__internal_util_TimeoutError__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__internal_util_TimeoutError__ = __webpack_require__(146);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "TimeoutError", function() { return __WEBPACK_IMPORTED_MODULE_27__internal_util_TimeoutError__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__internal_util_UnsubscriptionError__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__internal_util_UnsubscriptionError__ = __webpack_require__(147);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "UnsubscriptionError", function() { return __WEBPACK_IMPORTED_MODULE_28__internal_util_UnsubscriptionError__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__internal_util_applyMixins__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__internal_util_applyMixins__ = __webpack_require__(148);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "applyMixins", function() { return __WEBPACK_IMPORTED_MODULE_29__internal_util_applyMixins__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__internal_util_errorObject__ = __webpack_require__(19);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "errorObject", function() { return __WEBPACK_IMPORTED_MODULE_30__internal_util_errorObject__["a"]; });
@@ -82,9 +82,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "identity", function() { return __WEBPACK_IMPORTED_MODULE_32__internal_util_identity__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__internal_util_isArray__ = __webpack_require__(20);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "isArray", function() { return __WEBPACK_IMPORTED_MODULE_33__internal_util_isArray__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__internal_util_isArrayLike__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__internal_util_isArrayLike__ = __webpack_require__(149);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "isArrayLike", function() { return __WEBPACK_IMPORTED_MODULE_34__internal_util_isArrayLike__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__internal_util_isDate__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__internal_util_isDate__ = __webpack_require__(150);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "isDate", function() { return __WEBPACK_IMPORTED_MODULE_35__internal_util_isDate__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__internal_util_isFunction__ = __webpack_require__(70);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "isFunction", function() { return __WEBPACK_IMPORTED_MODULE_36__internal_util_isFunction__["a"]; });
@@ -92,11 +92,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "isIterable", function() { return __WEBPACK_IMPORTED_MODULE_37__internal_util_isIterable__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__internal_util_isNumeric__ = __webpack_require__(84);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "isNumeric", function() { return __WEBPACK_IMPORTED_MODULE_38__internal_util_isNumeric__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__internal_util_isObject__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__internal_util_isObject__ = __webpack_require__(151);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "isObject", function() { return __WEBPACK_IMPORTED_MODULE_39__internal_util_isObject__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__internal_util_isInteropObservable__ = __webpack_require__(236);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "isObservable", function() { return __WEBPACK_IMPORTED_MODULE_40__internal_util_isInteropObservable__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__internal_util_isPromise__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__internal_util_isPromise__ = __webpack_require__(152);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "isPromise", function() { return __WEBPACK_IMPORTED_MODULE_41__internal_util_isPromise__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__internal_util_isScheduler__ = __webpack_require__(26);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "isScheduler", function() { return __WEBPACK_IMPORTED_MODULE_42__internal_util_isScheduler__["a"]; });
@@ -108,15 +108,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "pipe", function() { return __WEBPACK_IMPORTED_MODULE_45__internal_util_pipe__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__internal_util_root__ = __webpack_require__(239);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "root", function() { return __WEBPACK_IMPORTED_MODULE_46__internal_util_root__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__internal_util_subscribeTo__ = __webpack_require__(152);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__internal_util_subscribeTo__ = __webpack_require__(153);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "subscribeTo", function() { return __WEBPACK_IMPORTED_MODULE_47__internal_util_subscribeTo__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__internal_util_subscribeToArray__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48__internal_util_subscribeToArray__ = __webpack_require__(154);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "subscribeToArray", function() { return __WEBPACK_IMPORTED_MODULE_48__internal_util_subscribeToArray__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__internal_util_subscribeToIterable__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__internal_util_subscribeToIterable__ = __webpack_require__(155);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "subscribeToIterable", function() { return __WEBPACK_IMPORTED_MODULE_49__internal_util_subscribeToIterable__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__internal_util_subscribeToObservable__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__internal_util_subscribeToObservable__ = __webpack_require__(156);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "subscribeToObservable", function() { return __WEBPACK_IMPORTED_MODULE_50__internal_util_subscribeToObservable__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__internal_util_subscribeToPromise__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__internal_util_subscribeToPromise__ = __webpack_require__(157);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "subscribeToPromise", function() { return __WEBPACK_IMPORTED_MODULE_51__internal_util_subscribeToPromise__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__internal_util_subscribeToResult__ = __webpack_require__(9);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "subscribeToResult", function() { return __WEBPACK_IMPORTED_MODULE_52__internal_util_subscribeToResult__["a"]; });
@@ -5464,826 +5464,6 @@ var ReactiveFormsModule = /** @class */ (function () {
 /* 104 */,
 /* 105 */,
 /* 106 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(5);
-var ListService = (function () {
-    function ListService() {
-        this.listNumbers = [];
-        this.setNumber = new core_1.EventEmitter();
-        for (var i = 0; i < 5; i++) {
-            this.listNumbers.push(Math.floor(Math.random() * 10000));
-        }
-    }
-    ListService.prototype.getListNumbers = function () {
-        return this.listNumbers.slice();
-    };
-    return ListService;
-}());
-ListService = __decorate([
-    core_1.Injectable({
-        providedIn: 'root',
-    }),
-    __metadata("design:paramtypes", [])
-], ListService);
-exports.ListService = ListService;
-
-
-/***/ }),
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_root__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_tryCatch__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_errorObject__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Observable__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Subscriber__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__operators_map__ = __webpack_require__(25);
-/* harmony export (immutable) */ __webpack_exports__["e"] = ajaxGet;
-/* harmony export (immutable) */ __webpack_exports__["f"] = ajaxPost;
-/* harmony export (immutable) */ __webpack_exports__["g"] = ajaxDelete;
-/* harmony export (immutable) */ __webpack_exports__["h"] = ajaxPut;
-/* harmony export (immutable) */ __webpack_exports__["i"] = ajaxPatch;
-/* harmony export (immutable) */ __webpack_exports__["j"] = ajaxGetJSON;
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return AjaxObservable; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return AjaxSubscriber; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AjaxResponse; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return AjaxError; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AjaxTimeoutError; });
-/** PURE_IMPORTS_START tslib,_.._util_root,_.._util_tryCatch,_.._util_errorObject,_.._Observable,_.._Subscriber,_.._operators_map PURE_IMPORTS_END */
-
-
-
-
-
-
-
-function getCORSRequest() {
-    if (__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XMLHttpRequest) {
-        return new __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XMLHttpRequest();
-    }
-    else if (!!__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XDomainRequest) {
-        return new __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XDomainRequest();
-    }
-    else {
-        throw new Error('CORS is not supported by your browser');
-    }
-}
-function getXMLHttpRequest() {
-    if (__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XMLHttpRequest) {
-        return new __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XMLHttpRequest();
-    }
-    else {
-        var progId = void 0;
-        try {
-            var progIds = ['Msxml2.XMLHTTP', 'Microsoft.XMLHTTP', 'Msxml2.XMLHTTP.4.0'];
-            for (var i = 0; i < 3; i++) {
-                try {
-                    progId = progIds[i];
-                    if (new __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].ActiveXObject(progId)) {
-                        break;
-                    }
-                }
-                catch (e) {
-                    //suppress exceptions
-                }
-            }
-            return new __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].ActiveXObject(progId);
-        }
-        catch (e) {
-            throw new Error('XMLHttpRequest is not supported by your browser');
-        }
-    }
-}
-function ajaxGet(url, headers) {
-    if (headers === void 0) {
-        headers = null;
-    }
-    return new AjaxObservable({ method: 'GET', url: url, headers: headers });
-}
-function ajaxPost(url, body, headers) {
-    return new AjaxObservable({ method: 'POST', url: url, body: body, headers: headers });
-}
-function ajaxDelete(url, headers) {
-    return new AjaxObservable({ method: 'DELETE', url: url, headers: headers });
-}
-function ajaxPut(url, body, headers) {
-    return new AjaxObservable({ method: 'PUT', url: url, body: body, headers: headers });
-}
-function ajaxPatch(url, body, headers) {
-    return new AjaxObservable({ method: 'PATCH', url: url, body: body, headers: headers });
-}
-var mapResponse = /*@__PURE__*/ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__operators_map__["a" /* map */])(function (x, index) { return x.response; });
-function ajaxGetJSON(url, headers) {
-    return mapResponse(new AjaxObservable({
-        method: 'GET',
-        url: url,
-        responseType: 'json',
-        headers: headers
-    }));
-}
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @extends {Ignored}
- * @hide true
- */
-var AjaxObservable = /*@__PURE__*/ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __extends */](AjaxObservable, _super);
-    function AjaxObservable(urlOrRequest) {
-        var _this = _super.call(this) || this;
-        var request = {
-            async: true,
-            createXHR: function () {
-                return this.crossDomain ? getCORSRequest() : getXMLHttpRequest();
-            },
-            crossDomain: true,
-            withCredentials: false,
-            headers: {},
-            method: 'GET',
-            responseType: 'json',
-            timeout: 0
-        };
-        if (typeof urlOrRequest === 'string') {
-            request.url = urlOrRequest;
-        }
-        else {
-            for (var prop in urlOrRequest) {
-                if (urlOrRequest.hasOwnProperty(prop)) {
-                    request[prop] = urlOrRequest[prop];
-                }
-            }
-        }
-        _this.request = request;
-        return _this;
-    }
-    /** @deprecated This is an internal implementation detail, do not use. */
-    AjaxObservable.prototype._subscribe = function (subscriber) {
-        return new AjaxSubscriber(subscriber, this.request);
-    };
-    /**
-     * Creates an observable for an Ajax request with either a request object with
-     * url, headers, etc or a string for a URL.
-     *
-     * @example
-     * source = Rx.Observable.ajax('/products');
-     * source = Rx.Observable.ajax({ url: 'products', method: 'GET' });
-     *
-     * @param {string|Object} request Can be one of the following:
-     *   A string of the URL to make the Ajax call.
-     *   An object with the following properties
-     *   - url: URL of the request
-     *   - body: The body of the request
-     *   - method: Method of the request, such as GET, POST, PUT, PATCH, DELETE
-     *   - async: Whether the request is async
-     *   - headers: Optional headers
-     *   - crossDomain: true if a cross domain request, else false
-     *   - createXHR: a function to override if you need to use an alternate
-     *   XMLHttpRequest implementation.
-     *   - resultSelector: a function to use to alter the output value type of
-     *   the Observable. Gets {@link AjaxResponse} as an argument.
-     * @return {Observable} An observable sequence containing the XMLHttpRequest.
-     * @static true
-     * @name ajax
-     * @owner Observable
-     * @nocollapse
-    */
-    AjaxObservable.create = (function () {
-        var create = function (urlOrRequest) {
-            return new AjaxObservable(urlOrRequest);
-        };
-        create.get = ajaxGet;
-        create.post = ajaxPost;
-        create.delete = ajaxDelete;
-        create.put = ajaxPut;
-        create.patch = ajaxPatch;
-        create.getJSON = ajaxGetJSON;
-        return create;
-    })();
-    return AjaxObservable;
-}(__WEBPACK_IMPORTED_MODULE_4__Observable__["a" /* Observable */]));
-
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @ignore
- * @extends {Ignored}
- */
-var AjaxSubscriber = /*@__PURE__*/ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __extends */](AjaxSubscriber, _super);
-    function AjaxSubscriber(destination, request) {
-        var _this = _super.call(this, destination) || this;
-        _this.request = request;
-        _this.done = false;
-        var headers = request.headers = request.headers || {};
-        // force CORS if requested
-        if (!request.crossDomain && !headers['X-Requested-With']) {
-            headers['X-Requested-With'] = 'XMLHttpRequest';
-        }
-        // ensure content type is set
-        if (!('Content-Type' in headers) && !(__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].FormData && request.body instanceof __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].FormData) && typeof request.body !== 'undefined') {
-            headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
-        }
-        // properly serialize body
-        request.body = _this.serializeBody(request.body, request.headers['Content-Type']);
-        _this.send();
-        return _this;
-    }
-    AjaxSubscriber.prototype.next = function (e) {
-        this.done = true;
-        var _a = this, xhr = _a.xhr, request = _a.request, destination = _a.destination;
-        var response = new AjaxResponse(e, xhr, request);
-        destination.next(response);
-    };
-    AjaxSubscriber.prototype.send = function () {
-        var _a = this, request = _a.request, _b = _a.request, user = _b.user, method = _b.method, url = _b.url, async = _b.async, password = _b.password, headers = _b.headers, body = _b.body;
-        var createXHR = request.createXHR;
-        var xhr = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_tryCatch__["a" /* tryCatch */])(createXHR).call(request);
-        if (xhr === __WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */]) {
-            this.error(__WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */].e);
-        }
-        else {
-            this.xhr = xhr;
-            // set up the events before open XHR
-            // https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
-            // You need to add the event listeners before calling open() on the request.
-            // Otherwise the progress events will not fire.
-            this.setupEvents(xhr, request);
-            // open XHR
-            var result = void 0;
-            if (user) {
-                result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_tryCatch__["a" /* tryCatch */])(xhr.open).call(xhr, method, url, async, user, password);
-            }
-            else {
-                result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_tryCatch__["a" /* tryCatch */])(xhr.open).call(xhr, method, url, async);
-            }
-            if (result === __WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */]) {
-                this.error(__WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */].e);
-                return null;
-            }
-            // timeout, responseType and withCredentials can be set once the XHR is open
-            if (async) {
-                xhr.timeout = request.timeout;
-                xhr.responseType = request.responseType;
-            }
-            if ('withCredentials' in xhr) {
-                xhr.withCredentials = !!request.withCredentials;
-            }
-            // set headers
-            this.setHeaders(xhr, headers);
-            // finally send the request
-            result = body ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_tryCatch__["a" /* tryCatch */])(xhr.send).call(xhr, body) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_tryCatch__["a" /* tryCatch */])(xhr.send).call(xhr);
-            if (result === __WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */]) {
-                this.error(__WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */].e);
-                return null;
-            }
-        }
-        return xhr;
-    };
-    AjaxSubscriber.prototype.serializeBody = function (body, contentType) {
-        if (!body || typeof body === 'string') {
-            return body;
-        }
-        else if (__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].FormData && body instanceof __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].FormData) {
-            return body;
-        }
-        if (contentType) {
-            var splitIndex = contentType.indexOf(';');
-            if (splitIndex !== -1) {
-                contentType = contentType.substring(0, splitIndex);
-            }
-        }
-        switch (contentType) {
-            case 'application/x-www-form-urlencoded':
-                return Object.keys(body).map(function (key) { return encodeURIComponent(key) + "=" + encodeURIComponent(body[key]); }).join('&');
-            case 'application/json':
-                return JSON.stringify(body);
-            default:
-                return body;
-        }
-    };
-    AjaxSubscriber.prototype.setHeaders = function (xhr, headers) {
-        for (var key in headers) {
-            if (headers.hasOwnProperty(key)) {
-                xhr.setRequestHeader(key, headers[key]);
-            }
-        }
-    };
-    AjaxSubscriber.prototype.setupEvents = function (xhr, request) {
-        var progressSubscriber = request.progressSubscriber;
-        function xhrTimeout(e) {
-            var _a = xhrTimeout, subscriber = _a.subscriber, progressSubscriber = _a.progressSubscriber, request = _a.request;
-            if (progressSubscriber) {
-                progressSubscriber.error(e);
-            }
-            subscriber.error(new AjaxTimeoutError(this, request)); //TODO: Make betterer.
-        }
-        xhr.ontimeout = xhrTimeout;
-        xhrTimeout.request = request;
-        xhrTimeout.subscriber = this;
-        xhrTimeout.progressSubscriber = progressSubscriber;
-        if (xhr.upload && 'withCredentials' in xhr) {
-            if (progressSubscriber) {
-                var xhrProgress_1;
-                xhrProgress_1 = function (e) {
-                    var progressSubscriber = xhrProgress_1.progressSubscriber;
-                    progressSubscriber.next(e);
-                };
-                if (__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XDomainRequest) {
-                    xhr.onprogress = xhrProgress_1;
-                }
-                else {
-                    xhr.upload.onprogress = xhrProgress_1;
-                }
-                xhrProgress_1.progressSubscriber = progressSubscriber;
-            }
-            var xhrError_1;
-            xhrError_1 = function (e) {
-                var _a = xhrError_1, progressSubscriber = _a.progressSubscriber, subscriber = _a.subscriber, request = _a.request;
-                if (progressSubscriber) {
-                    progressSubscriber.error(e);
-                }
-                subscriber.error(new AjaxError('ajax error', this, request));
-            };
-            xhr.onerror = xhrError_1;
-            xhrError_1.request = request;
-            xhrError_1.subscriber = this;
-            xhrError_1.progressSubscriber = progressSubscriber;
-        }
-        function xhrReadyStateChange(e) {
-            return;
-        }
-        xhr.onreadystatechange = xhrReadyStateChange;
-        xhrReadyStateChange.subscriber = this;
-        xhrReadyStateChange.progressSubscriber = progressSubscriber;
-        xhrReadyStateChange.request = request;
-        function xhrLoad(e) {
-            var _a = xhrLoad, subscriber = _a.subscriber, progressSubscriber = _a.progressSubscriber, request = _a.request;
-            if (this.readyState === 4) {
-                // normalize IE9 bug (http://bugs.jquery.com/ticket/1450)
-                var status_1 = this.status === 1223 ? 204 : this.status;
-                var response = (this.responseType === 'text' ? (this.response || this.responseText) : this.response);
-                // fix status code when it is 0 (0 status is undocumented).
-                // Occurs when accessing file resources or on Android 4.1 stock browser
-                // while retrieving files from application cache.
-                if (status_1 === 0) {
-                    status_1 = response ? 200 : 0;
-                }
-                // 4xx and 5xx should error (https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
-                if (status_1 < 400) {
-                    if (progressSubscriber) {
-                        progressSubscriber.complete();
-                    }
-                    subscriber.next(e);
-                    subscriber.complete();
-                }
-                else {
-                    if (progressSubscriber) {
-                        progressSubscriber.error(e);
-                    }
-                    subscriber.error(new AjaxError('ajax error ' + status_1, this, request));
-                }
-            }
-        }
-        xhr.onload = xhrLoad;
-        xhrLoad.subscriber = this;
-        xhrLoad.progressSubscriber = progressSubscriber;
-        xhrLoad.request = request;
-    };
-    AjaxSubscriber.prototype.unsubscribe = function () {
-        var _a = this, done = _a.done, xhr = _a.xhr;
-        if (!done && xhr && xhr.readyState !== 4 && typeof xhr.abort === 'function') {
-            xhr.abort();
-        }
-        _super.prototype.unsubscribe.call(this);
-    };
-    return AjaxSubscriber;
-}(__WEBPACK_IMPORTED_MODULE_5__Subscriber__["a" /* Subscriber */]));
-
-/**
- * A normalized AJAX response.
- *
- * @see {@link ajax}
- *
- * @class AjaxResponse
- */
-var AjaxResponse = /*@__PURE__*/ (function () {
-    function AjaxResponse(originalEvent, xhr, request) {
-        this.originalEvent = originalEvent;
-        this.xhr = xhr;
-        this.request = request;
-        this.status = xhr.status;
-        this.responseType = xhr.responseType || request.responseType;
-        this.response = parseXhrResponse(this.responseType, xhr);
-    }
-    return AjaxResponse;
-}());
-
-/**
- * A normalized AJAX error.
- *
- * @see {@link ajax}
- *
- * @class AjaxError
- */
-var AjaxError = /*@__PURE__*/ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __extends */](AjaxError, _super);
-    function AjaxError(message, xhr, request) {
-        var _this = _super.call(this, message) || this;
-        _this.name = 'AjaxError';
-        _this.message = message;
-        _this.xhr = xhr;
-        _this.request = request;
-        _this.status = xhr.status;
-        _this.responseType = xhr.responseType || request.responseType;
-        _this.response = parseXhrResponse(_this.responseType, xhr);
-        Object.setPrototypeOf(_this, AjaxError.prototype);
-        return _this;
-    }
-    return AjaxError;
-}(Error));
-
-function parseXhrResponse(responseType, xhr) {
-    switch (responseType) {
-        case 'json':
-            // HACK(benlesh): TypeScript shennanigans
-            // tslint:disable-next-line:no-any XMLHttpRequest is defined to always have 'response' inferring xhr as never for the else clause.
-            if ('response' in xhr) {
-                //IE does not support json as responseType, parse it internally
-                return xhr.responseType ? xhr.response : JSON.parse(xhr.response || xhr.responseText || 'null');
-            }
-            else {
-                return JSON.parse(xhr.responseText || 'null');
-            }
-        case 'xml':
-            return xhr.responseXML;
-        case 'text':
-        default:
-            // HACK(benlesh): TypeScript shennanigans
-            // tslint:disable-next-line:no-any XMLHttpRequest is defined to always have 'response' inferring xhr as never for the else sub-expression.
-            return ('response' in xhr) ? xhr.response : xhr.responseText;
-    }
-}
-/**
- * @see {@link ajax}
- *
- * @class AjaxTimeoutError
- */
-var AjaxTimeoutError = /*@__PURE__*/ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __extends */](AjaxTimeoutError, _super);
-    function AjaxTimeoutError(xhr, request) {
-        var _this = _super.call(this, 'ajax timeout', xhr, request) || this;
-        _this.name = 'AjaxTimeoutError';
-        Object.setPrototypeOf(_this, AjaxTimeoutError.prototype);
-        return _this;
-    }
-    return AjaxTimeoutError;
-}(AjaxError));
-
-//# sourceMappingURL=AjaxObservable.js.map
-
-
-/***/ }),
-/* 132 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Subject__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Subscriber__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Observable__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Subscription__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ReplaySubject__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_tryCatch__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__util_errorObject__ = __webpack_require__(19);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WebSocketSubject; });
-/** PURE_IMPORTS_START tslib,_.._Subject,_.._Subscriber,_.._Observable,_.._Subscription,_.._ReplaySubject,_.._util_tryCatch,_.._util_errorObject PURE_IMPORTS_END */
-
-
-
-
-
-
-
-
-var DEFAULT_WEBSOCKET_CONFIG = {
-    url: '',
-    deserializer: function (e) { return JSON.parse(e.data); },
-    serializer: function (value) { return JSON.stringify(value); },
-};
-var WEBSOCKETSUBJECT_INVALID_ERROR_OBJECT = 'WebSocketSubject.error must be called with an object with an error code, and an optional reason: { code: number, reason: string }';
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @extends {Ignored}
- * @hide true
- */
-var WebSocketSubject = /*@__PURE__*/ (function (_super) {
-    __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __extends */](WebSocketSubject, _super);
-    function WebSocketSubject(urlConfigOrSource, destination) {
-        var _this = _super.call(this) || this;
-        if (urlConfigOrSource instanceof __WEBPACK_IMPORTED_MODULE_3__Observable__["a" /* Observable */]) {
-            _this.destination = destination;
-            _this.source = urlConfigOrSource;
-        }
-        else {
-            var config = _this._config = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __assign */]({}, DEFAULT_WEBSOCKET_CONFIG);
-            _this._output = new __WEBPACK_IMPORTED_MODULE_1__Subject__["a" /* Subject */]();
-            if (typeof urlConfigOrSource === 'string') {
-                config.url = urlConfigOrSource;
-            }
-            else {
-                for (var key in urlConfigOrSource) {
-                    if (urlConfigOrSource.hasOwnProperty(key)) {
-                        config[key] = urlConfigOrSource[key];
-                    }
-                }
-            }
-            if (!config.WebSocketCtor && WebSocket) {
-                config.WebSocketCtor = WebSocket;
-            }
-            else if (!config.WebSocketCtor) {
-                throw new Error('no WebSocket constructor can be found');
-            }
-            _this.destination = new __WEBPACK_IMPORTED_MODULE_5__ReplaySubject__["a" /* ReplaySubject */]();
-        }
-        return _this;
-    }
-    WebSocketSubject.prototype.lift = function (operator) {
-        var sock = new WebSocketSubject(this._config, this.destination);
-        sock.operator = operator;
-        sock.source = this;
-        return sock;
-    };
-    WebSocketSubject.prototype._resetState = function () {
-        this._socket = null;
-        if (!this.source) {
-            this.destination = new __WEBPACK_IMPORTED_MODULE_5__ReplaySubject__["a" /* ReplaySubject */]();
-        }
-        this._output = new __WEBPACK_IMPORTED_MODULE_1__Subject__["a" /* Subject */]();
-    };
-    /**
-     * Creates an {@link Observable}, that when subscribed to, sends a message,
-     * defined by the `subMsg` function, to the server over the socket to begin a
-     * subscription to data over that socket. Once data arrives, the
-     * `messageFilter` argument will be used to select the appropriate data for
-     * the resulting Observable. When teardown occurs, either due to
-     * unsubscription, completion or error, a message defined by the `unsubMsg`
-     * argument will be send to the server over the WebSocketSubject.
-     *
-     * @param subMsg A function to generate the subscription message to be sent to
-     * the server. This will still be processed by the serializer in the
-     * WebSocketSubject's config. (Which defaults to JSON serialization)
-     * @param unsubMsg A function to generate the unsubscription message to be
-     * sent to the server at teardown. This will still be processed by the
-     * serializer in the WebSocketSubject's config.
-     * @param messageFilter A predicate for selecting the appropriate messages
-     * from the server for the output stream.
-     */
-    WebSocketSubject.prototype.multiplex = function (subMsg, unsubMsg, messageFilter) {
-        var self = this;
-        return new __WEBPACK_IMPORTED_MODULE_3__Observable__["a" /* Observable */](function (observer) {
-            var result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_tryCatch__["a" /* tryCatch */])(subMsg)();
-            if (result === __WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */]) {
-                observer.error(__WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */].e);
-            }
-            else {
-                self.next(result);
-            }
-            var subscription = self.subscribe(function (x) {
-                var result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_tryCatch__["a" /* tryCatch */])(messageFilter)(x);
-                if (result === __WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */]) {
-                    observer.error(__WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */].e);
-                }
-                else if (result) {
-                    observer.next(x);
-                }
-            }, function (err) { return observer.error(err); }, function () { return observer.complete(); });
-            return function () {
-                var result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_tryCatch__["a" /* tryCatch */])(unsubMsg)();
-                if (result === __WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */]) {
-                    observer.error(__WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */].e);
-                }
-                else {
-                    self.next(result);
-                }
-                subscription.unsubscribe();
-            };
-        });
-    };
-    WebSocketSubject.prototype._connectSocket = function () {
-        var _this = this;
-        var _a = this._config, WebSocketCtor = _a.WebSocketCtor, protocol = _a.protocol, url = _a.url, binaryType = _a.binaryType;
-        var observer = this._output;
-        var socket = null;
-        try {
-            socket = protocol ?
-                new WebSocketCtor(url, protocol) :
-                new WebSocketCtor(url);
-            this._socket = socket;
-            if (binaryType) {
-                this._socket.binaryType = binaryType;
-            }
-        }
-        catch (e) {
-            observer.error(e);
-            return;
-        }
-        var subscription = new __WEBPACK_IMPORTED_MODULE_4__Subscription__["a" /* Subscription */](function () {
-            _this._socket = null;
-            if (socket && socket.readyState === 1) {
-                socket.close();
-            }
-        });
-        socket.onopen = function (e) {
-            var openObserver = _this._config.openObserver;
-            if (openObserver) {
-                openObserver.next(e);
-            }
-            var queue = _this.destination;
-            _this.destination = __WEBPACK_IMPORTED_MODULE_2__Subscriber__["a" /* Subscriber */].create(function (x) {
-                if (socket.readyState === 1) {
-                    var serializer = _this._config.serializer;
-                    var msg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_tryCatch__["a" /* tryCatch */])(serializer)(x);
-                    if (msg === __WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */]) {
-                        _this.destination.error(__WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */].e);
-                        return;
-                    }
-                    socket.send(msg);
-                }
-            }, function (e) {
-                var closingObserver = _this._config.closingObserver;
-                if (closingObserver) {
-                    closingObserver.next(undefined);
-                }
-                if (e && e.code) {
-                    socket.close(e.code, e.reason);
-                }
-                else {
-                    observer.error(new TypeError(WEBSOCKETSUBJECT_INVALID_ERROR_OBJECT));
-                }
-                _this._resetState();
-            }, function () {
-                var closingObserver = _this._config.closingObserver;
-                if (closingObserver) {
-                    closingObserver.next(undefined);
-                }
-                socket.close();
-                _this._resetState();
-            });
-            if (queue && queue instanceof __WEBPACK_IMPORTED_MODULE_5__ReplaySubject__["a" /* ReplaySubject */]) {
-                subscription.add(queue.subscribe(_this.destination));
-            }
-        };
-        socket.onerror = function (e) {
-            _this._resetState();
-            observer.error(e);
-        };
-        socket.onclose = function (e) {
-            _this._resetState();
-            var closeObserver = _this._config.closeObserver;
-            if (closeObserver) {
-                closeObserver.next(e);
-            }
-            if (e.wasClean) {
-                observer.complete();
-            }
-            else {
-                observer.error(e);
-            }
-        };
-        socket.onmessage = function (e) {
-            var deserializer = _this._config.deserializer;
-            var result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_tryCatch__["a" /* tryCatch */])(deserializer)(e);
-            if (result === __WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */]) {
-                observer.error(__WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */].e);
-            }
-            else {
-                observer.next(result);
-            }
-        };
-    };
-    /** @deprecated This is an internal implementation detail, do not use. */
-    WebSocketSubject.prototype._subscribe = function (subscriber) {
-        var _this = this;
-        var source = this.source;
-        if (source) {
-            return source.subscribe(subscriber);
-        }
-        if (!this._socket) {
-            this._connectSocket();
-        }
-        var subscription = new __WEBPACK_IMPORTED_MODULE_4__Subscription__["a" /* Subscription */]();
-        subscription.add(this._output.subscribe(subscriber));
-        subscription.add(function () {
-            var _socket = _this._socket;
-            if (_this._output.observers.length === 0) {
-                if (_socket && _socket.readyState === 1) {
-                    _socket.close();
-                }
-                _this._resetState();
-            }
-        });
-        return subscription;
-    };
-    WebSocketSubject.prototype.unsubscribe = function () {
-        var _a = this, source = _a.source, _socket = _a._socket;
-        if (_socket && _socket.readyState === 1) {
-            _socket.close();
-            this._resetState();
-        }
-        _super.prototype.unsubscribe.call(this);
-        if (!source) {
-            this.destination = new __WEBPACK_IMPORTED_MODULE_5__ReplaySubject__["a" /* ReplaySubject */]();
-        }
-    };
-    return WebSocketSubject;
-}(__WEBPACK_IMPORTED_MODULE_1__Subject__["c" /* AnonymousSubject */]));
-
-//# sourceMappingURL=WebSocketSubject.js.map
-
-
-/***/ }),
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = applyMixins;
-/** PURE_IMPORTS_START  PURE_IMPORTS_END */
-function applyMixins(derivedCtor, baseCtors) {
-    for (var i = 0, len = baseCtors.length; i < len; i++) {
-        var baseCtor = baseCtors[i];
-        var propertyKeys = Object.getOwnPropertyNames(baseCtor.prototype);
-        for (var j = 0, len2 = propertyKeys.length; j < len2; j++) {
-            var name_1 = propertyKeys[j];
-            derivedCtor.prototype[name_1] = baseCtor.prototype[name_1];
-        }
-    }
-}
-//# sourceMappingURL=applyMixins.js.map
-
-
-/***/ }),
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8271,6 +7451,826 @@ var HttpClientJsonpModule = /** @class */ (function () {
 
 
 /***/ }),
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var ListService = (function () {
+    function ListService() {
+        this.listNumbers = [];
+        this.setNumber = new core_1.EventEmitter();
+        for (var i = 0; i < 5; i++) {
+            this.listNumbers.push(Math.floor(Math.random() * 10000));
+        }
+    }
+    ListService.prototype.getListNumbers = function () {
+        return this.listNumbers.slice();
+    };
+    return ListService;
+}());
+ListService = __decorate([
+    core_1.Injectable({
+        providedIn: 'root',
+    }),
+    __metadata("design:paramtypes", [])
+], ListService);
+exports.ListService = ListService;
+
+
+/***/ }),
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_root__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_tryCatch__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_errorObject__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Observable__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Subscriber__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__operators_map__ = __webpack_require__(25);
+/* harmony export (immutable) */ __webpack_exports__["e"] = ajaxGet;
+/* harmony export (immutable) */ __webpack_exports__["f"] = ajaxPost;
+/* harmony export (immutable) */ __webpack_exports__["g"] = ajaxDelete;
+/* harmony export (immutable) */ __webpack_exports__["h"] = ajaxPut;
+/* harmony export (immutable) */ __webpack_exports__["i"] = ajaxPatch;
+/* harmony export (immutable) */ __webpack_exports__["j"] = ajaxGetJSON;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return AjaxObservable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return AjaxSubscriber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AjaxResponse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return AjaxError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AjaxTimeoutError; });
+/** PURE_IMPORTS_START tslib,_.._util_root,_.._util_tryCatch,_.._util_errorObject,_.._Observable,_.._Subscriber,_.._operators_map PURE_IMPORTS_END */
+
+
+
+
+
+
+
+function getCORSRequest() {
+    if (__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XMLHttpRequest) {
+        return new __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XMLHttpRequest();
+    }
+    else if (!!__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XDomainRequest) {
+        return new __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XDomainRequest();
+    }
+    else {
+        throw new Error('CORS is not supported by your browser');
+    }
+}
+function getXMLHttpRequest() {
+    if (__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XMLHttpRequest) {
+        return new __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XMLHttpRequest();
+    }
+    else {
+        var progId = void 0;
+        try {
+            var progIds = ['Msxml2.XMLHTTP', 'Microsoft.XMLHTTP', 'Msxml2.XMLHTTP.4.0'];
+            for (var i = 0; i < 3; i++) {
+                try {
+                    progId = progIds[i];
+                    if (new __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].ActiveXObject(progId)) {
+                        break;
+                    }
+                }
+                catch (e) {
+                    //suppress exceptions
+                }
+            }
+            return new __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].ActiveXObject(progId);
+        }
+        catch (e) {
+            throw new Error('XMLHttpRequest is not supported by your browser');
+        }
+    }
+}
+function ajaxGet(url, headers) {
+    if (headers === void 0) {
+        headers = null;
+    }
+    return new AjaxObservable({ method: 'GET', url: url, headers: headers });
+}
+function ajaxPost(url, body, headers) {
+    return new AjaxObservable({ method: 'POST', url: url, body: body, headers: headers });
+}
+function ajaxDelete(url, headers) {
+    return new AjaxObservable({ method: 'DELETE', url: url, headers: headers });
+}
+function ajaxPut(url, body, headers) {
+    return new AjaxObservable({ method: 'PUT', url: url, body: body, headers: headers });
+}
+function ajaxPatch(url, body, headers) {
+    return new AjaxObservable({ method: 'PATCH', url: url, body: body, headers: headers });
+}
+var mapResponse = /*@__PURE__*/ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__operators_map__["a" /* map */])(function (x, index) { return x.response; });
+function ajaxGetJSON(url, headers) {
+    return mapResponse(new AjaxObservable({
+        method: 'GET',
+        url: url,
+        responseType: 'json',
+        headers: headers
+    }));
+}
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @extends {Ignored}
+ * @hide true
+ */
+var AjaxObservable = /*@__PURE__*/ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __extends */](AjaxObservable, _super);
+    function AjaxObservable(urlOrRequest) {
+        var _this = _super.call(this) || this;
+        var request = {
+            async: true,
+            createXHR: function () {
+                return this.crossDomain ? getCORSRequest() : getXMLHttpRequest();
+            },
+            crossDomain: true,
+            withCredentials: false,
+            headers: {},
+            method: 'GET',
+            responseType: 'json',
+            timeout: 0
+        };
+        if (typeof urlOrRequest === 'string') {
+            request.url = urlOrRequest;
+        }
+        else {
+            for (var prop in urlOrRequest) {
+                if (urlOrRequest.hasOwnProperty(prop)) {
+                    request[prop] = urlOrRequest[prop];
+                }
+            }
+        }
+        _this.request = request;
+        return _this;
+    }
+    /** @deprecated This is an internal implementation detail, do not use. */
+    AjaxObservable.prototype._subscribe = function (subscriber) {
+        return new AjaxSubscriber(subscriber, this.request);
+    };
+    /**
+     * Creates an observable for an Ajax request with either a request object with
+     * url, headers, etc or a string for a URL.
+     *
+     * @example
+     * source = Rx.Observable.ajax('/products');
+     * source = Rx.Observable.ajax({ url: 'products', method: 'GET' });
+     *
+     * @param {string|Object} request Can be one of the following:
+     *   A string of the URL to make the Ajax call.
+     *   An object with the following properties
+     *   - url: URL of the request
+     *   - body: The body of the request
+     *   - method: Method of the request, such as GET, POST, PUT, PATCH, DELETE
+     *   - async: Whether the request is async
+     *   - headers: Optional headers
+     *   - crossDomain: true if a cross domain request, else false
+     *   - createXHR: a function to override if you need to use an alternate
+     *   XMLHttpRequest implementation.
+     *   - resultSelector: a function to use to alter the output value type of
+     *   the Observable. Gets {@link AjaxResponse} as an argument.
+     * @return {Observable} An observable sequence containing the XMLHttpRequest.
+     * @static true
+     * @name ajax
+     * @owner Observable
+     * @nocollapse
+    */
+    AjaxObservable.create = (function () {
+        var create = function (urlOrRequest) {
+            return new AjaxObservable(urlOrRequest);
+        };
+        create.get = ajaxGet;
+        create.post = ajaxPost;
+        create.delete = ajaxDelete;
+        create.put = ajaxPut;
+        create.patch = ajaxPatch;
+        create.getJSON = ajaxGetJSON;
+        return create;
+    })();
+    return AjaxObservable;
+}(__WEBPACK_IMPORTED_MODULE_4__Observable__["a" /* Observable */]));
+
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
+var AjaxSubscriber = /*@__PURE__*/ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __extends */](AjaxSubscriber, _super);
+    function AjaxSubscriber(destination, request) {
+        var _this = _super.call(this, destination) || this;
+        _this.request = request;
+        _this.done = false;
+        var headers = request.headers = request.headers || {};
+        // force CORS if requested
+        if (!request.crossDomain && !headers['X-Requested-With']) {
+            headers['X-Requested-With'] = 'XMLHttpRequest';
+        }
+        // ensure content type is set
+        if (!('Content-Type' in headers) && !(__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].FormData && request.body instanceof __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].FormData) && typeof request.body !== 'undefined') {
+            headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+        }
+        // properly serialize body
+        request.body = _this.serializeBody(request.body, request.headers['Content-Type']);
+        _this.send();
+        return _this;
+    }
+    AjaxSubscriber.prototype.next = function (e) {
+        this.done = true;
+        var _a = this, xhr = _a.xhr, request = _a.request, destination = _a.destination;
+        var response = new AjaxResponse(e, xhr, request);
+        destination.next(response);
+    };
+    AjaxSubscriber.prototype.send = function () {
+        var _a = this, request = _a.request, _b = _a.request, user = _b.user, method = _b.method, url = _b.url, async = _b.async, password = _b.password, headers = _b.headers, body = _b.body;
+        var createXHR = request.createXHR;
+        var xhr = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_tryCatch__["a" /* tryCatch */])(createXHR).call(request);
+        if (xhr === __WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */]) {
+            this.error(__WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */].e);
+        }
+        else {
+            this.xhr = xhr;
+            // set up the events before open XHR
+            // https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
+            // You need to add the event listeners before calling open() on the request.
+            // Otherwise the progress events will not fire.
+            this.setupEvents(xhr, request);
+            // open XHR
+            var result = void 0;
+            if (user) {
+                result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_tryCatch__["a" /* tryCatch */])(xhr.open).call(xhr, method, url, async, user, password);
+            }
+            else {
+                result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_tryCatch__["a" /* tryCatch */])(xhr.open).call(xhr, method, url, async);
+            }
+            if (result === __WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */]) {
+                this.error(__WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */].e);
+                return null;
+            }
+            // timeout, responseType and withCredentials can be set once the XHR is open
+            if (async) {
+                xhr.timeout = request.timeout;
+                xhr.responseType = request.responseType;
+            }
+            if ('withCredentials' in xhr) {
+                xhr.withCredentials = !!request.withCredentials;
+            }
+            // set headers
+            this.setHeaders(xhr, headers);
+            // finally send the request
+            result = body ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_tryCatch__["a" /* tryCatch */])(xhr.send).call(xhr, body) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_tryCatch__["a" /* tryCatch */])(xhr.send).call(xhr);
+            if (result === __WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */]) {
+                this.error(__WEBPACK_IMPORTED_MODULE_3__util_errorObject__["a" /* errorObject */].e);
+                return null;
+            }
+        }
+        return xhr;
+    };
+    AjaxSubscriber.prototype.serializeBody = function (body, contentType) {
+        if (!body || typeof body === 'string') {
+            return body;
+        }
+        else if (__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].FormData && body instanceof __WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].FormData) {
+            return body;
+        }
+        if (contentType) {
+            var splitIndex = contentType.indexOf(';');
+            if (splitIndex !== -1) {
+                contentType = contentType.substring(0, splitIndex);
+            }
+        }
+        switch (contentType) {
+            case 'application/x-www-form-urlencoded':
+                return Object.keys(body).map(function (key) { return encodeURIComponent(key) + "=" + encodeURIComponent(body[key]); }).join('&');
+            case 'application/json':
+                return JSON.stringify(body);
+            default:
+                return body;
+        }
+    };
+    AjaxSubscriber.prototype.setHeaders = function (xhr, headers) {
+        for (var key in headers) {
+            if (headers.hasOwnProperty(key)) {
+                xhr.setRequestHeader(key, headers[key]);
+            }
+        }
+    };
+    AjaxSubscriber.prototype.setupEvents = function (xhr, request) {
+        var progressSubscriber = request.progressSubscriber;
+        function xhrTimeout(e) {
+            var _a = xhrTimeout, subscriber = _a.subscriber, progressSubscriber = _a.progressSubscriber, request = _a.request;
+            if (progressSubscriber) {
+                progressSubscriber.error(e);
+            }
+            subscriber.error(new AjaxTimeoutError(this, request)); //TODO: Make betterer.
+        }
+        xhr.ontimeout = xhrTimeout;
+        xhrTimeout.request = request;
+        xhrTimeout.subscriber = this;
+        xhrTimeout.progressSubscriber = progressSubscriber;
+        if (xhr.upload && 'withCredentials' in xhr) {
+            if (progressSubscriber) {
+                var xhrProgress_1;
+                xhrProgress_1 = function (e) {
+                    var progressSubscriber = xhrProgress_1.progressSubscriber;
+                    progressSubscriber.next(e);
+                };
+                if (__WEBPACK_IMPORTED_MODULE_1__util_root__["a" /* root */].XDomainRequest) {
+                    xhr.onprogress = xhrProgress_1;
+                }
+                else {
+                    xhr.upload.onprogress = xhrProgress_1;
+                }
+                xhrProgress_1.progressSubscriber = progressSubscriber;
+            }
+            var xhrError_1;
+            xhrError_1 = function (e) {
+                var _a = xhrError_1, progressSubscriber = _a.progressSubscriber, subscriber = _a.subscriber, request = _a.request;
+                if (progressSubscriber) {
+                    progressSubscriber.error(e);
+                }
+                subscriber.error(new AjaxError('ajax error', this, request));
+            };
+            xhr.onerror = xhrError_1;
+            xhrError_1.request = request;
+            xhrError_1.subscriber = this;
+            xhrError_1.progressSubscriber = progressSubscriber;
+        }
+        function xhrReadyStateChange(e) {
+            return;
+        }
+        xhr.onreadystatechange = xhrReadyStateChange;
+        xhrReadyStateChange.subscriber = this;
+        xhrReadyStateChange.progressSubscriber = progressSubscriber;
+        xhrReadyStateChange.request = request;
+        function xhrLoad(e) {
+            var _a = xhrLoad, subscriber = _a.subscriber, progressSubscriber = _a.progressSubscriber, request = _a.request;
+            if (this.readyState === 4) {
+                // normalize IE9 bug (http://bugs.jquery.com/ticket/1450)
+                var status_1 = this.status === 1223 ? 204 : this.status;
+                var response = (this.responseType === 'text' ? (this.response || this.responseText) : this.response);
+                // fix status code when it is 0 (0 status is undocumented).
+                // Occurs when accessing file resources or on Android 4.1 stock browser
+                // while retrieving files from application cache.
+                if (status_1 === 0) {
+                    status_1 = response ? 200 : 0;
+                }
+                // 4xx and 5xx should error (https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
+                if (status_1 < 400) {
+                    if (progressSubscriber) {
+                        progressSubscriber.complete();
+                    }
+                    subscriber.next(e);
+                    subscriber.complete();
+                }
+                else {
+                    if (progressSubscriber) {
+                        progressSubscriber.error(e);
+                    }
+                    subscriber.error(new AjaxError('ajax error ' + status_1, this, request));
+                }
+            }
+        }
+        xhr.onload = xhrLoad;
+        xhrLoad.subscriber = this;
+        xhrLoad.progressSubscriber = progressSubscriber;
+        xhrLoad.request = request;
+    };
+    AjaxSubscriber.prototype.unsubscribe = function () {
+        var _a = this, done = _a.done, xhr = _a.xhr;
+        if (!done && xhr && xhr.readyState !== 4 && typeof xhr.abort === 'function') {
+            xhr.abort();
+        }
+        _super.prototype.unsubscribe.call(this);
+    };
+    return AjaxSubscriber;
+}(__WEBPACK_IMPORTED_MODULE_5__Subscriber__["a" /* Subscriber */]));
+
+/**
+ * A normalized AJAX response.
+ *
+ * @see {@link ajax}
+ *
+ * @class AjaxResponse
+ */
+var AjaxResponse = /*@__PURE__*/ (function () {
+    function AjaxResponse(originalEvent, xhr, request) {
+        this.originalEvent = originalEvent;
+        this.xhr = xhr;
+        this.request = request;
+        this.status = xhr.status;
+        this.responseType = xhr.responseType || request.responseType;
+        this.response = parseXhrResponse(this.responseType, xhr);
+    }
+    return AjaxResponse;
+}());
+
+/**
+ * A normalized AJAX error.
+ *
+ * @see {@link ajax}
+ *
+ * @class AjaxError
+ */
+var AjaxError = /*@__PURE__*/ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __extends */](AjaxError, _super);
+    function AjaxError(message, xhr, request) {
+        var _this = _super.call(this, message) || this;
+        _this.name = 'AjaxError';
+        _this.message = message;
+        _this.xhr = xhr;
+        _this.request = request;
+        _this.status = xhr.status;
+        _this.responseType = xhr.responseType || request.responseType;
+        _this.response = parseXhrResponse(_this.responseType, xhr);
+        Object.setPrototypeOf(_this, AjaxError.prototype);
+        return _this;
+    }
+    return AjaxError;
+}(Error));
+
+function parseXhrResponse(responseType, xhr) {
+    switch (responseType) {
+        case 'json':
+            // HACK(benlesh): TypeScript shennanigans
+            // tslint:disable-next-line:no-any XMLHttpRequest is defined to always have 'response' inferring xhr as never for the else clause.
+            if ('response' in xhr) {
+                //IE does not support json as responseType, parse it internally
+                return xhr.responseType ? xhr.response : JSON.parse(xhr.response || xhr.responseText || 'null');
+            }
+            else {
+                return JSON.parse(xhr.responseText || 'null');
+            }
+        case 'xml':
+            return xhr.responseXML;
+        case 'text':
+        default:
+            // HACK(benlesh): TypeScript shennanigans
+            // tslint:disable-next-line:no-any XMLHttpRequest is defined to always have 'response' inferring xhr as never for the else sub-expression.
+            return ('response' in xhr) ? xhr.response : xhr.responseText;
+    }
+}
+/**
+ * @see {@link ajax}
+ *
+ * @class AjaxTimeoutError
+ */
+var AjaxTimeoutError = /*@__PURE__*/ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __extends */](AjaxTimeoutError, _super);
+    function AjaxTimeoutError(xhr, request) {
+        var _this = _super.call(this, 'ajax timeout', xhr, request) || this;
+        _this.name = 'AjaxTimeoutError';
+        Object.setPrototypeOf(_this, AjaxTimeoutError.prototype);
+        return _this;
+    }
+    return AjaxTimeoutError;
+}(AjaxError));
+
+//# sourceMappingURL=AjaxObservable.js.map
+
+
+/***/ }),
+/* 133 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Subject__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Subscriber__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Observable__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Subscription__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ReplaySubject__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_tryCatch__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__util_errorObject__ = __webpack_require__(19);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WebSocketSubject; });
+/** PURE_IMPORTS_START tslib,_.._Subject,_.._Subscriber,_.._Observable,_.._Subscription,_.._ReplaySubject,_.._util_tryCatch,_.._util_errorObject PURE_IMPORTS_END */
+
+
+
+
+
+
+
+
+var DEFAULT_WEBSOCKET_CONFIG = {
+    url: '',
+    deserializer: function (e) { return JSON.parse(e.data); },
+    serializer: function (value) { return JSON.stringify(value); },
+};
+var WEBSOCKETSUBJECT_INVALID_ERROR_OBJECT = 'WebSocketSubject.error must be called with an object with an error code, and an optional reason: { code: number, reason: string }';
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @extends {Ignored}
+ * @hide true
+ */
+var WebSocketSubject = /*@__PURE__*/ (function (_super) {
+    __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __extends */](WebSocketSubject, _super);
+    function WebSocketSubject(urlConfigOrSource, destination) {
+        var _this = _super.call(this) || this;
+        if (urlConfigOrSource instanceof __WEBPACK_IMPORTED_MODULE_3__Observable__["a" /* Observable */]) {
+            _this.destination = destination;
+            _this.source = urlConfigOrSource;
+        }
+        else {
+            var config = _this._config = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __assign */]({}, DEFAULT_WEBSOCKET_CONFIG);
+            _this._output = new __WEBPACK_IMPORTED_MODULE_1__Subject__["a" /* Subject */]();
+            if (typeof urlConfigOrSource === 'string') {
+                config.url = urlConfigOrSource;
+            }
+            else {
+                for (var key in urlConfigOrSource) {
+                    if (urlConfigOrSource.hasOwnProperty(key)) {
+                        config[key] = urlConfigOrSource[key];
+                    }
+                }
+            }
+            if (!config.WebSocketCtor && WebSocket) {
+                config.WebSocketCtor = WebSocket;
+            }
+            else if (!config.WebSocketCtor) {
+                throw new Error('no WebSocket constructor can be found');
+            }
+            _this.destination = new __WEBPACK_IMPORTED_MODULE_5__ReplaySubject__["a" /* ReplaySubject */]();
+        }
+        return _this;
+    }
+    WebSocketSubject.prototype.lift = function (operator) {
+        var sock = new WebSocketSubject(this._config, this.destination);
+        sock.operator = operator;
+        sock.source = this;
+        return sock;
+    };
+    WebSocketSubject.prototype._resetState = function () {
+        this._socket = null;
+        if (!this.source) {
+            this.destination = new __WEBPACK_IMPORTED_MODULE_5__ReplaySubject__["a" /* ReplaySubject */]();
+        }
+        this._output = new __WEBPACK_IMPORTED_MODULE_1__Subject__["a" /* Subject */]();
+    };
+    /**
+     * Creates an {@link Observable}, that when subscribed to, sends a message,
+     * defined by the `subMsg` function, to the server over the socket to begin a
+     * subscription to data over that socket. Once data arrives, the
+     * `messageFilter` argument will be used to select the appropriate data for
+     * the resulting Observable. When teardown occurs, either due to
+     * unsubscription, completion or error, a message defined by the `unsubMsg`
+     * argument will be send to the server over the WebSocketSubject.
+     *
+     * @param subMsg A function to generate the subscription message to be sent to
+     * the server. This will still be processed by the serializer in the
+     * WebSocketSubject's config. (Which defaults to JSON serialization)
+     * @param unsubMsg A function to generate the unsubscription message to be
+     * sent to the server at teardown. This will still be processed by the
+     * serializer in the WebSocketSubject's config.
+     * @param messageFilter A predicate for selecting the appropriate messages
+     * from the server for the output stream.
+     */
+    WebSocketSubject.prototype.multiplex = function (subMsg, unsubMsg, messageFilter) {
+        var self = this;
+        return new __WEBPACK_IMPORTED_MODULE_3__Observable__["a" /* Observable */](function (observer) {
+            var result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_tryCatch__["a" /* tryCatch */])(subMsg)();
+            if (result === __WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */]) {
+                observer.error(__WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */].e);
+            }
+            else {
+                self.next(result);
+            }
+            var subscription = self.subscribe(function (x) {
+                var result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_tryCatch__["a" /* tryCatch */])(messageFilter)(x);
+                if (result === __WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */]) {
+                    observer.error(__WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */].e);
+                }
+                else if (result) {
+                    observer.next(x);
+                }
+            }, function (err) { return observer.error(err); }, function () { return observer.complete(); });
+            return function () {
+                var result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_tryCatch__["a" /* tryCatch */])(unsubMsg)();
+                if (result === __WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */]) {
+                    observer.error(__WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */].e);
+                }
+                else {
+                    self.next(result);
+                }
+                subscription.unsubscribe();
+            };
+        });
+    };
+    WebSocketSubject.prototype._connectSocket = function () {
+        var _this = this;
+        var _a = this._config, WebSocketCtor = _a.WebSocketCtor, protocol = _a.protocol, url = _a.url, binaryType = _a.binaryType;
+        var observer = this._output;
+        var socket = null;
+        try {
+            socket = protocol ?
+                new WebSocketCtor(url, protocol) :
+                new WebSocketCtor(url);
+            this._socket = socket;
+            if (binaryType) {
+                this._socket.binaryType = binaryType;
+            }
+        }
+        catch (e) {
+            observer.error(e);
+            return;
+        }
+        var subscription = new __WEBPACK_IMPORTED_MODULE_4__Subscription__["a" /* Subscription */](function () {
+            _this._socket = null;
+            if (socket && socket.readyState === 1) {
+                socket.close();
+            }
+        });
+        socket.onopen = function (e) {
+            var openObserver = _this._config.openObserver;
+            if (openObserver) {
+                openObserver.next(e);
+            }
+            var queue = _this.destination;
+            _this.destination = __WEBPACK_IMPORTED_MODULE_2__Subscriber__["a" /* Subscriber */].create(function (x) {
+                if (socket.readyState === 1) {
+                    var serializer = _this._config.serializer;
+                    var msg = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_tryCatch__["a" /* tryCatch */])(serializer)(x);
+                    if (msg === __WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */]) {
+                        _this.destination.error(__WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */].e);
+                        return;
+                    }
+                    socket.send(msg);
+                }
+            }, function (e) {
+                var closingObserver = _this._config.closingObserver;
+                if (closingObserver) {
+                    closingObserver.next(undefined);
+                }
+                if (e && e.code) {
+                    socket.close(e.code, e.reason);
+                }
+                else {
+                    observer.error(new TypeError(WEBSOCKETSUBJECT_INVALID_ERROR_OBJECT));
+                }
+                _this._resetState();
+            }, function () {
+                var closingObserver = _this._config.closingObserver;
+                if (closingObserver) {
+                    closingObserver.next(undefined);
+                }
+                socket.close();
+                _this._resetState();
+            });
+            if (queue && queue instanceof __WEBPACK_IMPORTED_MODULE_5__ReplaySubject__["a" /* ReplaySubject */]) {
+                subscription.add(queue.subscribe(_this.destination));
+            }
+        };
+        socket.onerror = function (e) {
+            _this._resetState();
+            observer.error(e);
+        };
+        socket.onclose = function (e) {
+            _this._resetState();
+            var closeObserver = _this._config.closeObserver;
+            if (closeObserver) {
+                closeObserver.next(e);
+            }
+            if (e.wasClean) {
+                observer.complete();
+            }
+            else {
+                observer.error(e);
+            }
+        };
+        socket.onmessage = function (e) {
+            var deserializer = _this._config.deserializer;
+            var result = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__util_tryCatch__["a" /* tryCatch */])(deserializer)(e);
+            if (result === __WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */]) {
+                observer.error(__WEBPACK_IMPORTED_MODULE_7__util_errorObject__["a" /* errorObject */].e);
+            }
+            else {
+                observer.next(result);
+            }
+        };
+    };
+    /** @deprecated This is an internal implementation detail, do not use. */
+    WebSocketSubject.prototype._subscribe = function (subscriber) {
+        var _this = this;
+        var source = this.source;
+        if (source) {
+            return source.subscribe(subscriber);
+        }
+        if (!this._socket) {
+            this._connectSocket();
+        }
+        var subscription = new __WEBPACK_IMPORTED_MODULE_4__Subscription__["a" /* Subscription */]();
+        subscription.add(this._output.subscribe(subscriber));
+        subscription.add(function () {
+            var _socket = _this._socket;
+            if (_this._output.observers.length === 0) {
+                if (_socket && _socket.readyState === 1) {
+                    _socket.close();
+                }
+                _this._resetState();
+            }
+        });
+        return subscription;
+    };
+    WebSocketSubject.prototype.unsubscribe = function () {
+        var _a = this, source = _a.source, _socket = _a._socket;
+        if (_socket && _socket.readyState === 1) {
+            _socket.close();
+            this._resetState();
+        }
+        _super.prototype.unsubscribe.call(this);
+        if (!source) {
+            this.destination = new __WEBPACK_IMPORTED_MODULE_5__ReplaySubject__["a" /* ReplaySubject */]();
+        }
+    };
+    return WebSocketSubject;
+}(__WEBPACK_IMPORTED_MODULE_1__Subject__["c" /* AnonymousSubject */]));
+
+//# sourceMappingURL=WebSocketSubject.js.map
+
+
+/***/ }),
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = applyMixins;
+/** PURE_IMPORTS_START  PURE_IMPORTS_END */
+function applyMixins(derivedCtor, baseCtors) {
+    for (var i = 0, len = baseCtors.length; i < len; i++) {
+        var baseCtor = baseCtors[i];
+        var propertyKeys = Object.getOwnPropertyNames(baseCtor.prototype);
+        for (var j = 0, len2 = propertyKeys.length; j < len2; j++) {
+            var name_1 = propertyKeys[j];
+            derivedCtor.prototype[name_1] = baseCtor.prototype[name_1];
+        }
+    }
+}
+//# sourceMappingURL=applyMixins.js.map
+
+
+/***/ }),
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
 /* 159 */,
 /* 160 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -8573,6 +8573,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var forms_1 = __webpack_require__(86);
 var rest_service_1 = __webpack_require__(260);
+var http_1 = __webpack_require__(106);
 var HttpPageComponent = (function () {
     function HttpPageComponent(restService) {
         this.restService = restService;
@@ -8592,9 +8593,29 @@ var HttpPageComponent = (function () {
         var data = this.setupData();
         this.data.push(data);
         this.restService.updateDate(this.data).subscribe(function (res) {
-            var data = res.json();
+            var data = res;
             console.log('Response Update', res, data);
             _this.data = data;
+        }, function (error) {
+            console.error(error);
+        });
+        this.form.reset();
+    };
+    HttpPageComponent.prototype.onUpdateWithEvents = function () {
+        var _this = this;
+        var data = this.setupData();
+        this.data.push(data);
+        this.restService.updateDateWithEvents(this.data).subscribe(function (res) {
+            switch (res.type) {
+                case http_1.HttpEventType.Sent:
+                    console.log('Update was sent');
+                    break;
+                case http_1.HttpEventType.Response:
+                    var data_1 = res.body;
+                    console.log('Response Update', res, data_1);
+                    _this.data = data_1;
+                    break;
+            }
         }, function (error) {
             console.error(error);
         });
@@ -8968,7 +8989,7 @@ exports.CanDeactivateGuard = CanDeactivateGuard;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__internal_observable_dom_ajax__ = __webpack_require__(211);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "ajax", function() { return __WEBPACK_IMPORTED_MODULE_0__internal_observable_dom_ajax__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__internal_observable_dom_AjaxObservable__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__internal_observable_dom_AjaxObservable__ = __webpack_require__(132);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "AjaxResponse", function() { return __WEBPACK_IMPORTED_MODULE_1__internal_observable_dom_AjaxObservable__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "AjaxError", function() { return __WEBPACK_IMPORTED_MODULE_1__internal_observable_dom_AjaxObservable__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "AjaxTimeoutError", function() { return __WEBPACK_IMPORTED_MODULE_1__internal_observable_dom_AjaxObservable__["c"]; });
@@ -8988,7 +9009,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AjaxObservable__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__AjaxObservable__ = __webpack_require__(132);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ajax; });
 /** PURE_IMPORTS_START _AjaxObservable PURE_IMPORTS_END */
 
@@ -9001,7 +9022,7 @@ var ajax = __WEBPACK_IMPORTED_MODULE_0__AjaxObservable__["d" /* AjaxObservable *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__WebSocketSubject__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__WebSocketSubject__ = __webpack_require__(133);
 /* harmony export (immutable) */ __webpack_exports__["a"] = webSocket;
 /** PURE_IMPORTS_START _WebSocketSubject PURE_IMPORTS_END */
 
@@ -9147,7 +9168,7 @@ var _root = __window || __global || __self;
 
 //# sourceMappingURL=root.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(157)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(158)))
 
 /***/ }),
 /* 240 */,
@@ -9167,7 +9188,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // Imports
 var core_1 = __webpack_require__(5);
 var platform_browser_1 = __webpack_require__(59);
-var http_1 = __webpack_require__(158);
+var http_1 = __webpack_require__(106);
 var forms_1 = __webpack_require__(86);
 // Custom Modules
 var app_routing_module_1 = __webpack_require__(160);
@@ -9306,7 +9327,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var list_service_1 = __webpack_require__(106);
+var list_service_1 = __webpack_require__(107);
 var account_service_1 = __webpack_require__(171);
 var MenuComponent = (function () {
     function MenuComponent(listService, accountService) {
@@ -9365,7 +9386,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var list_service_1 = __webpack_require__(106);
+var list_service_1 = __webpack_require__(107);
 var CustomComponent = (function () {
     function CustomComponent(listService) {
         this.listService = listService;
@@ -9662,7 +9683,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var list_service_1 = __webpack_require__(106);
+var list_service_1 = __webpack_require__(107);
 var ListComponent = (function () {
     function ListComponent(listService) {
         this.listService = listService;
@@ -9828,7 +9849,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 //import { Http, Headers, Response } from '@angular/http';
-var http_1 = __webpack_require__(158);
+var http_1 = __webpack_require__(106);
 var rxjs_1 = __webpack_require__(0);
 __webpack_require__(0);
 var RestService = (function () {
@@ -9837,16 +9858,19 @@ var RestService = (function () {
         this.firebaseUrl = 'https://angular-90284.firebaseio.com/';
     }
     RestService.prototype.saveDate = function (data) {
-        var headers = new Headers({ 'Content-Type': 'application/json' });
-        return this.http.post(this.firebaseUrl + 'data.json', data);
+        var headers = new http_1.HttpHeaders().set('Content-Type', 'application/json');
+        return this.http.post(this.firebaseUrl + 'data.json', data, { headers: headers });
     };
     RestService.prototype.updateDate = function (data) {
         return this.http.put(this.firebaseUrl + 'data.json', data);
     };
+    RestService.prototype.updateDateWithEvents = function (data) {
+        return this.http.put(this.firebaseUrl + 'data.json', data, { observe: 'events' });
+    };
     RestService.prototype.getData = function () {
         return this.http.get(this.firebaseUrl + 'data.json', {
             observe: 'response',
-            responseType: 'text' // get response in text format(usually it is in json)
+            responseType: 'text' // get response in text format(usually it is in json), if set to 'json' will receive standart object. 'json' is default
         }).map(function (res) {
             console.log('data.json - response = ', res);
             var data = JSON.parse(res.body);
@@ -10228,7 +10252,7 @@ module.exports = "<div>\r\n\t<h1>Hello dear, {{title}}</h1>\r\n\t<input type=\"t
 /* 429 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>HTTP Requests Page</h1>\r\n<form id=\"simpeForm\" class=\"form\" (ngSubmit)=\"onSubmit(formElement)\" #formElement=\"ngForm\">\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"name\">Name:</label>\r\n      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" ngModel />\r\n  </div>\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"value\">Value:</label>\r\n      <input type=\"text\" id=\"value\" class=\"form-control\" name=\"value\" ngModel />\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\">Save</button>\r\n  <button type=\"button\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\" (click)=\"onUpdate()\">Update</button>\r\n</form>\r\n<h2>Data from the Firebase</h2>\r\n<ul *ngIf=\"data && data.length\" class=\"row\">\r\n  <li *ngFor=\"let item of data\" class=\"col-3\">\r\n    <p><strong>Name: </strong>{{item.name}}</p>\r\n    <p><strong>Value: </strong>{{item.value}}</p>\r\n  </li>\r\n</ul>\r\n";
+module.exports = "<h1>HTTP Requests Page</h1>\r\n<form id=\"simpeForm\" class=\"form\" (ngSubmit)=\"onSubmit(formElement)\" #formElement=\"ngForm\">\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"name\">Name:</label>\r\n      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" ngModel />\r\n  </div>\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"value\">Value:</label>\r\n      <input type=\"text\" id=\"value\" class=\"form-control\" name=\"value\" ngModel />\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\">Save</button>\r\n  <button type=\"button\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\" (click)=\"onUpdate()\">Update</button>\r\n  <button type=\"button\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\" (click)=\"onUpdateWithEvents()\">Update With Listen Events</button>\r\n</form>\r\n<h2>Data from the Firebase</h2>\r\n<ul *ngIf=\"data && data.length\" class=\"row\">\r\n  <li *ngFor=\"let item of data\" class=\"col-3\">\r\n    <p><strong>Name: </strong>{{item.name}}</p>\r\n    <p><strong>Value: </strong>{{item.value}}</p>\r\n  </li>\r\n</ul>\r\n";
 
 /***/ }),
 /* 430 */
@@ -17110,7 +17134,7 @@ __export(__webpack_require__(436));
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Observable__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Subscription__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__SubscriptionLoggable__ = __webpack_require__(234);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_applyMixins__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_applyMixins__ = __webpack_require__(148);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ColdObservable; });
 /** PURE_IMPORTS_START tslib,_Observable,_Subscription,_SubscriptionLoggable,_util_applyMixins PURE_IMPORTS_END */
 
@@ -17166,7 +17190,7 @@ var ColdObservable = /*@__PURE__*/ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Subject__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Subscription__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__SubscriptionLoggable__ = __webpack_require__(234);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_applyMixins__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_applyMixins__ = __webpack_require__(148);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HotObservable; });
 /** PURE_IMPORTS_START tslib,_Subject,_Subscription,_SubscriptionLoggable,_util_applyMixins PURE_IMPORTS_END */
 
@@ -17625,7 +17649,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__internal_observable_dom_webSocket__ = __webpack_require__(212);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "webSocket", function() { return __WEBPACK_IMPORTED_MODULE_0__internal_observable_dom_webSocket__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__internal_observable_dom_WebSocketSubject__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__internal_observable_dom_WebSocketSubject__ = __webpack_require__(133);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "WebSocketSubject", function() { return __WEBPACK_IMPORTED_MODULE_1__internal_observable_dom_WebSocketSubject__["a"]; });
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 //import { Http, Headers, Response } from '@angular/http';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import 'rxjs';
 
@@ -12,18 +12,22 @@ export default class RestService{
     constructor(private http: HttpClient){}
 
     saveDate(data: any[]){
-      const headers = new Headers({'Content-Type': 'application/json'});
-      return this.http.post(this.firebaseUrl + 'data.json', data);
+      const headers = new HttpHeaders().set('Content-Type', 'application/json');
+      return this.http.post(this.firebaseUrl + 'data.json', data, {headers});
     }
 
     updateDate(data: any[]){
       return this.http.put(this.firebaseUrl + 'data.json', data);
     }
 
+    updateDateWithEvents(data: any[]){
+      return this.http.put(this.firebaseUrl + 'data.json', data, {observe: 'events'});
+    }
+
     getData(){
       return this.http.get(this.firebaseUrl + 'data.json', {
         observe: 'response', // get whole response
-        responseType: 'text' // get response in text format(usually it is in json)
+        responseType: 'text' // get response in text format(usually it is in json), if set to 'json' will receive standart object. 'json' is default
       }).map((res: any) => {
           console.log('data.json - response = ',res);
           const data = JSON.parse(res.body);
