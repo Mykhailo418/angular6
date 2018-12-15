@@ -9859,7 +9859,7 @@ var RestService = (function () {
     }
     RestService.prototype.saveDate = function (data) {
         var headers = new http_1.HttpHeaders().set('Content-Type', 'application/json');
-        headers.append('Accept', 'application/json');
+        headers = headers.append('Accept', 'application/json');
         return this.http.post(this.firebaseUrl + 'data.json', data, { headers: headers });
     };
     RestService.prototype.updateDate = function (data) {
@@ -9869,9 +9869,11 @@ var RestService = (function () {
         return this.http.put(this.firebaseUrl + 'data.json', data, { observe: 'events' });
     };
     RestService.prototype.getData = function () {
+        var params = new http_1.HttpParams().set('param1', '123').append('param2', '123');
         return this.http.get(this.firebaseUrl + 'data.json', {
             observe: 'response',
-            responseType: 'text' // get response in text format(usually it is in json), if set to 'json' will receive standart object. 'json' is default
+            responseType: 'text',
+            params: params
         }).map(function (res) {
             console.log('data.json - response = ', res);
             var data = JSON.parse(res.body);
