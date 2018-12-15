@@ -9859,6 +9859,7 @@ var RestService = (function () {
     }
     RestService.prototype.saveDate = function (data) {
         var headers = new http_1.HttpHeaders().set('Content-Type', 'application/json');
+        headers.append('Accept', 'application/json');
         return this.http.post(this.firebaseUrl + 'data.json', data, { headers: headers });
     };
     RestService.prototype.updateDate = function (data) {

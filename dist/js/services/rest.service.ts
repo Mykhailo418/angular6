@@ -13,6 +13,7 @@ export default class RestService{
 
     saveDate(data: any[]){
       const headers = new HttpHeaders().set('Content-Type', 'application/json');
+      headers.append('Accept','application/json');
       return this.http.post(this.firebaseUrl + 'data.json', data, {headers});
     }
 
