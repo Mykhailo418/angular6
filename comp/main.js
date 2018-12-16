@@ -9239,6 +9239,8 @@ var AppUnless_directive_1 = __webpack_require__(253);
 // Pipes
 var shorten_pipe_1 = __webpack_require__(258);
 var filter_pipe_1 = __webpack_require__(257);
+// Interceptors
+var common_interceptor_1 = __webpack_require__(776);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -9252,7 +9254,9 @@ AppModule = __decorate([
             notFound_component_1.NotFoundComponent, editing_component_1.EditingPageComponent, errorPage_component_1.ErrorPage, observablesPage_component_1.ObservablesPageComponent, forms_component_1.FormsPageComponent, reactiveForms_component_1.ReactiveFormComponent,
             pipes_component_1.PipesPageComponent, shorten_pipe_1.ShortenPipe, filter_pipe_1.FilterPipe, httpPage_component_1.HttpPageComponent],
         bootstrap: [app_component_1.AppComponent],
-        providers: []
+        providers: [
+            { provide: http_1.HTTP_INTERCEPTORS, useClass: common_interceptor_1.CommonInterceptor, multi: true }
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;
@@ -17704,6 +17708,30 @@ var app_module_1 = __webpack_require__(242);
 var core_1 = __webpack_require__(5);
 core_1.enableProdMode();
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+
+
+/***/ }),
+/* 774 */,
+/* 775 */,
+/* 776 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+// we can use @Injectable() in order to inject other service here
+var CommonInterceptor = (function () {
+    function CommonInterceptor() {
+    }
+    CommonInterceptor.prototype.intercept = function (req, next) {
+        console.log('CommonInterceptor: ', req);
+        // editing http request, because req is immutable
+        var copiedReq = req.clone({ params: req.params.append('interceptorParam', '789') });
+        return next.handle(copiedReq);
+    };
+    return CommonInterceptor;
+}());
+exports.CommonInterceptor = CommonInterceptor;
 
 
 /***/ })
