@@ -33,6 +33,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 
 // Interceptors
 import { CommonInterceptor } from './services/common.interceptor';
+import { IncomingRequestInterceptor } from './services/incomingReq.interceptor';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, SharedModule, CoreModule],
@@ -42,7 +43,8 @@ import { CommonInterceptor } from './services/common.interceptor';
     PipesPageComponent, ShortenPipe, FilterPipe, HttpPageComponent],
   bootstrap: [AppComponent],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: CommonInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: CommonInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: IncomingRequestInterceptor, multi: true}
   ]
 })
 export class AppModule {
