@@ -8621,6 +8621,32 @@ var HttpPageComponent = (function () {
         });
         this.form.reset();
     };
+    HttpPageComponent.prototype.onUpdateWithRequest = function () {
+        var _this = this;
+        var data = this.setupData();
+        this.data.push(data);
+        this.restService.updateDataWithRequest(this.data).subscribe(function (res) {
+            switch (res.type) {
+                case http_1.HttpEventType.Sent:
+                    console.log('Update was sent');
+                    break;
+                case http_1.HttpEventType.UploadProgress:
+                    console.log('Uploading data:', res);
+                    break;
+                case http_1.HttpEventType.DownloadProgress:
+                    console.log('Download data:', res);
+                    break;
+                case http_1.HttpEventType.Response:
+                    var data_2 = res.body;
+                    console.log('Response Update:', res, data_2);
+                    _this.data = data_2;
+                    break;
+            }
+        }, function (error) {
+            console.error(error);
+        });
+        this.form.reset();
+    };
     HttpPageComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.restService.getData().subscribe(function (data) {
@@ -9868,6 +9894,12 @@ var RestService = (function () {
     RestService.prototype.updateDateWithEvents = function (data) {
         return this.http.put(this.firebaseUrl + 'data.json', data, { observe: 'events' });
     };
+    RestService.prototype.updateDataWithRequest = function (data) {
+        var req = new http_1.HttpRequest('PUT', this.firebaseUrl + 'data.json', data, {
+            reportProgress: true // in order to receive progress events data
+        });
+        return this.http.request(req);
+    };
     RestService.prototype.getData = function () {
         var params = new http_1.HttpParams().set('param1', '123').append('param2', '123');
         return this.http.get(this.firebaseUrl + 'data.json', {
@@ -10255,7 +10287,7 @@ module.exports = "<div>\r\n\t<h1>Hello dear, {{title}}</h1>\r\n\t<input type=\"t
 /* 429 */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>HTTP Requests Page</h1>\r\n<form id=\"simpeForm\" class=\"form\" (ngSubmit)=\"onSubmit(formElement)\" #formElement=\"ngForm\">\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"name\">Name:</label>\r\n      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" ngModel />\r\n  </div>\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"value\">Value:</label>\r\n      <input type=\"text\" id=\"value\" class=\"form-control\" name=\"value\" ngModel />\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\">Save</button>\r\n  <button type=\"button\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\" (click)=\"onUpdate()\">Update</button>\r\n  <button type=\"button\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\" (click)=\"onUpdateWithEvents()\">Update With Listen Events</button>\r\n</form>\r\n<h2>Data from the Firebase</h2>\r\n<ul *ngIf=\"data && data.length\" class=\"row\">\r\n  <li *ngFor=\"let item of data\" class=\"col-3\">\r\n    <p><strong>Name: </strong>{{item.name}}</p>\r\n    <p><strong>Value: </strong>{{item.value}}</p>\r\n  </li>\r\n</ul>\r\n";
+module.exports = "<h1>HTTP Requests Page</h1>\r\n<form id=\"simpeForm\" class=\"form\" (ngSubmit)=\"onSubmit(formElement)\" #formElement=\"ngForm\">\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"name\">Name:</label>\r\n      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" ngModel />\r\n  </div>\r\n  <div class=\"form-group\">\r\n      <label class=\"label-control\" for=\"value\">Value:</label>\r\n      <input type=\"text\" id=\"value\" class=\"form-control\" name=\"value\" ngModel />\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\">Save</button>\r\n  <button type=\"button\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\" (click)=\"onUpdate()\">Update</button>\r\n  <button type=\"button\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\" (click)=\"onUpdateWithEvents()\">Update With Listen Events</button>\r\n  <button type=\"button\" class=\"btn btn-success\" [disabled]=\"!formElement.valid\" (click)=\"onUpdateWithRequest()\">Update With Progress</button>\r\n</form>\r\n<h2>Data from the Firebase</h2>\r\n<ul *ngIf=\"data && data.length\" class=\"row\">\r\n  <li *ngFor=\"let item of data\" class=\"col-3\">\r\n    <p><strong>Name: </strong>{{item.name}}</p>\r\n    <p><strong>Value: </strong>{{item.value}}</p>\r\n  </li>\r\n</ul>\r\n";
 
 /***/ }),
 /* 430 */

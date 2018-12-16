@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 //import { Http, Headers, Response } from '@angular/http';
-import { HttpClient, HttpHeaders,  HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders,  HttpParams, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import 'rxjs';
 
@@ -23,6 +23,13 @@ export default class RestService{
 
     updateDateWithEvents(data: any[]){
       return this.http.put(this.firebaseUrl + 'data.json', data, {observe: 'events'});
+    }
+
+    updateDataWithRequest(data: any[]){
+      const req = new HttpRequest('PUT', this.firebaseUrl + 'data.json', data, {
+        reportProgress: true // in order to receive progress events data
+      });
+      return this.http.request(req);
     }
 
     getData(){

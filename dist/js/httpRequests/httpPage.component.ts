@@ -56,6 +56,32 @@ export class HttpPageComponent implements OnInit {
       this.form.reset();
   }
 
+  onUpdateWithRequest(){
+      const data = this.setupData();
+      this.data.push(data);
+      this.restService.updateDataWithRequest(this.data).subscribe((res: HttpEvent<Object>) => {
+          switch(res.type){
+            case HttpEventType.Sent:
+              console.log('Update was sent');
+            break;
+            case HttpEventType.UploadProgress:
+              console.log('Uploading data:', res);
+            break;
+            case HttpEventType.DownloadProgress:
+              console.log('Download data:', res);
+            break;
+            case HttpEventType.Response:
+              const data: any[] = (<any[]>res.body);
+              console.log('Response Update:',res,data);
+              this.data = data;
+            break;
+          }
+      }, (error: any) => {
+          console.error(error);
+      });
+      this.form.reset();
+  }
+
   ngOnInit(){
     this.restService.getData().subscribe((data: Object | any[]) => {
         console.log('GET DATA', data);
