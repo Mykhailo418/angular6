@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 
 // Custom Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -24,7 +25,9 @@ import { FormsPageComponent } from './formsPage/forms.component';
 import { ReactiveFormComponent } from './formsPage/reactiveForms.component';
 import { PipesPageComponent } from './pipesPage/pipes.component';
 import { HttpPageComponent } from './httpRequests/httpPage.component';
+import { NgrxPageComponent } from './ngrx/page/ngrxPage.component';
 
+// Directives
 import { AppUnlessDirective } from './directives/AppUnless.directive';
 
 // Pipes
@@ -35,12 +38,18 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { CommonInterceptor } from './services/common.interceptor';
 import { IncomingRequestInterceptor } from './services/incomingReq.interceptor';
 
+// Reducers
+import {itemsListReducer} from './ngrx/reducers/common.reducer';
+
+const reducers = {itemsListReducer}
+
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, SharedModule, CoreModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, SharedModule, CoreModule,
+    StoreModule.forRoot(reducers)],
   declarations: [AppComponent, CustomComponent, AppUnlessDirective,
 		ListComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
     NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent,
-    PipesPageComponent, ShortenPipe, FilterPipe, HttpPageComponent],
+    PipesPageComponent, ShortenPipe, FilterPipe, HttpPageComponent, NgrxPageComponent],
   bootstrap: [AppComponent],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: CommonInterceptor, multi: true},

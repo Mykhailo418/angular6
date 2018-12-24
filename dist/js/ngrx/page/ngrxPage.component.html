@@ -1,0 +1,10 @@
+<h1>Ngrx page</h1>
+<div>
+  <button class="btn btn-primary" (click)="dispatchMoreItem()">Dispatch Item</button>
+</div>
+<ul *ngIf="items && items.length" class="row">
+    <li *ngFor="let item of items" class="col-3">
+      <strong>Key: </strong> {{item.key}}<br />
+      <strong>Value: </strong> {{item.value}}
+    </li>
+</ul>
