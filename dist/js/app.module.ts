@@ -39,9 +39,7 @@ import { CommonInterceptor } from './services/common.interceptor';
 import { IncomingRequestInterceptor } from './services/incomingReq.interceptor';
 
 // Reducers
-import {itemsListReducer} from './ngrx/reducers/common.reducer';
-
-const reducers = {itemsListReducer}
+import {reducers} from './ngrx/store.reducer';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, SharedModule, CoreModule,

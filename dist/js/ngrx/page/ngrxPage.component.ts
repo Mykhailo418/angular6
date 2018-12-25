@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import * as ItemsActions from '../common.actions';
 import {state as itemsState} from '../reducers/common.reducer';
-import {appState} from '../store.interface';
+import {appState} from '../store.reducer';
 
 @Component({
 	selector: 'ngrx-page',
