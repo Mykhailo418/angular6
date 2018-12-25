@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import * as ItemsActions from '../common.actions';
+import {state as itemsState} from '../reducers/common.reducer';
+import {appState} from '../store.interface';
 
 @Component({
 	selector: 'ngrx-page',
@@ -9,9 +11,9 @@ import * as ItemsActions from '../common.actions';
 })
 export class NgrxPageComponent implements OnInit, OnDestroy {
 	items: any[]
-  itemsObservable: Observable<{items: any[] }>;
+  itemsObservable: Observable<itemsState>;
   itemsSubscription: Subscription;
-	constructor(private store: Store<{ itemsListReducer: {items: any[]} }>) {
+	constructor(private store: Store<appState>) {
 
   }
 
