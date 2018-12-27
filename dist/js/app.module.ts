@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 // Custom Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -40,10 +41,11 @@ import { IncomingRequestInterceptor } from './services/incomingReq.interceptor';
 
 // Reducers
 import {reducers} from './ngrx/store.reducer';
+import {CommonEffects} from './ngrx/common.effects';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule, SharedModule, CoreModule,
-    StoreModule.forRoot(reducers)],
+    StoreModule.forRoot(reducers), EffectsModule.forRoot([CommonEffects])],
   declarations: [AppComponent, CustomComponent, AppUnlessDirective,
 		ListComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
     NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent,

@@ -16,6 +16,10 @@ export function itemsListReducer(state = initialState, action: ItemsActions.Item
         ...state,
         items: [...state.items, action.payload]
       }
+    case ItemsActions.UPDATE_LAST:
+        let items = [...state.items];
+        items[items.length - 1] = action.payload;
+        return {...state, items}
   }
   return state;
 }
