@@ -42,12 +42,12 @@ module.exports = {
 	devtool: 'source-map',
 	watch: true,
 	watchOptions: {
-		aggregateTimeout: 100
+		//aggregateTimeout: 100
 	},
 	plugins: [
 	    // Workaround for angular/angular#11580
 	    new webpack.ContextReplacementPlugin(
-	      // The (\\|\/) piece accounts for path separators in *nix and Windows 
+	      // The (\\|\/) piece accounts for path separators in *nix and Windows
 	      /angular(\\|\/)core(\\|\/)@angular/,
 	      helpers.root('./dist'), // location of your src
 	      {} // a map of your routes
