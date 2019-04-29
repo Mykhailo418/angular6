@@ -10,6 +10,7 @@ const helpers = require('./helpers');
 
 module.exports = {
 	context: __dirname,
+	mode: 'development',
 	entry: {
 			polyfills: js_path + 'polyfills.ts',
 			vendor: js_path + 'vendor.ts',
@@ -42,7 +43,7 @@ module.exports = {
 	devtool: 'source-map',
 	watch: true,
 	watchOptions: {
-		//aggregateTimeout: 100
+		aggregateTimeout: 100
 	},
 	plugins: [
 	    // Workaround for angular/angular#11580

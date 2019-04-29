@@ -13,6 +13,7 @@ import { FormsPageComponent } from './formsPage/forms.component';
 import { PipesPageComponent } from './pipesPage/pipes.component';
 import { HttpPageComponent } from './httpRequests/httpPage.component';
 import { NgrxPageComponent } from './ngrx/page/ngrxPage.component';
+import { AnimationPageComponent } from './animation/animationPage.component';
 
 // Services
 import { AuthGuard } from './services/auth/AuthGuard';
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
 	{path: 'pipes', component: PipesPageComponent},
 	{path: 'http-page', component: HttpPageComponent},
 	{path: 'ngrx-page', component: NgrxPageComponent},
+	{path: 'animation-page', component: AnimationPageComponent},
 	{path: 'users', loadChildren: '../dist/js/users/users.module#AppUsersModule'}, //TODO: can not find module
 	{path: '500', component: ErrorPage, data: { msg: 'Error 500: Server Error' }},
 	{path: '501', component: ErrorPage, data: { msg: 'Error 501: Not Implemented' }},
