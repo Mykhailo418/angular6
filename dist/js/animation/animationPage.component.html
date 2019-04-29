@@ -1,6 +1,11 @@
 <h2>Animation Page</h2>
 <button class="btn btn-primary" type="button" name="button" (click)="onAnimate()">Animate</button>
+<button class="btn btn-success" type="button" name="button" (click)="onShrink()">Shrink</button>
 <hr />
 <div [@divState]="state"
+     style="width:100px; height:100px"
+></div>
+<br />
+<div [@wildState]="wildState"
      style="width:100px; height:100px"
 ></div>
