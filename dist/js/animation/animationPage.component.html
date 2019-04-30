@@ -19,13 +19,26 @@
   </div>
 </div>
 <br />
-<ul class="list-group">
-  <li class="list-group-item"
-    style="position: relative"
-    *ngFor="let item of list; let i = index"
-    [ngStyle]="{'z-index': list.length - i}"
-    [@addingItem]
-    (click)="onDelete(i)"
-  >{{item}}</li>
-</ul>
+<div class="row">
+  <div class="col-sm-6">
+    <ul class="list-group">
+      <li class="list-group-item"
+        style="position: relative"
+        *ngFor="let item of list; let i = index"
+        [ngStyle]="{'z-index': list.length - i}"
+        [@list1]
+        (click)="onDelete(i)"
+      >{{item}}</li>
+    </ul>
+  </div>
+  <div class="col-sm-6">
+    <ul class="list-group">
+      <li class="list-group-item"
+        *ngFor="let item of list; let i = index"
+        [@list2]
+        (click)="onDelete(i)"
+      >{{item}}</li>
+    </ul>
+  </div>
+</div>
 <br /><br /><br />

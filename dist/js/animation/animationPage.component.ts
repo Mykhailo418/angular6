@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 const NORMAL_STATE = 'normal';
 const HIGHLIGHTED_STATE = 'highkighted';
@@ -45,7 +45,7 @@ const SHRINK_STATE = 'shrink';
 				animate(500)
 			] ),
     ]),
-		trigger('addingItem', [
+		trigger('list1', [
       transition(`void => *`, [
 				style({
 				  transform: 'translateY(-100px)'
@@ -62,6 +62,28 @@ const SHRINK_STATE = 'shrink';
 				  transform: 'translateY(-100px)',
 				}) )
 
+			])
+    ]),
+		trigger('list2', [
+      transition(`void => *`, [
+				animate(1000, keyframes([
+						style({
+						  transform: 'translateY(-100px)',
+							offset: 0
+						}),
+						style({
+						  transform: 'translateY(-30px)',
+							offset: 0.3
+						}),
+						style({
+						  transform: 'translateY(-20px)',
+							offset: 0.8
+						}),
+						style({
+						  transform: 'translateY(0px)',
+							offset: 1
+						}),
+				]) )
 			])
     ]),
   ]
