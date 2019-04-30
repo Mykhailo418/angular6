@@ -35,7 +35,15 @@ const SHRINK_STATE = 'shrink';
         transform: 'translateX(0) scale(0.5)'
       }) ),
       transition(`${NORMAL_STATE} <=> ${HIGHLIGHTED_STATE}`, animate(300)),
-      transition(`${SHRINK_STATE} <=> *`, animate(500)),
+      transition(`${SHRINK_STATE} <=> *`, [
+				style({
+					'background-color': 'orange'
+				}),
+				animate(1000, style({
+					borderRadius: '50px'
+				}) ),
+				animate(500)
+			] ),
     ])
   ]
 })
