@@ -44,12 +44,32 @@ const SHRINK_STATE = 'shrink';
 				}) ),
 				animate(500)
 			] ),
-    ])
+    ]),
+		trigger('addingItem', [
+      transition(`void => *`, [
+				style({
+				  transform: 'translateY(-100px)'
+				}),
+				animate(300)
+			]),
+			transition(`* => void`, [
+				style({
+					position:'static',
+				  'z-index': -1
+				}),
+				animate(300, style({
+					opacity: 0,
+				  transform: 'translateY(-100px)',
+				}) )
+
+			])
+    ]),
   ]
 })
 export class AnimationPageComponent {
   state: string = NORMAL_STATE;
   wildState: string = NORMAL_STATE;
+	list: string[] = ['item 1', 'item 2', 'item 3'];
 	constructor(){}
 
   onAnimate(){
@@ -60,4 +80,12 @@ export class AnimationPageComponent {
   onShrink(){
     this.wildState = (this.wildState !== SHRINK_STATE) ? SHRINK_STATE : NORMAL_STATE;
   }
+
+	addItem(value: string){
+		this.list.push(value);
+	}
+
+	onDelete(index: number){
+		this.list.splice(index, 1);
+	}
 }
