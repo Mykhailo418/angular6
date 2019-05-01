@@ -4,6 +4,8 @@
 <hr />
 <div [@divState]="state"
      style="width:100px; height:100px"
+     (@divState.start)="animationStarted($event)"
+     (@divState.done)="animationFinished($event)"
 ></div>
 <br />
 <div [@wildState]="wildState"

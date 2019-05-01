@@ -37,7 +37,8 @@ const SHRINK_STATE = 'shrink';
       transition(`${NORMAL_STATE} <=> ${HIGHLIGHTED_STATE}`, animate(300)),
       transition(`${SHRINK_STATE} <=> *`, [
 				style({
-					'background-color': 'orange'
+					'background-color': 'orange',
+					borderRadius:0
 				}),
 				animate(1000, style({
 					borderRadius: '50px'
@@ -121,5 +122,13 @@ export class AnimationPageComponent {
 
 	onDelete(index: number){
 		this.list.splice(index, 1);
+	}
+
+	animationStarted(event: any){
+		console.log('ANIMATION STARTED:',event);
+	}
+
+	animationFinished(event: any){
+		console.log('ANIMATION FINISHED:',event);
 	}
 }
