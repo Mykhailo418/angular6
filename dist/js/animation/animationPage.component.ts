@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
 
 const NORMAL_STATE = 'normal';
 const HIGHLIGHTED_STATE = 'highkighted';
@@ -84,6 +84,18 @@ const SHRINK_STATE = 'shrink';
 							offset: 1
 						}),
 				]) )
+			]),
+			transition(`* => void`, [
+					group([ // do animations synchronous(start do it at the sametime)
+						animate(200, style({
+							color: 'red',
+							fontWeight: 700
+						}) ),
+						animate(600, style({
+							opacity: 0,
+						  transform: 'translateY(-100px)',
+						}) )
+					])
 			])
     ]),
   ]
