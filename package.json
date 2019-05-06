@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A webpack starter for Angular",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack --mode=development"
   },
   "license": "MIT",
   "dependencies": {

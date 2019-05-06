@@ -86,6 +86,29 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../.F:/Wamp64/www/mytest/angular/first/dist/js lazy recursive":
+/*!****************************************************************************!*\
+  !*** ../.F:/Wamp64/www/mytest/angular/first/dist/js lazy namespace object ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncaught exception popping up in devtools
+	return Promise.resolve().then(function() {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	});
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = "../.F:/Wamp64/www/mytest/angular/first/dist/js lazy recursive";
+
+/***/ }),
+
 /***/ "./dist/js/vendor.ts":
 /*!***************************!*\
   !*** ./dist/js/vendor.ts ***!
@@ -33146,29 +33169,6 @@ publishFacade(_global);
 
 /***/ }),
 
-/***/ "./node_modules/@angular/core/fesm5 lazy recursive":
-/*!****************************************************************!*\
-  !*** ./node_modules/@angular/core/fesm5 lazy namespace object ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncaught exception popping up in devtools
-	return Promise.resolve().then(function() {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "./node_modules/@angular/core/fesm5 lazy recursive";
-
-/***/ }),
-
 /***/ "./node_modules/@angular/core/fesm5/core.js":
 /*!**************************************************!*\
   !*** ./node_modules/@angular/core/fesm5/core.js ***!
@@ -50686,7 +50686,7 @@ var SystemJsNgModuleLoader = /** @class */ (function () {
         if (exportName === undefined) {
             exportName = 'default';
         }
-        return __webpack_require__("./node_modules/@angular/core/fesm5 lazy recursive")(module)
+        return __webpack_require__("../.F:/Wamp64/www/mytest/angular/first/dist/js lazy recursive")(module)
             .then(function (module) { return module[exportName]; })
             .then(function (type) { return checkNotEmpty(type, module, exportName); })
             .then(function (type) { return _this._compiler.compileModuleAsync(type); });
@@ -50698,7 +50698,7 @@ var SystemJsNgModuleLoader = /** @class */ (function () {
             exportName = 'default';
             factoryClassSuffix = '';
         }
-        return __webpack_require__("./node_modules/@angular/core/fesm5 lazy recursive")(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
+        return __webpack_require__("../.F:/Wamp64/www/mytest/angular/first/dist/js lazy recursive")(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
             .then(function (module) { return module[exportName + factoryClassSuffix]; })
             .then(function (factory) { return checkNotEmpty(factory, module, exportName); });
     };
