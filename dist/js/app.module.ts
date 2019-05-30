@@ -31,6 +31,8 @@ import { PipesPageComponent } from './pipesPage/pipes.component';
 import { HttpPageComponent } from './httpRequests/httpPage.component';
 import { NgrxPageComponent } from './ngrx/page/ngrxPage.component';
 import { AnimationPageComponent } from './animation/animationPage.component';
+import { CustomAngularElementsPageComponent } from './customAngularElements/customAngularElements.component';
+import { CustomElementTimerComponent } from './customAngularElements/timer/timer.component';
 
 // Directives
 import { AppUnlessDirective } from './directives/AppUnless.directive';
@@ -54,8 +56,10 @@ import {CommonEffects} from './ngrx/common.effects';
   declarations: [AppComponent, CustomComponent, AppUnlessDirective,
 		ListComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
     NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent,
-    PipesPageComponent, ShortenPipe, FilterPipe, HttpPageComponent, NgrxPageComponent, AnimationPageComponent],
+    PipesPageComponent, ShortenPipe, FilterPipe, HttpPageComponent, NgrxPageComponent, AnimationPageComponent,CustomAngularElementsPageComponent,
+    CustomElementTimerComponent],
   bootstrap: [AppComponent],
+  entryComponents: [CustomElementTimerComponent],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: CommonInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: IncomingRequestInterceptor, multi: true}
