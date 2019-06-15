@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A webpack starter for Angular",
   "scripts": {
-    "start": "webpack --mode=development"
+    "start": "webpack --mode=development --config=webpack.config.js",
+    "dev": "webpack --mode=development --config=webpack.config.dev.js",
+    "prod": "webpack --mode=production --config=webpack.config.prod.js"
   },
   "license": "MIT",
   "dependencies": {
@@ -28,8 +30,10 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
+    "@types/core-js": "^2.5.1",
     "@types/jasmine": "3.3.2",
     "@types/node": "^10.12.15",
+    "angular-router-loader": "^0.8.5",
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^2.0.1",
@@ -52,6 +56,6 @@
     "webpack": "4.27.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "3.1.10",
-    "webpack-merge": "^4.1.5"
+    "webpack-merge": "^4.2.1"
   }
 }
