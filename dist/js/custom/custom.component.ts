@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef, OnChanges, 
-	SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, 
+import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef, OnChanges,
+	SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked,
 	OnDestroy, ContentChild } from '@angular/core';
 
 import { ListService } from '../services/list.service';
@@ -10,7 +10,7 @@ import { ListService } from '../services/list.service';
 	encapsulation: ViewEncapsulation.None,
 })
 
-export class CustomComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, 
+export class CustomComponent implements OnInit, OnChanges, DoCheck, AfterContentInit,
 AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy  {
 	@Input('serPref') serverPrefix: String = '';
 	@Input() newMsg: Object;
@@ -24,7 +24,7 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy  {
 	unlessCondition: Boolean = false;
 	currentNum: Number;
 
-	constructor(private listService: ListService){
+	constructor(private listService: ListService, private hostElement: ElementRef){
 
 	}
 
@@ -76,6 +76,7 @@ AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy  {
 	ngAfterViewInit(){
 		console.log('AfterViewInit - custom Compoennt');
 		console.log('Text Title Some Title(AfterViewInit) = '+this.titleFromDOM.nativeElement.textContent);
+		console.log('Host Elelemnt (Current <app-custom> element) = ', this.hostElement);
 	}
 
 	ngAfterViewChecked(){
