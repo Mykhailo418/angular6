@@ -33,6 +33,10 @@ import { NgrxPageComponent } from './ngrx/page/ngrxPage.component';
 import { AnimationPageComponent } from './animation/animationPage.component';
 import { CustomAngularElementsPageComponent } from './customAngularElements/customAngularElements.component';
 import { CustomElementTimerComponent } from './customAngularElements/timer/timer.component';
+import { AppViewContainerExample } from './viewCont/viewCont.component';
+import { ACompViewContainer } from './viewCont/a.component';
+import { BCompViewContainer } from './viewCont/b.component';
+import { AppViewContainerChildExample } from './viewCont/child/viewContChild.component';
 
 // Directives
 import { AppUnlessDirective } from './directives/AppUnless.directive';
@@ -57,7 +61,7 @@ import {CommonEffects} from './ngrx/common.effects';
 		ListComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
     NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent,
     PipesPageComponent, ShortenPipe, FilterPipe, HttpPageComponent, NgrxPageComponent, AnimationPageComponent,CustomAngularElementsPageComponent,
-    CustomElementTimerComponent],
+    CustomElementTimerComponent, AppViewContainerExample, AppViewContainerChildExample, ACompViewContainer, BCompViewContainer],
   bootstrap: [AppComponent],
   entryComponents: [CustomElementTimerComponent],
   providers: [

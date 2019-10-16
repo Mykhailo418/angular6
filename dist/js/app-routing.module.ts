@@ -15,6 +15,7 @@ import { HttpPageComponent } from './httpRequests/httpPage.component';
 import { NgrxPageComponent } from './ngrx/page/ngrxPage.component';
 import { AnimationPageComponent } from './animation/animationPage.component';
 import { CustomAngularElementsPageComponent } from './customAngularElements/customAngularElements.component';
+import { AppViewContainerExample } from './viewCont/viewCont.component';
 
 // Services
 import { AuthGuard } from './services/auth/AuthGuard';
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
 	{path: 'ngrx-page', component: NgrxPageComponent},
 	{path: 'animation-page', component: AnimationPageComponent},
 	{path: 'custom-ang-el-page', component: CustomAngularElementsPageComponent},
+	{path: 'view-container-page', component: AppViewContainerExample},
 	{path: 'users', loadChildren: '../dist/js/users/users.module#AppUsersModule'}, //TODO: can not find module
 	{path: '500', component: ErrorPage, data: { msg: 'Error 500: Server Error' }},
 	{path: '501', component: ErrorPage, data: { msg: 'Error 501: Not Implemented' }},
