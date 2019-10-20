@@ -37,6 +37,9 @@ import { AppViewContainerExample } from './viewCont/viewCont.component';
 import { ACompViewContainer } from './viewCont/a.component';
 import { BCompViewContainer } from './viewCont/b.component';
 import { AppViewContainerChildExample } from './viewCont/child/viewContChild.component';
+import { DIParentPageComponent } from './DIPage/DIPage.component';
+import { DIChildComponent } from './DIPage/child.component';
+import { DISubChildComponent } from './DIPage/subchild.component';
 
 // Directives
 import { AppUnlessDirective } from './directives/AppUnless.directive';
@@ -61,7 +64,8 @@ import {CommonEffects} from './ngrx/common.effects';
 		ListComponent, HomeComponent, ContactsComponent, QueryParamsComponent,
     NotFoundComponent, EditingPageComponent, ErrorPage, ObservablesPageComponent, FormsPageComponent, ReactiveFormComponent,
     PipesPageComponent, ShortenPipe, FilterPipe, HttpPageComponent, NgrxPageComponent, AnimationPageComponent,CustomAngularElementsPageComponent,
-    CustomElementTimerComponent, AppViewContainerExample, AppViewContainerChildExample, ACompViewContainer, BCompViewContainer],
+    CustomElementTimerComponent, AppViewContainerExample, AppViewContainerChildExample, ACompViewContainer, BCompViewContainer,
+    DIParentPageComponent, DIChildComponent, DISubChildComponent],
   bootstrap: [AppComponent],
   entryComponents: [CustomElementTimerComponent],
   providers: [
